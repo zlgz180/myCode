@@ -4,6 +4,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
+ * 2个线程交替打印1---100
+ * 
  * @author tianwei
  * @since 2018-06-26 18:36
  */
