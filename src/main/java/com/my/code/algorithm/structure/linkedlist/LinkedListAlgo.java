@@ -7,6 +7,21 @@ package com.my.code.algorithm.structure.linkedlist;
  */
 public class LinkedListAlgo {
 
+    public static Node reverseLinkedList(Node node) {
+        if (node == null || node.next == null) {
+            return node;
+        } else {
+            Node headNode = reverseLinkedList(node.next);
+            node.next.next = node;
+            node.next = null;
+            return headNode;
+        }
+    }
+
+    public static void main(String[] args) {
+
+    }
+
     // 单链表反转
     public static Node reverse(Node list) {
         Node headNode = null;
@@ -22,7 +37,6 @@ public class LinkedListAlgo {
             previousNode = currentNode;
             currentNode = nextNode;
         }
-
         return headNode;
     }
 

@@ -23,8 +23,9 @@ public class StackBasedLinkedList {
      * 我用-1表示栈中没有数据。
      */
     public int pop() {
-        if (top == null)
+        if (top == null) {
             return -1;
+        }
         int value = top.data;
         top = top.next;
         return value;
