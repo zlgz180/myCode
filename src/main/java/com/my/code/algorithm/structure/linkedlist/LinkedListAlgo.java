@@ -6,23 +6,12 @@ package com.my.code.algorithm.structure.linkedlist;
  * Author: Zheng
  */
 public class LinkedListAlgo {
-
-    public static Node reverseLinkedList(Node node) {
-        if (node == null || node.next == null) {
-            return node;
-        } else {
-            Node headNode = reverseLinkedList(node.next);
-            node.next.next = node;
-            node.next = null;
-            return headNode;
-        }
-    }
-
-    public static void main(String[] args) {
-
-    }
-
-    // 单链表反转
+    /**
+     * 单链表反转
+     *
+     * @param list
+     * @return
+     */
     public static Node reverse(Node list) {
         Node headNode = null;
 
@@ -33,17 +22,23 @@ public class LinkedListAlgo {
             if (nextNode == null) {
                 headNode = currentNode;
             }
-            currentNode.next = previousNode;
             previousNode = currentNode;
             currentNode = nextNode;
+            currentNode.next = previousNode;
         }
         return headNode;
     }
 
-    // 检测环
+    /**
+     * 检测环
+     * 
+     * @param list
+     * @return
+     */
     public static boolean checkCircle(Node list) {
-        if (list == null)
+        if (list == null) {
             return false;
+        }
 
         Node fast = list.next;
         Node slow = list;
@@ -51,15 +46,21 @@ public class LinkedListAlgo {
         while (fast != null && fast.next != null) {
             fast = fast.next.next;
             slow = slow.next;
-
-            if (slow == fast)
+            if (slow == fast) {
                 return true;
+            }
         }
 
         return false;
     }
 
-    // 有序链表合并
+    /**
+     * 有序链表合并
+     * 
+     * @param la
+     * @param lb
+     * @return
+     */
     public static Node mergeSortedLists(Node la, Node lb) {
         if (la == null) {
             return lb;
@@ -100,7 +101,12 @@ public class LinkedListAlgo {
         return head;
     }
 
-    // 删除倒数第K个结点
+    /**
+     * 
+     * @param list
+     * @param k
+     * @return
+     */
     public static Node deleteLastKth(Node list, int k) {
         Node fast = list;
         int i = 1;
@@ -109,8 +115,9 @@ public class LinkedListAlgo {
             ++i;
         }
 
-        if (fast == null)
+        if (fast == null) {
             return list;
+        }
 
         Node slow = list;
         Node prev = null;
@@ -130,9 +137,9 @@ public class LinkedListAlgo {
 
     // 求中间结点
     public static Node findMiddleNode(Node list) {
-        if (list == null)
+        if (list == null) {
             return null;
-
+        }
         Node fast = list;
         Node slow = list;
 
@@ -140,7 +147,6 @@ public class LinkedListAlgo {
             fast = fast.next.next;
             slow = slow.next;
         }
-
         return slow;
     }
 
@@ -155,6 +161,23 @@ public class LinkedListAlgo {
 
     public static Node createNode(int value) {
         return new Node(value, null);
+    }
+
+    /**
+     * 递归反转链表
+     *
+     * @param node
+     * @return
+     */
+    public Node reverseLinkedList(Node node) {
+        if (node == null || node.next == null) {
+            return node;
+        } else {
+            Node headNode = reverseLinkedList(node.next);
+            node.next.next = node;
+            node.next = null;
+            return headNode;
+        }
     }
 
     public static class Node {

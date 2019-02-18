@@ -43,6 +43,15 @@ public class LRUBaseLinkedList<T> {
         this.length = 0;
     }
 
+    public static void main(String[] args) {
+        LRUBaseLinkedList list = new LRUBaseLinkedList();
+        Scanner sc = new Scanner(System.in);
+        while (true) {
+            list.add(sc.nextInt());
+            list.printAll();
+        }
+    }
+
     public void add(T data) {
         SNode preNode = findPreNode(data);
 
@@ -52,7 +61,7 @@ public class LRUBaseLinkedList<T> {
             intsertElemAtBegin(data);
         } else {
             if (length >= this.capacity) {
-                //删除尾结点
+                // 删除尾结点
                 deleteElemAtEnd();
             }
             intsertElemAtBegin(data);
@@ -162,15 +171,6 @@ public class LRUBaseLinkedList<T> {
 
         public void setNext(SNode next) {
             this.next = next;
-        }
-    }
-
-    public static void main(String[] args) {
-        LRUBaseLinkedList list = new LRUBaseLinkedList();
-        Scanner sc = new Scanner(System.in);
-        while (true) {
-            list.add(sc.nextInt());
-            list.printAll();
         }
     }
 }

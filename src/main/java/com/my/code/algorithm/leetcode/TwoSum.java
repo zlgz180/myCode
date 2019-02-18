@@ -19,6 +19,13 @@ public class TwoSum {
         // int[] nums = { 3, 3 };
         int[] nums = { 2, 5, 5, 11 };
         System.out.println(Arrays.toString(twoSum(nums, 10)));
+
+
+
+    }
+
+    public static void merge(int[] nums1, int m, int[] nums2, int n) {
+
     }
 
     public static int[] twoSum(int[] nums, int target) {

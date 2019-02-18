@@ -1,4 +1,4 @@
-package com.my.code.Thead;
+package com.my.code.thead;
 
 import com.google.common.util.concurrent.RateLimiter;
 

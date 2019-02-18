@@ -1,12 +1,101 @@
 package com.my.code.algorithm.seach;
 
-import com.alibaba.fastjson.JSON;
-
 public class BinarySearch {
     public static void main(String[] args) {
-        int[] a = new int[]{2, 6, 4, 3, 1, 7};
+        int[] a = new int[] { 1, 1 };
         // bubbleSort(a, a.length);
-        System.out.println(JSON.toJSONString(a));
+        // System.out.println(JSON.toJSONString(a));
+
+        System.out.println(bSeach2(a, 1));
+    }
+
+    /**
+     * 查找第一个重复的数据,二分查找
+     *
+     * @param t
+     * @param val
+     * @return
+     */
+    public static long bSeach2(int[] t, int val) {
+        int l = 0;
+        int h = t.length - 1;
+        int m = -1;
+        while (l <= h) {
+            m = l + (h - l) >> 1;
+            if (t[m] == val) {
+                // m不一定是第一个m
+                if (m == 0) {
+                    return 0;
+                }
+                if (t[m - 1] != val) {
+                    return m;
+                }
+            }
+            if (t[m] < val) {
+                l = m + 1;
+            }
+            if (t[m] > val) {
+                h = m - 1;
+            }
+        }
+        return m;
+    }
+
+    /**
+     * 查找最后一个个重复的数据,二分查找
+     *
+     * @param t
+     * @param val
+     * @return
+     */
+    public static long bSeach3(int[] t, int val) {
+        int l = 0;
+        int h = t.length - 1;
+        int m = -1;
+        while (l <= h) {
+            m = l + (h - l) >> 1;
+            if (t[m] == val) {
+                if (m == t.length - 1) {
+                    return m;
+                }
+                if (t[m + 1] != val) {
+                    return m;
+                }
+            }
+            if (t[m] < val) {
+                l = m + 1;
+            }
+            if (t[m] > val) {
+                h = m - 1;
+            }
+        }
+        return m;
+    }
+
+    /**
+     * 查找第一个大于val的序号
+     *
+     * @param t
+     * @param val
+     * @return
+     */
+    public static long bSeach4(int[] t, int val) {
+        int l = 0;
+        int h = t.length - 1;
+        int m = -1;
+        while (l <= h) {
+            m = l + (h - l) >> 1;
+            if (t[m] == val) {
+                return m + 1;
+            }
+            if (t[m] < val) {
+                l = m + 1;
+            }
+            if (t[m] > val) {
+                h = m - 1;
+            }
+        }
+        return m;
     }
 
     public long sort(int[] a, int val) {
@@ -14,7 +103,7 @@ public class BinarySearch {
         int high = a.length - 1;
         while (high >= low) {
             int mid = low + (high - low) / 2;
-//            long mid = (high + low) / 2;
+            // long mid = (high + low) / 2;
             if (a[mid] == val) {
                 return mid;
             } else if (a[mid] < val) {
