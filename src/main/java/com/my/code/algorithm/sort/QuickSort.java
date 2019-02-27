@@ -1,6 +1,15 @@
+package com.my.code.algorithm.sort;
+
 import java.util.Arrays;
 
+/**
+ * //
+ *
+ * @author tianwei
+ * @since 2019/2/26 18:24
+ */
 public class QuickSort {
+
     public static void quickSort(int[] arr, int startIndex, int endIndex) {
         // 递归结束条件：startIndex大等于endIndex的时候
         if (startIndex >= endIndex) {
@@ -51,5 +60,18 @@ public class QuickSort {
         int[] arr = new int[] { 4, 7, 6, 5, 3, 2, 8, 1 };
         quickSort(arr, 0, arr.length - 1);
         System.out.println(Arrays.toString(arr));
+    }
+
+    class MyDemo {
+        public void demo(int[] sums, int start, int end) {
+            if (start >= end) {
+                return;
+            }
+            // int partition = myPartition(sums, start, end - 1);
+            // demo(sums, start, partition - 1);
+            // demo(sums, partition + 1, end);
+        }
+
+
     }
 }

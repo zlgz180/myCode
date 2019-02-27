@@ -9,7 +9,9 @@ public class CountingSort {
 
     // 计数排序，a是数组，n是数组大小。假设数组中存储的都是非负整数。
     public static void countingSort(int[] a, int n) {
-        if (n <= 1) return;
+        if (n <= 1) {
+            return;
+        }
 
         // 查找数组中数据的范围
         int max = a[0];

@@ -17,16 +17,18 @@ public class getMinSum {
     }
 
     private static long getMinSum(int arr[]) {
-        if (arr == null || arr.length < 5)
+        if (arr == null || arr.length < 5) {
             return -1; // or throw npe
+        }
         int leftIndex = 1, rightIndex = arr.length - 2;
         long leftMin = arr[leftIndex], rightMin = arr[rightIndex];
 
         while (leftIndex + 2 < rightIndex) {
-            if (leftMin < rightMin)
+            if (leftMin < rightMin) {
                 rightMin = Math.min(rightMin, arr[--rightIndex]);
-            else
+            } else {
                 leftMin = Math.min(leftMin, arr[++leftIndex]);
+            }
         }
 
         return leftMin + rightMin;

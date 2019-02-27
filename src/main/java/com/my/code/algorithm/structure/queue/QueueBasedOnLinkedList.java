@@ -25,7 +25,9 @@ public class QueueBasedOnLinkedList {
 
     // 出队
     public String dequeue() {
-        if (head == null) return null;
+        if (head == null) {
+            return null;
+        }
 
         String value = head.data;
         head = head.next;

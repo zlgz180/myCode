@@ -1,5 +1,7 @@
 package com.my.code.algorithm.leetcode;
 
+import java.util.LinkedList;
+
 /**
  * @author tianwei
  * @since 2019-02-01 17:33
@@ -68,13 +70,61 @@ public class Tree {
         visit(p);
     }
 
-    static class TreeNode {
-        int val = 0;
-        TreeNode left = null;
-        TreeNode right = null;
+    /**
+     * 前序遍历 根-->左-->右
+     */
+    public static void DFS(TreeNode root) {
+        if (root != null) {
+            System.out.println(root.val);
+            DFS(root.left);
+            DFS(root.right);
+        }
+    }
 
-        public TreeNode(int val) {
-            this.val = val;
+    /**
+     * 前序遍历 非递归实现
+     * 
+     * @param root
+     */
+    public static void DFSMorege(TreeNode root) {
+        LinkedList<TreeNode> list = new LinkedList<>();
+        TreeNode treeNode = root;
+        while (true) {
+            if (treeNode != null) {
+                System.out.println(treeNode.val);
+                list.add(treeNode);
+                treeNode = treeNode.left;
+            } else {
+                TreeNode pop = list.pop();
+                treeNode = pop.right;
+            }
+        }
+    }
+
+
+    /**
+     * 中序遍历 左/根/右
+     * 
+     * @param root
+     */
+    public static void DFS2(TreeNode root) {
+        if (root != null) {
+            DFS(root.left);
+            System.out.println(root.val);
+            DFS(root.right);
+        }
+    }
+
+    /**
+     * 后序遍历 左/右/根
+     *
+     * @param root
+     */
+    public static void DFS3(TreeNode root) {
+        if (root != null) {
+            DFS(root.left);
+            DFS(root.right);
+            System.out.println(root.val);
         }
     }
 }

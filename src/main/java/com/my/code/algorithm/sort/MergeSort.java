@@ -13,7 +13,9 @@ public class MergeSort {
     // 递归调用函数
     private static void mergeSortInternally(int[] a, int p, int r) {
         // 递归终止条件
-        if (p >= r) return;
+        if (p >= r) {
+            return;
+        }
 
         // 取p到r之间的中间位置q,防止（p+r）的和超过int类型最大值
         int q = p + (r - p) / 2;

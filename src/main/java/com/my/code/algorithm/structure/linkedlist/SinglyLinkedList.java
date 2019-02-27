@@ -102,8 +102,9 @@ public class SinglyLinkedList {
     }
 
     public void insertAfter(Node p, Node newNode) {
-        if (p == null)
+        if (p == null) {
             return;
+        }
 
         newNode.next = p.next;
         p.next = newNode;
@@ -115,8 +116,9 @@ public class SinglyLinkedList {
     }
 
     public void insertBefore(Node p, Node newNode) {
-        if (p == null)
+        if (p == null) {
             return;
+        }
         if (head == p) {
             insertToHead(newNode);
             return;
@@ -137,8 +139,9 @@ public class SinglyLinkedList {
     }
 
     public void deleteByNode(Node p) {
-        if (p == null || head == null)
+        if (p == null || head == null) {
             return;
+        }
 
         if (p == head) {
             head = head.next;
@@ -158,8 +161,9 @@ public class SinglyLinkedList {
     }
 
     public void deleteByValue(int value) {
-        if (head == null)
+        if (head == null) {
             return;
+        }
 
         Node p = head;
         Node q = null;
@@ -168,8 +172,9 @@ public class SinglyLinkedList {
             p = p.next;
         }
 
-        if (p == null)
+        if (p == null) {
             return;
+        }
 
         if (q == null) {
             head = head.next;

@@ -9,7 +9,9 @@ public class Sorts {
 
   // 冒泡排序，a是数组，n表示数组大小
   public static void bubbleSort(int[] a, int n) {
-    if (n <= 1) return;
+    if (n <= 1) {
+        return;
+    }
 
     for (int i = 0; i < n; ++i) {
       // 提前退出标志位
@@ -23,13 +25,17 @@ public class Sorts {
           flag = true;
         }
       }
-      if (!flag) break;  // 没有数据交换，提前退出
+      if (!flag) {
+          break;  // 没有数据交换，提前退出
+      }
     }
   }
 
   // 插入排序，a表示数组，n表示数组大小
   public static void insertionSort(int[] a, int n) {
-    if (n <= 1) return;
+    if (n <= 1) {
+        return;
+    }
 
     for (int i = 1; i < n; ++i) {
       int value = a[i];
@@ -48,7 +54,9 @@ public class Sorts {
 
   // 选择排序，a表示数组，n表示数组大小
   public static void selectionSort(int[] a, int n) {
-    if (n <= 1) return;
+    if (n <= 1) {
+        return;
+    }
 
     for (int i = 0; i < n - 1; ++i) {
       // 查找最小值

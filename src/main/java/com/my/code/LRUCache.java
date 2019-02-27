@@ -39,8 +39,9 @@ public class LRUCache<K, V> {
 
     public V get(K key) {
         Entry<K, V> entry = getEntry(key);
-        if (entry == null)
+        if (entry == null) {
             return null;
+        }
         moveToFirst(entry);
         return entry.value;
     }
@@ -48,27 +49,35 @@ public class LRUCache<K, V> {
     public void remove(K key) {
         Entry entry = getEntry(key);
         if (entry != null) {
-            if (entry.pre != null)
+            if (entry.pre != null) {
                 entry.pre.next = entry.next;
-            if (entry.next != null)
+            }
+            if (entry.next != null) {
                 entry.next.pre = entry.pre;
-            if (entry == first)
+            }
+            if (entry == first) {
                 first = entry.next;
-            if (entry == last)
+            }
+            if (entry == last) {
                 last = entry.pre;
+            }
         }
         hashMap.remove(key);
     }
 
     private void moveToFirst(Entry entry) {
-        if (entry == first)
+        if (entry == first) {
             return;
-        if (entry.pre != null)
+        }
+        if (entry.pre != null) {
             entry.pre.next = entry.next;
-        if (entry.next != null)
+        }
+        if (entry.next != null) {
             entry.next.pre = entry.pre;
-        if (entry == last)
+        }
+        if (entry == last) {
             last = last.pre;
+        }
 
         if (first == null || last == null) {
             first = last = entry;
