@@ -1,4 +1,4 @@
-package com.my.code.thead;
+package com.my.code.jdk.thead;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;

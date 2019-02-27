@@ -1,4 +1,4 @@
-package com.my.code.thead;
+package com.my.code.jdk.guava;
 
 import com.google.common.util.concurrent.RateLimiter;
 
@@ -6,7 +6,7 @@ import com.google.common.util.concurrent.RateLimiter;
  * @author tianwei
  * @since 2018-06-27 15:23
  */
-public class RateLimiterDemo {
+public class GuavaRateLimiterDemo {
     public static void main(String[] args) {
         RateLimiter limiter = RateLimiter.create(2.0);
         // 批量调用

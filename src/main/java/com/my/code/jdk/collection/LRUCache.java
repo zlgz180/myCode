@@ -1,4 +1,4 @@
-package com.my.code;
+package com.my.code.jdk.collection;
 
 import java.util.HashMap;
 

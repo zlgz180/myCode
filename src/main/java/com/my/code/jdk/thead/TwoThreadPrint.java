@@ -1,4 +1,4 @@
-package com.my.code.algorithm;
+package com.my.code.jdk.thead;
 
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.ReentrantLock;

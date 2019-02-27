@@ -1,4 +1,4 @@
-package com.my.code.thead;
+package com.my.code.jdk.thead;
 
 import java.util.concurrent.*;
 
@@ -10,7 +10,7 @@ import org.apache.commons.lang3.concurrent.BasicThreadFactory;
  * @author tianwei
  * @since 2018-06-27 10:34
  */
-public class ThreadPoolDemo {
+public class ThreadPoolExceptionDemo {
 
     public static void main(String[] args) throws ExecutionException {
         // try {

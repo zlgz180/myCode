@@ -1,4 +1,4 @@
-package com.my.code.thead;
+package com.my.code.jdk.collection;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentSkipListMap;
@@ -7,7 +7,7 @@ import java.util.concurrent.ConcurrentSkipListMap;
  * @author tianwei
  * @since 2019-02-22 16:51
  */
-public class ddd {
+public class SortListDemo {
 
     public static void main(String[] args) {
         TreeMap map = new TreeMap(new Comparator() {

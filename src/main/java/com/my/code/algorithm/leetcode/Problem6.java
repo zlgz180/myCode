@@ -1,4 +1,4 @@
-package com.my.code.algorithm;
+package com.my.code.algorithm.leetcode;
 
 /**
  *

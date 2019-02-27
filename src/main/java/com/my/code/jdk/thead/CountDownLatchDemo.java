@@ -1,4 +1,4 @@
-package com.my.code.thead;
+package com.my.code.jdk.thead;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;

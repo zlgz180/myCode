@@ -1,4 +1,4 @@
-package com.my.code.thead;
+package com.my.code.jdk.thead;
 
 import java.util.ArrayList;
 import java.util.Date;

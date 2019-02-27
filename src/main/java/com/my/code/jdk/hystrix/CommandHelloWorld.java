@@ -1,4 +1,4 @@
-package com.my.code.thead.hystrix;
+package com.my.code.jdk.hystrix;
 
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;

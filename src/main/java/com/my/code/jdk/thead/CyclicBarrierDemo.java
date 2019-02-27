@@ -1,4 +1,4 @@
-package com.my.code.thead;
+package com.my.code.jdk.thead;
 
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
