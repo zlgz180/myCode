@@ -1,13 +1,52 @@
 package com.my.code.algorithm.structure.tree;
 
+import java.util.ArrayDeque;
+import java.util.Stack;
+
 /**
- * 二叉搜索树,父大于子女，未必平衡，可退化成链表
+ * 二叉搜索树,父大于子女，未必平衡，可退化成链表，二叉平衡树可优化平衡
  *
  * @author tianwei
  * @since 2019/2/27 11:23
  */
 public class BinarySearchTree {
     private Node tree;
+
+    public static void main(String[] args) {
+        BinarySearchTree binarySearchTree = new BinarySearchTree();
+
+        Node root = new Node(1);
+        root.left = new Node(2);
+        root.right = new Node(3);
+        root.left.left = new Node(4);
+        root.left.right = new Node(5);
+        // binarySearchTree.printByRow(root);
+        // binarySearchTree.preOrder2(root);
+
+        binarySearchTree.inOrder2(root);
+    }
+
+    /**
+     * 按层遍历
+     *
+     * @param root
+     * @return
+     */
+    public void printByRow(Node root) {
+        // LinkedList<Node> list = new LinkedList<>();
+        ArrayDeque<Node> list = new ArrayDeque<>();
+        list.add(root);
+        while (!list.isEmpty()) {
+            Node curr = list.poll();
+            System.out.println(curr.data);
+            if (curr.left != null) {
+                list.add(curr.left);
+            }
+            if (curr.right != null) {
+                list.add(curr.right);
+            }
+        }
+    }
 
     public Node find(int data) {
         Node p = tree;
@@ -23,7 +62,12 @@ public class BinarySearchTree {
         return null;
     }
 
-
+    /**
+     * 计算深度
+     *
+     * @param node
+     * @return
+     */
     public int deptth(Node node) {
         if (node == null) {
             return 0;
@@ -206,6 +250,108 @@ public class BinarySearchTree {
             p = p.right;
         }
         return p;
+    }
+
+    /**
+     * 前向遍历-->根左右
+     *
+     * @param node
+     */
+    private void preOrder(Node node) {
+        if (node == null) {
+            return;
+        }
+        System.out.println(node.data);
+        afterOrder(node.left);
+        afterOrder(node.right);
+    }
+
+    /**
+     * 前向遍历-->根左右/非递归
+     */
+    private void preOrder2(Node root) {
+        Stack<Node> stack = new Stack<>();
+        stack.add(root);
+        while (!stack.isEmpty()) {
+            Node curr = stack.pop();
+            System.out.println(curr.data);
+            if (curr.right != null) {
+                stack.add(curr.right);
+            }
+            if (curr.left != null) {
+                stack.add(curr.left);
+            }
+        }
+    }
+
+    /**
+     * 中序遍历-->左根右
+     * 
+     * @param node
+     */
+    private void inOrder(Node node) {
+        if (node == null) {
+            return;
+        }
+        afterOrder(node.left);
+        System.out.println(node.data);
+        afterOrder(node.right);
+    }
+
+    /**
+     * 中序遍历-->左根右/非递归
+     *
+     * @param node
+     */
+    private void inOrder2(Node node) {
+        Stack<Node> stack = new Stack<>();
+        while (!stack.isEmpty() || node != null) {
+            if (node != null) {
+                stack.add(node);
+                node = node.left;
+                continue;
+            }
+            node = stack.pop();
+            System.out.println(node.data);
+            node = node.right;
+        }
+    }
+
+
+    /**
+     * 后序遍历-->右左根
+     * 
+     * @param node
+     */
+    private void afterOrder(Node node) {
+        if (node == null) {
+            return;
+        }
+        afterOrder(node.right);
+        afterOrder(node.left);
+        System.out.println(node.data);
+    }
+
+    /**
+     * 后序遍历
+     */
+    private void afterOrder2(Node root) {
+        Stack<Node> stack1 = new Stack<Node>();
+        Stack<Node> stack2 = new Stack<Node>();
+        stack1.add(root);
+        while (!stack1.isEmpty()) {
+            root = stack1.pop();
+            stack2.add(root);
+            if (root.left != null) {
+                stack1.add(root.left);
+            }
+            if (root.right != null) {
+                stack1.add(root.right);
+            }
+        }
+        while (!stack2.isEmpty()) {
+            System.out.println(stack2.pop().data);
+        }
     }
 
     public static class Node {

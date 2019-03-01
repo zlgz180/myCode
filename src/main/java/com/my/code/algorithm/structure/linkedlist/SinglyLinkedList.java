@@ -296,10 +296,8 @@ public class SinglyLinkedList {
 
     // 无头结点的链表翻转
     public Node inverseLinkList(Node p) {
-
         Node pre = null;
         Node head = this.head;
-        System.out.println("z---" + head.data);
         Node next = null;
         while (head != p) {
             next = head.next;
@@ -313,7 +311,18 @@ public class SinglyLinkedList {
         // 返回左半部分的中点之前的那个节点
         // 从此处开始同步像两边比较
         return head;
+    }
 
+    public Node inverseList(Node root) {
+        Node pre = new Node(-1, null);
+        Node cur = root;
+        while (root != null) {
+            Node next = root.next;
+            cur.next = pre;
+            pre = cur;
+            cur = next;
+        }
+        return pre.next;
     }
 
     public static class Node {
