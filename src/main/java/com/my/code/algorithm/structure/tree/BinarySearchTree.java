@@ -1,5 +1,11 @@
 package com.my.code.algorithm.structure.tree;
 
+/**
+ * 二叉搜索树,父大于子女，未必平衡，可退化成链表
+ *
+ * @author tianwei
+ * @since 2019/2/27 11:23
+ */
 public class BinarySearchTree {
     private Node tree;
 
@@ -7,11 +13,40 @@ public class BinarySearchTree {
         Node p = tree;
         while (p != null) {
             if (data < p.data) {
-              p = p.left;
+                p = p.left;
             } else if (data > p.data) {
-              p = p.right;
+                p = p.right;
             } else {
-              return p;
+                return p;
+            }
+        }
+        return null;
+    }
+
+
+    public int deptth(Node node) {
+        if (node == null) {
+            return 0;
+        }
+        if (node.right != null || node.left != null) {
+            return 1;
+        }
+        return Math.max(deptth(node.left), deptth(node.right));
+    }
+
+    public Node find2(int data) {
+        Node cur = this.tree;
+        while (cur != null) {
+            if (cur.data == data) {
+                return cur;
+            }
+            if (cur.data > data) {
+                // 找左
+                cur = cur.left;
+            }
+            if (cur.data < data) {
+                // 找右
+                cur = cur.right;
             }
         }
         return null;
@@ -41,19 +76,51 @@ public class BinarySearchTree {
         }
     }
 
+    /**
+     * 插入的数据先个父节点比较，大的往右，小的往左
+     *
+     * @param data
+     */
+    public void insert2(int data) {
+        if (tree == null) {
+            tree = new Node(data);
+            return;
+        }
+        Node cur = this.tree;
+        while (cur != null) {
+            if (cur.data < data) {
+                if (cur.left == null) {
+                    cur.left = new Node(data);
+                    return;
+                }
+                cur = cur.left;
+            }
+            if (cur.data > data) {
+                if (cur.right == null) {
+                    cur.right = new Node(data);
+                    return;
+                }
+                cur = cur.right;
+            }
+            if (cur.data == data) {
+                return;
+            }
+        }
+    }
+
     public void delete(int data) {
         Node p = tree; // p指向要删除的节点，初始化指向根节点
         Node pp = null; // pp记录的是p的父节点
         while (p != null && p.data != data) {
             pp = p;
             if (data > p.data) {
-              p = p.right;
+                p = p.right;
             } else {
-              p = p.left;
+                p = p.left;
             }
         }
         if (p == null) {
-          return; // 没有找到
+            return; // 没有找到
         }
 
         // 要删除的节点有两个子节点
@@ -72,25 +139,25 @@ public class BinarySearchTree {
         // 删除节点是叶子节点或者仅有一个子节点
         Node child; // p的子节点
         if (p.left != null) {
-          child = p.left;
+            child = p.left;
         } else if (p.right != null) {
-          child = p.right;
+            child = p.right;
         } else {
-          child = null;
+            child = null;
         }
 
         if (pp == null) {
-          tree = child; // 删除的是根节点
+            tree = child; // 删除的是根节点
         } else if (pp.left == p) {
-          pp.left = child;
+            pp.left = child;
         } else {
-          pp.right = child;
+            pp.right = child;
         }
     }
 
     public Node findMin() {
         if (tree == null) {
-          return null;
+            return null;
         }
         Node p = tree;
         while (p.left != null) {
@@ -99,11 +166,42 @@ public class BinarySearchTree {
         return p;
     }
 
+    /**
+     * 查找树最小值（左叉的左叉）
+     *
+     * @return
+     */
+    public Node findMin2() {
+        if (tree == null) {
+            return null;
+        }
+        Node cur = this.tree;
+        while (cur != null) {
+            if (cur.left != null) {
+                cur = cur.left;
+            } else {
+                return cur;
+            }
+        }
+        return cur;
+    }
+
     public Node findMax() {
         if (tree == null) {
-          return null;
+            return null;
         }
         Node p = tree;
+        while (p.right != null) {
+            p = p.right;
+        }
+        return p;
+    }
+
+    public Node findMax2() {
+        if (tree == null) {
+            return null;
+        }
+        Node p = this.tree;
         while (p.right != null) {
             p = p.right;
         }

@@ -1,4 +1,4 @@
-package com.my.code.algorithm.seach;
+package com.my.code.algorithm.sort.seach;
 
 public class BinarySearch {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.my.code.algorithm.structure;
+package com.my.code.jdk.collection;
 
 import java.util.HashMap;
 import java.util.concurrent.ConcurrentLinkedQueue;

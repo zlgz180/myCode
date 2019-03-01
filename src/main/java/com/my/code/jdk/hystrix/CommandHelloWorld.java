@@ -21,7 +21,7 @@ public class CommandHelloWorld extends HystrixCommand<String> {
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         CommandHelloWorld demo = new CommandHelloWorld("tianwei");
-         String execute = demo.execute();// 同步调用
+        String execute = demo.execute();// 同步调用
         Future<String> queue = demo.queue();// 异步调用
         String s = queue.get();
         System.out.println(s);
