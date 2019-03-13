@@ -293,9 +293,9 @@ public class BinarySearchTree {
         if (node == null) {
             return;
         }
-        afterOrder(node.left);
+        inOrder(node.left);
         System.out.println(node.data);
-        afterOrder(node.right);
+        inOrder(node.right);
     }
 
     /**

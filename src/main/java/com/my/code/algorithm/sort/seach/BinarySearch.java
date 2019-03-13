@@ -6,7 +6,8 @@ public class BinarySearch {
         // bubbleSort(a, a.length);
         // System.out.println(JSON.toJSONString(a));
 
-        System.out.println(bSeach2(a, 1));
+        // System.out.println(bSeach2(a, 1));
+        System.out.println(8 >>> 1);
     }
 
     /**
@@ -42,7 +43,7 @@ public class BinarySearch {
     }
 
     /**
-     * 查找最后一个个重复的数据,二分查找
+     * 查找最后一个重复的数据,二分查找
      *
      * @param t
      * @param val
@@ -98,7 +99,25 @@ public class BinarySearch {
         return m;
     }
 
-    public long sort(int[] a, int val) {
+    public int search2(int[] nums, int target) {
+        int l = 0;
+        int h = nums.length - 1;
+        while (h >= l) {
+            // int mid = (h + l) / 2;
+            int mid = l + (h - l) >> 1;
+            if (nums[mid] == target) {
+                return mid;
+            }
+            if (nums[mid] < target) {
+                h = mid - 1;
+            } else {
+                l = mid + 1;
+            }
+        }
+        return 0;
+    }
+
+    public long search1(int[] a, int val) {
         int low = 0;
         int high = a.length - 1;
         while (high >= low) {
