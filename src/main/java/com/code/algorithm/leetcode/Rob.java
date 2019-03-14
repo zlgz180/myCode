@@ -22,19 +22,16 @@ public class Rob {
     }
 
     public static int rob(int[] nums) {
-        int len = nums.length;
-        if (len == 0) {
-            return 0;
+        // 奇数
+        int t1 = 0;
+        // 偶数
+        int t2 = 0;
+        for (int i = 0; i < nums.length; i = i + 2) {
+            t1 += nums[i];
         }
-        if (len == 1) {
-            return nums[0];
+        for (int i = 1; i < nums.length; i = i + 2) {
+            t2 += nums[i];
         }
-        int[] dp = new int[nums.length];
-        dp[0] = nums[0];
-        dp[1] = Math.max(nums[0], nums[1]);
-        for (int i = 2; i < nums.length; i++) {
-            dp[i] = Math.max(nums[i] + dp[i - 2], dp[i - 1]);
-        }
-        return dp[len - 1];
+        return Math.max(t1, t2);
     }
 }
