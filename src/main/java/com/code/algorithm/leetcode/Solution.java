@@ -1,5 +1,7 @@
 package com.my.code.algorithm.leetcode;
 
+import com.code.algorithm.leetcode.ListNode;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

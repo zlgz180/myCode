@@ -16,7 +16,7 @@ public class FECourse extends ACourse {
     }
 
     @Override
-    protected boolean needWriteArticle() {
+    public boolean needWriteArticle() {
         return this.needWriteArticleFlag;
     }
 }
