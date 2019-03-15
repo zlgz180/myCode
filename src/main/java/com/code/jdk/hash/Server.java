@@ -1,4 +1,4 @@
-package com.my.code.jdk.hash;
+package com.code.jdk.hash;
 
 /**
  * Server 是对服务器的抽象，一般是 ip+port 的形式。

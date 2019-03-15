@@ -17,6 +17,8 @@ public class SortListDemo {
             }
         });
 
+        map.firstKey();
+
         ConcurrentSkipListMap skipListMap = new ConcurrentSkipListMap(new Comparator() {
             @Override
             public int compare(Object o1, Object o2) {

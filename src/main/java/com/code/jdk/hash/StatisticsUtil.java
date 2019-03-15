@@ -1,4 +1,4 @@
-package com.my.code.jdk.hash;
+package com.code.jdk.hash;
 
 public class StatisticsUtil {
     /**

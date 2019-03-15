@@ -1,4 +1,4 @@
-package com.my.code.jdk.hash.strategy;
+package com.code.jdk.hash.strategy;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;

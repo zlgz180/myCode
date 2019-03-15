@@ -1,4 +1,6 @@
-package com.my.code.jdk.hash.strategy;
+package com.code.jdk.hash.strategy;
+
+import com.code.jdk.hash.strategy.HashStrategy;
 
 /**
  * FNV132HASH 算法实现

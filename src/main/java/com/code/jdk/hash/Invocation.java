@@ -1,4 +1,4 @@
-package com.my.code.jdk.hash;
+package com.code.jdk.hash;
 
 /**
  * Invocation 是对请求的抽象，包含一个用于 hash 的 key。

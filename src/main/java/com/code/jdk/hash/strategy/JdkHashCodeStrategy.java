@@ -1,4 +1,4 @@
-package com.my.code.jdk.hash.strategy;
+package com.code.jdk.hash.strategy;
 
 /**
  * 最简单、经典的 hashCode 实现

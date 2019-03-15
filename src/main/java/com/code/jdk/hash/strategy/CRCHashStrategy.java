@@ -1,4 +1,4 @@
-package com.my.code.jdk.hash.strategy;
+package com.code.jdk.hash.strategy;
 
 import java.util.zip.CRC32;
 
