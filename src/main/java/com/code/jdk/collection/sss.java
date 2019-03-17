@@ -1,4 +1,4 @@
-package com.my.code.jdk.thead;
+package com.code.jdk.collection;
 
 import java.util.Comparator;
 import java.util.TreeMap;

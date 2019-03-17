@@ -1,4 +1,4 @@
-package com.code;
+package com.code.spring;
 
 import java.beans.PropertyDescriptor;
 

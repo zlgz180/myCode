@@ -118,7 +118,7 @@ public class SuccessorNode {
         System.out.println(test.value + " next: " + getSuccessorNode(test));
     }
 
-    private static class Node {
+    public static class Node {
         private Integer value;
         private Node left;
         private Node right;

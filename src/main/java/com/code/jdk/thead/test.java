@@ -1,12 +1,44 @@
 package com.code.jdk.thead;
 
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
+import com.alibaba.fastjson.JSON;
+
+import java.util.Map;
+import java.util.concurrent.*;
 
 public class test {
+    public static void main(String[] args) {
+        Thread.dumpStack();
+        Map<Thread, StackTraceElement[]> allStackTraces = Thread.getAllStackTraces();
+        System.out.println(JSON.toJSONString(allStackTraces));
+
+        ThreadFactory threadFactory = new ThreadFactory() {
+            @Override public Thread newThread(Runnable r) {
+                new Thread(r).setUncaughtExceptionHandler((t, e) -> {
+                    
+                });
+                return null;
+            }
+        };
+        ThreadPoolExecutor poolExecutor = new ThreadPoolExecutor(0, 5, 1000L, TimeUnit.MILLISECONDS,
+                new ArrayBlockingQueue(1000), threadFactory, new RejectedExecutionHandler() {
+            @Override public void rejectedExecution(Runnable r, ThreadPoolExecutor executor) {
+
+            }
+        });
+    }
+
     public static void main2(String[] args) throws InterruptedException {
+
+        Thread.yield();
+        new Thread().join();
+        Object.class.notify();
+        Object.class.wait();
+        Thread.sleep(1000);
+        new Runnable() {
+            @Override public void run() {
+
+            }
+        };
         ExecutorService exec = new ThreadPoolExecutor(3, 3, 30L, TimeUnit.SECONDS, new ArrayBlockingQueue<>(1000),
                 r -> {
                     Thread thread = new Thread(r);
@@ -22,8 +54,7 @@ public class test {
         // exec.shutdown();
     }
 
-
-    public static void main(String[] args) {
+    public static void main3(String[] args) {
         Object lock = new Object();
         Thread t1 = new Thread(() -> {
             synchronized (lock) {
@@ -58,8 +89,7 @@ public class test {
 }
 
 class MyThread implements Runnable {
-    @Override
-    public void run() {
+    @Override public void run() {
         int[] ints = new int[1024 * 1024 * 10];
         ints[0] = 1;
         try {

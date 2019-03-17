@@ -1,4 +1,4 @@
-package com.my.code.algorithm.leetcode;
+package com.code.algorithm.leetcode;
 
 import com.code.algorithm.leetcode.ListNode;
 
@@ -117,7 +117,7 @@ public class Solution {
 
     /**
      * 贪心算法不好使
-     * 
+     *
      * @param triangle
      * @return
      */
