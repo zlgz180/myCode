@@ -23,7 +23,8 @@ public class BinarySearchTree {
         // binarySearchTree.printByRow(root);
         // binarySearchTree.preOrder2(root);
 
-        binarySearchTree.inOrder2(root);
+        //        binarySearchTree.inOrder2(root);
+        System.out.println(binarySearchTree.deptth(root));
     }
 
     /**
@@ -72,10 +73,10 @@ public class BinarySearchTree {
         if (node == null) {
             return 0;
         }
-        if (node.right != null || node.left != null) {
+        if (node.left == null && node.right == null) {
             return 1;
         }
-        return Math.max(deptth(node.left), deptth(node.right));
+        return Math.max(deptth(node.left), deptth(node.right)) + 1;
     }
 
     public Node find2(int data) {
@@ -286,7 +287,7 @@ public class BinarySearchTree {
 
     /**
      * 中序遍历-->左根右
-     * 
+     *
      * @param node
      */
     private void inOrder(Node node) {
@@ -317,18 +318,17 @@ public class BinarySearchTree {
         }
     }
 
-
     /**
-     * 后序遍历-->右左根
-     * 
+     * 后序遍历-->左右根
+     *
      * @param node
      */
     private void afterOrder(Node node) {
         if (node == null) {
             return;
         }
-        afterOrder(node.right);
         afterOrder(node.left);
+        afterOrder(node.right);
         System.out.println(node.data);
     }
 
