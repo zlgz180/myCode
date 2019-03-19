@@ -1,11 +1,11 @@
 package com.code.jdk.hash;
 
-import com.code.jdk.hash.strategy.HashStrategy;
-import com.code.jdk.hash.strategy.JdkHashCodeStrategy;
-
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
+
+import com.code.jdk.hash.strategy.HashStrategy;
+import com.code.jdk.hash.strategy.JdkHashCodeStrategy;
 
 /**
  * 一致性hash
@@ -18,7 +18,8 @@ public class ConsistentHashLoadBalancer implements LoadBalancer {
     private final static String VIRTUAL_NODE_SUFFIX = "&&";
     private HashStrategy hashStrategy = new JdkHashCodeStrategy();
 
-    @Override public Server select(List<Server> servers, Invocation invocation) {
+    @Override
+    public Server select(List<Server> servers, Invocation invocation) {
         // 计算hash值
         int invocationHashCode = hashStrategy.getHashCode(invocation.getHashKey());
         // 把服务器url+端口映射到10虚拟节点的环上

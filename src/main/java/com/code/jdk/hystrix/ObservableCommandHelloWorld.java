@@ -33,4 +33,25 @@ public class ObservableCommandHelloWorld extends HystrixObservableCommand<String
             }
         }).subscribeOn(Schedulers.io());
     }
+
+    /**
+     * 服务降级
+     */
+    @Override
+    protected Observable<String> resumeWithFallback() {
+        return Observable.create(new Observable.OnSubscribe<String>() {
+            @Override
+            public void call(Subscriber<? super String> subscriber) {
+                try {
+                    if (!subscriber.isUnsubscribed()) {
+                        subscriber.onNext("失败了！");
+                        subscriber.onNext("找大神来排查一下吧！");
+                        subscriber.onCompleted();
+                    }
+                } catch (Exception e) {
+                    subscriber.onError(e);
+                }
+            }
+        }).subscribeOn(Schedulers.io());
+    }
 }

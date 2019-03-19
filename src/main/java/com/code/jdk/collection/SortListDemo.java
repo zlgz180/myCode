@@ -1,6 +1,8 @@
 package com.code.jdk.collection;
 
-import java.util.*;
+import java.util.Comparator;
+import java.util.PriorityQueue;
+import java.util.TreeMap;
 import java.util.concurrent.ConcurrentSkipListMap;
 
 /**
@@ -17,7 +19,7 @@ public class SortListDemo {
             }
         });
 
-        map.firstKey();
+
 
         ConcurrentSkipListMap skipListMap = new ConcurrentSkipListMap(new Comparator() {
             @Override
@@ -25,11 +27,6 @@ public class SortListDemo {
                 return 0;
             }
         });
-
-        Collections.sort(null);
-        int[] a = {};
-        Arrays.parallelSort(a);
-
 
         PriorityQueue<Object> priorityQueue = new PriorityQueue<>(new Comparator<Object>() {
             @Override
