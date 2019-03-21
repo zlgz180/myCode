@@ -1,5 +1,7 @@
 package com.code.design.pattern.structural.flyweight;
 
+import java.util.Objects;
+
 /**
  * Created by geely
  */
@@ -19,9 +21,9 @@ public class Test {
         Integer c = Integer.valueOf(1000);
         Integer d = 1000;
 
-        System.out.println("a==b:" + (a == b));
+        System.out.println("a==b:" + (Objects.equals(a, b)));
 
-        System.out.println("c==d:" + (c == d));
+        System.out.println("c==d:" + (Objects.equals(c, d)));
 
     }
 }

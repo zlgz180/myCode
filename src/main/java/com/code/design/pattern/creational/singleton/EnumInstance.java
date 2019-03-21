@@ -5,13 +5,18 @@ package com.code.design.pattern.creational.singleton;
  */
 public enum EnumInstance {
     INSTANCE {
+        @Override
         protected void printTest() {
             System.out.println("Geely Print Test");
         }
     };
-    protected abstract void printTest();
-
     private Object data;
+
+    public static EnumInstance getInstance() {
+        return INSTANCE;
+    }
+
+    protected abstract void printTest();
 
     public Object getData() {
         return data;
@@ -19,10 +24,6 @@ public enum EnumInstance {
 
     public void setData(Object data) {
         this.data = data;
-    }
-
-    public static EnumInstance getInstance() {
-        return INSTANCE;
     }
 
 }
