@@ -7,7 +7,8 @@ import org.springframework.cglib.proxy.MethodInterceptor;
 import org.springframework.cglib.proxy.MethodProxy;
 
 /**
- * -XX:MetaspaceSize=1M -XX:MaxMetaspaceSize=100M
+ * -XX:MetaspaceSize=1M -XX:MaxMetaspaceSize=100M<br>
+ * Metaspace跟垃圾回收器没关系,是jdk8新支持
  * 
  * @author tianwei
  * @since 2019/3/19 15:18

@@ -1,4 +1,4 @@
-package com.code.jdk.hystrix;
+package com.code.spring.hystrix;
 
 import java.util.concurrent.ExecutionException;
 
