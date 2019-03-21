@@ -1,11 +1,11 @@
 package com.code.design.pattern.structural.proxy.dynamicproxy;
 
-import com.code.design.pattern.structural.proxy.Order;
-import com.code.design.pattern.structural.proxy.db.DataSourceContextHolder;
-
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
+
+import com.code.design.pattern.structural.proxy.Order;
+import com.code.design.pattern.structural.proxy.db.DataSourceContextHolder;
 
 /**
  * Created by geely
@@ -18,11 +18,10 @@ public class OrderServiceDynamicProxy implements InvocationHandler {
         this.target = target;
     }
 
-    public Object bind(){
+    public Object bind() {
         Class cls = target.getClass();
-        return Proxy.newProxyInstance(cls.getClassLoader(),cls.getInterfaces(),this);
+        return Proxy.newProxyInstance(cls.getClassLoader(), cls.getInterfaces(), this);
     }
-
 
 
 
@@ -30,26 +29,26 @@ public class OrderServiceDynamicProxy implements InvocationHandler {
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         Object argObject = args[0];
         beforeMethod(argObject);
-        Object object = method.invoke(target,args);
+        Object object = method.invoke(target, args);
         afterMethod();
         return object;
     }
 
-    private void beforeMethod(Object obj){
+    private void beforeMethod(Object obj) {
         int userId = 0;
         System.out.println("动态代理 before code");
-        if(obj instanceof Order){
-            Order order = (Order)obj;
+        if (obj instanceof Order) {
+            Order order = (Order) obj;
             userId = order.getUserId();
         }
         int dbRouter = userId % 2;
-        System.out.println("动态代理分配到【db"+dbRouter+"】处理数据");
+        System.out.println("动态代理分配到【db" + dbRouter + "】处理数据");
 
-        //todo 设置dataSource;
-        DataSourceContextHolder.setDBType("db"+String.valueOf(dbRouter));
+        // todo 设置dataSource;
+        DataSourceContextHolder.setDBType("db" + String.valueOf(dbRouter));
     }
 
-    private void afterMethod(){
+    private void afterMethod() {
         System.out.println("动态代理 after code");
     }
 }

@@ -10,7 +10,7 @@ public class Course {
     private String courseVideo;
     private String courseArticle;
 
-    //question & answer
+    // question & answer
     private String courseQA;
 
     public Course(CourseBuilder courseBuilder) {
@@ -24,25 +24,21 @@ public class Course {
 
     @Override
     public String toString() {
-        return "Course{" +
-                "courseName='" + courseName + '\'' +
-                ", coursePPT='" + coursePPT + '\'' +
-                ", courseVideo='" + courseVideo + '\'' +
-                ", courseArticle='" + courseArticle + '\'' +
-                ", courseQA='" + courseQA + '\'' +
-                '}';
+        return "Course{" + "courseName='" + courseName + '\'' + ", coursePPT='" + coursePPT + '\'' + ", courseVideo='"
+                + courseVideo + '\'' + ", courseArticle='" + courseArticle + '\'' + ", courseQA='" + courseQA + '\''
+                + '}';
     }
 
-    public static class CourseBuilder{
+    public static class CourseBuilder {
         private String courseName;
         private String coursePPT;
         private String courseVideo;
         private String courseArticle;
 
-        //question & answer
+        // question & answer
         private String courseQA;
 
-        public CourseBuilder buildCourseName(String courseName){
+        public CourseBuilder buildCourseName(String courseName) {
             this.courseName = courseName;
             return this;
         }
@@ -68,7 +64,7 @@ public class Course {
             return this;
         }
 
-        public Course build(){
+        public Course build() {
             return new Course(this);
         }
 

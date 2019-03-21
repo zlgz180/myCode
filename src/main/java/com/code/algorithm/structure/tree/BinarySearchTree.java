@@ -23,7 +23,7 @@ public class BinarySearchTree {
         // binarySearchTree.printByRow(root);
         // binarySearchTree.preOrder2(root);
 
-        //        binarySearchTree.inOrder2(root);
+        // binarySearchTree.inOrder2(root);
         System.out.println(binarySearchTree.deptth(root));
     }
 

@@ -4,7 +4,7 @@ package com.code.design.pattern.creational.simplefactory;
  * Created by geely
  */
 public class VideoFactory {
-    public Video getVideo(Class c){
+    public Video getVideo(Class c) {
         Video video = null;
         try {
             video = (Video) Class.forName(c.getName()).newInstance();
@@ -19,10 +19,10 @@ public class VideoFactory {
     }
 
 
-    public Video getVideo(String type){
-        if("java".equalsIgnoreCase(type)){
+    public Video getVideo(String type) {
+        if ("java".equalsIgnoreCase(type)) {
             return new JavaVideo();
-        }else if("python".equalsIgnoreCase(type)){
+        } else if ("python".equalsIgnoreCase(type)) {
             return new PythonVideo();
         }
         return null;

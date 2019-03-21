@@ -12,7 +12,7 @@ import org.apache.commons.lang3.concurrent.BasicThreadFactory;
  */
 public class ThreadPoolExceptionDemo {
 
-    public static void main(String[] args)  {
+    public static void main(String[] args) {
         // try {
         // DivTask divTask = new DivTask(99, 0);
         // new Thread(divTask).start();
@@ -34,7 +34,8 @@ public class ThreadPoolExceptionDemo {
             // threadPool.submit(new DivTask(99, i));
             threadPool.execute(new DivTask(99, i));
             Future<?> submit = threadPool.submit(new Runnable() {
-                @Override public void run() {
+                @Override
+                public void run() {
 
                 }
             });

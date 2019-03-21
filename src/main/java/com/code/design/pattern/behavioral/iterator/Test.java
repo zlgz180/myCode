@@ -35,10 +35,10 @@ public class Test {
     }
 
 
-    public static void printCourses(CourseAggregate courseAggregate){
-        CourseIterator courseIterator= courseAggregate.getCourseIterator();
-        while(!courseIterator.isLastCourse()){
-            Course course=courseIterator.nextCourse();
+    public static void printCourses(CourseAggregate courseAggregate) {
+        CourseIterator courseIterator = courseAggregate.getCourseIterator();
+        while (!courseIterator.isLastCourse()) {
+            Course course = courseIterator.nextCourse();
             System.out.println(course.getName());
         }
     }

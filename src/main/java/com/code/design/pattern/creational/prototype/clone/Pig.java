@@ -5,7 +5,7 @@ import java.util.Date;
 /**
  * Created by geely
  */
-public class Pig implements Cloneable{
+public class Pig implements Cloneable {
     private String name;
     private Date birthday;
 
@@ -32,18 +32,15 @@ public class Pig implements Cloneable{
 
     @Override
     protected Object clone() throws CloneNotSupportedException {
-        Pig pig = (Pig)super.clone();
+        Pig pig = (Pig) super.clone();
 
-        //深克隆
+        // 深克隆
         pig.birthday = (Date) pig.birthday.clone();
         return pig;
     }
 
     @Override
     public String toString() {
-        return "Pig{" +
-                "name='" + name + '\'' +
-                ", birthday=" + birthday +
-                '}'+super.toString();
+        return "Pig{" + "name='" + name + '\'' + ", birthday=" + birthday + '}' + super.toString();
     }
 }

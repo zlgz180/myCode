@@ -11,7 +11,7 @@ public class Test {
         aBattercake = new EggDecorator(aBattercake);
         aBattercake = new SausageDecorator(aBattercake);
 
-        System.out.println(aBattercake.getDesc()+" 销售价格:"+aBattercake.cost());
+        System.out.println(aBattercake.getDesc() + " 销售价格:" + aBattercake.cost());
 
     }
 }

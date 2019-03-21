@@ -54,7 +54,7 @@ public class GenericArray<T> {
 
     // 获取对应元素的下标, 未找到，返回 -1
     public int find(T e) {
-        for ( int i = 0; i < size; i++) {
+        for (int i = 0; i < size; i++) {
             if (data[i].equals(e)) {
                 return i;
             }
@@ -96,7 +96,7 @@ public class GenericArray<T> {
         for (int i = index + 1; i < size; i++) {
             data[i - 1] = data[i];
         }
-        size --;
+        size--;
         data[size] = null;
 
         // 缩容
@@ -158,7 +158,7 @@ public class GenericArray<T> {
     }
 
     private void checkIndexForRemove(int index) {
-        if(index < 0 || index >= size) {
+        if (index < 0 || index >= size) {
             throw new IllegalArgumentException("remove failed! Require index >=0 and index < size.");
         }
     }

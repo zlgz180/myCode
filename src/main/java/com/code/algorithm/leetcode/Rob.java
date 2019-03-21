@@ -36,7 +36,7 @@ public class Rob {
         dp[0] = nums[0];
         dp[1] = Math.max(nums[0], nums[1]);
         for (int i = 2; i < len; i++) {
-            //重点这
+            // 重点这
             dp[i] = Math.max(nums[i] + dp[i - 2], dp[i - 1]);
         }
         return dp[len - 1];
@@ -81,10 +81,10 @@ public class Rob {
         TreeNode curr = root;
         while (!stack.isEmpty() || curr != null) {
             if (curr != null) {
-                //                curr=
+                // curr=
             }
             stack.add(curr);
-            //            curr.left
+            // curr.left
         }
         return null;
     }

@@ -26,7 +26,7 @@ public class MaxSubArray {
         int result = 0;
         int sum = nums[0];
         for (int num : nums) {
-            //如果小于0就不加了，加了就小了
+            // 如果小于0就不加了，加了就小了
             if (sum < 0) {
                 sum = num;
             } else {

@@ -12,6 +12,7 @@ public class SemaphoreDemo {
     private static int SUM = 1;
     private static int MAX = 100;
     private static Semaphore lock = new Semaphore(1);
+
     public static void main(String[] args) {
         MyThread t1 = new MyThread(1);
         MyThread t2 = new MyThread(2);

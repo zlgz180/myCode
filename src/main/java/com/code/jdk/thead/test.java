@@ -1,9 +1,9 @@
 package com.code.jdk.thead;
 
-import com.alibaba.fastjson.JSON;
-
 import java.util.Map;
 import java.util.concurrent.*;
+
+import com.alibaba.fastjson.JSON;
 
 public class test {
     public static void main(String[] args) {
@@ -12,19 +12,21 @@ public class test {
         System.out.println(JSON.toJSONString(allStackTraces));
 
         ThreadFactory threadFactory = new ThreadFactory() {
-            @Override public Thread newThread(Runnable r) {
+            @Override
+            public Thread newThread(Runnable r) {
                 new Thread(r).setUncaughtExceptionHandler((t, e) -> {
-                    
+
                 });
                 return null;
             }
         };
         ThreadPoolExecutor poolExecutor = new ThreadPoolExecutor(0, 5, 1000L, TimeUnit.MILLISECONDS,
                 new ArrayBlockingQueue(1000), threadFactory, new RejectedExecutionHandler() {
-            @Override public void rejectedExecution(Runnable r, ThreadPoolExecutor executor) {
+                    @Override
+                    public void rejectedExecution(Runnable r, ThreadPoolExecutor executor) {
 
-            }
-        });
+                    }
+                });
     }
 
     public static void main2(String[] args) throws InterruptedException {
@@ -35,7 +37,8 @@ public class test {
         Object.class.wait();
         Thread.sleep(1000);
         new Runnable() {
-            @Override public void run() {
+            @Override
+            public void run() {
 
             }
         };
@@ -89,7 +92,8 @@ public class test {
 }
 
 class MyThread implements Runnable {
-    @Override public void run() {
+    @Override
+    public void run() {
         int[] ints = new int[1024 * 1024 * 10];
         ints[0] = 1;
         try {

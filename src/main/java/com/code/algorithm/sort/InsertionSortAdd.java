@@ -10,7 +10,7 @@ import java.util.Arrays;
 public class InsertionSortAdd {
 
     public static void main(String[] args) {
-        int[] data = new int[]{4, 6, 5, 3, 7, 1, 2};
+        int[] data = new int[] { 4, 6, 5, 3, 7, 1, 2 };
         fromStartToEnd(Arrays.copyOf(data, data.length));
         System.out.println(Arrays.toString(data));
     }

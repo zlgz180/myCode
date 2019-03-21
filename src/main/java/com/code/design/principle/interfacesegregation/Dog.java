@@ -3,7 +3,7 @@ package com.code.design.principle.interfacesegregation;
 /**
  * Created by geely
  */
-public class Dog implements ISwimAnimalAction,IEatAnimalAction {
+public class Dog implements ISwimAnimalAction, IEatAnimalAction {
 
     @Override
     public void eat() {

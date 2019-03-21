@@ -1,7 +1,5 @@
 package com.code.algorithm.leetcode;
 
-import java.util.Collections;
-
 /**
  * 有一个无序int数组，没有重复元素，求出把数组分成三份的两个数最小的和。举例： 1、2、3、4、5、6，最小和是2 + 4 = 6，时间复杂度O(n)。
  */

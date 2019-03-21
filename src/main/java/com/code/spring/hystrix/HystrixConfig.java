@@ -17,17 +17,18 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 public class HystrixConfig {
-//    // 用来拦截处理HystrixCommand注解
-//    @Bean
-//    public HystrixCommandAspect hystrixAspect() {
-//        return new HystrixCommandAspect();
-//    }
-//
-//    // 用来像监控中心Dashboard发送stream信息
-//    @Bean
-//    public ServletRegistrationBean hystrixMetricsStreamServlet() {
-//        ServletRegistrationBean registration = new ServletRegistrationBean(new HystrixMetricsStreamServlet());
-//        registration.addUrlMappings("/hystrix.stream");
-//        return registration;
-//    }
+    // // 用来拦截处理HystrixCommand注解
+    // @Bean
+    // public HystrixCommandAspect hystrixAspect() {
+    // return new HystrixCommandAspect();
+    // }
+    //
+    // // 用来像监控中心Dashboard发送stream信息
+    // @Bean
+    // public ServletRegistrationBean hystrixMetricsStreamServlet() {
+    // ServletRegistrationBean registration = new ServletRegistrationBean(new
+    // HystrixMetricsStreamServlet());
+    // registration.addUrlMappings("/hystrix.stream");
+    // return registration;
+    // }
 }

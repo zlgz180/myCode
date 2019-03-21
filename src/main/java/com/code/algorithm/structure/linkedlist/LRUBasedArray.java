@@ -6,10 +6,7 @@ import java.util.Map;
 /**
  * Created by SpecialYang in 2018/12/7 2:00 PM.
  *
- * 基于数组实现的LRU缓存
- * 1. 空间复杂度为O(n)
- * 2. 时间复杂度为O(n)
- * 3. 不支持null的缓存
+ * 基于数组实现的LRU缓存 1. 空间复杂度为O(n) 2. 时间复杂度为O(n) 3. 不支持null的缓存
  */
 public class LRUBasedArray<T> {
 
@@ -36,6 +33,7 @@ public class LRUBasedArray<T> {
 
     /**
      * 模拟访问某个值
+     * 
      * @param object
      */
     public void offer(T object) {
@@ -56,6 +54,7 @@ public class LRUBasedArray<T> {
 
     /**
      * 若缓存中有指定的值，则更新位置
+     * 
      * @param end
      */
     public void update(int end) {
@@ -67,6 +66,7 @@ public class LRUBasedArray<T> {
 
     /**
      * 缓存数据到头部，但要先右移
+     * 
      * @param object
      * @param end 数组右移的边界
      */
@@ -79,6 +79,7 @@ public class LRUBasedArray<T> {
 
     /**
      * 缓存满的情况，踢出后，再缓存到数组头部
+     * 
      * @param object
      */
     public void removeAndCache(T object) {
@@ -88,6 +89,7 @@ public class LRUBasedArray<T> {
 
     /**
      * end左边的数据统一右移一位
+     * 
      * @param end
      */
     private void rightShift(int end) {
@@ -124,7 +126,7 @@ public class LRUBasedArray<T> {
         public static void main(String[] args) {
             testDefaultConstructor();
             testSpecifiedConstructor(4);
-//            testWithException();
+            // testWithException();
         }
 
         private static void testWithException() {

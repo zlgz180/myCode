@@ -1,7 +1,6 @@
 package com.code.jdk.collection;
 
-import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
+import java.util.ArrayList;
 
 /**
  * @author tianwei

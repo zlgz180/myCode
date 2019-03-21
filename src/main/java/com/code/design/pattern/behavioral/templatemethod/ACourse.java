@@ -5,31 +5,33 @@ package com.code.design.pattern.behavioral.templatemethod;
  */
 public abstract class ACourse {
 
-    protected final void makeCourse(){
+    protected final void makeCourse() {
         this.makePPT();
         this.makeVideo();
-        if(needWriteArticle()){
+        if (needWriteArticle()) {
             this.writeArticle();
         }
         this.packageCourse();
     }
 
-    final void makePPT(){
+    final void makePPT() {
         System.out.println("制作PPT");
     }
-    final void makeVideo(){
+
+    final void makeVideo() {
         System.out.println("制作视频");
     }
-    final void writeArticle(){
+
+    final void writeArticle() {
         System.out.println("编写手记");
     }
-    //钩子方法
-    public boolean needWriteArticle(){
+
+    // 钩子方法
+    public boolean needWriteArticle() {
         return false;
     }
+
     abstract void packageCourse();
-
-
 
 
 

@@ -24,7 +24,7 @@ public class Course extends CatalogComponent {
 
     @Override
     public void print() {
-        System.out.println("Course Name:"+name+" Price:"+price);
+        System.out.println("Course Name:" + name + " Price:" + price);
     }
 
 }

@@ -4,28 +4,29 @@ package com.code.design.principle.singleresponsibility;
  * Created by geely
  */
 public class Method {
-    private void updateUserInfo(String userName,String address){
+    private void updateUserInfo(String userName, String address) {
         userName = "geely";
         address = "beijing";
     }
 
-    private void updateUserInfo(String userName,String... properties){
+    private void updateUserInfo(String userName, String... properties) {
         userName = "geely";
-//        address = "beijing";
+        // address = "beijing";
     }
 
-    private void updateUsername(String userName){
+    private void updateUsername(String userName) {
         userName = "geely";
     }
-    private void updateUserAddress(String address){
+
+    private void updateUserAddress(String address) {
         address = "beijing";
     }
 
-    private void updateUserInfo(String userName,String address,boolean bool){
-        if(bool){
-            //todo something1
-        }else{
-            //todo something2
+    private void updateUserInfo(String userName, String address, boolean bool) {
+        if (bool) {
+            // todo something1
+        } else {
+            // todo something2
         }
 
 

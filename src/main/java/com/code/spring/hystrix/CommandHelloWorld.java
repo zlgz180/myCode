@@ -78,5 +78,5 @@ public class CommandHelloWorld extends HystrixCommand<String> {
         return name + 111;
     }
 
-     
+
 }

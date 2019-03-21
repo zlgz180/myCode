@@ -3,7 +3,7 @@ package com.code.design.principle.singleresponsibility;
 /**
  * Created by geely
  */
-public class CourseImpl implements ICourseManager,ICourseContent {
+public class CourseImpl implements ICourseManager, ICourseContent {
     @Override
     public void studyCourse() {
 

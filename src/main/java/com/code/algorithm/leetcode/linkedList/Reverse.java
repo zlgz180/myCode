@@ -1,14 +1,14 @@
 package com.code.algorithm.leetcode.linkedList;
 
-import com.code.algorithm.leetcode.ListNode;
-
 import java.util.Stack;
+
+import com.code.algorithm.leetcode.ListNode;
 
 public class Reverse {
     public static void main(String[] args) {
         ListNode listNode = new ListNode(1);
         ListNode listNode2 = new ListNode(2);
-        listNode.next =listNode2 ;
+        listNode.next = listNode2;
         listNode.next.next = new ListNode(3);
         listNode.next.next.next = listNode2;
         getFristInLoop(listNode);
@@ -83,11 +83,11 @@ public class Reverse {
         }
         ListNode pre = null;
         while (curr != null) {
-            //先把next拿出来等待交换
+            // 先把next拿出来等待交换
             ListNode next = curr.next;
-            //断开链接
+            // 断开链接
             curr.next = pre;
-            //双指针后移
+            // 双指针后移
             pre = curr;
             curr = next;
         }

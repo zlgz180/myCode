@@ -13,16 +13,16 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/api/point")
-public class PointRestController   {
+public class PointRestController {
     @Resource
     private PlanRestController planRestController;
 
-//    @RequestMapping(value = "/test")
-//    public Response<Boolean> test(Long id) throws InterruptedException {
-//        Response<Boolean> orderPageList = planRestController.getOrderPageList(id);
-//        log.info("操作2");
-//        return orderPageList;
-//    }
+    // @RequestMapping(value = "/test")
+    // public Response<Boolean> test(Long id) throws InterruptedException {
+    // Response<Boolean> orderPageList = planRestController.getOrderPageList(id);
+    // log.info("操作2");
+    // return orderPageList;
+    // }
 
 
 

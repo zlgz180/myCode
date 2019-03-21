@@ -15,11 +15,11 @@ public class SausageDecorator extends AbstractDecorator {
 
     @Override
     protected String getDesc() {
-        return super.getDesc()+" 加一根香肠";
+        return super.getDesc() + " 加一根香肠";
     }
 
     @Override
     protected int cost() {
-        return super.cost()+2;
+        return super.cost() + 2;
     }
 }

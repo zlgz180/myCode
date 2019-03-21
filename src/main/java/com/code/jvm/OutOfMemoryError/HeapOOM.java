@@ -18,6 +18,7 @@ public class HeapOOM {
             list.add(new OOMObject());
         }
     }
+
     static class OOMObject {
     }
 }

@@ -13,19 +13,20 @@ public class SynchronizedDemo {
     private static Object lock = new Object();
 
     public static void main(String[] args) throws InterruptedException {
-        //交替打印123
-        //sync();
-        //死锁
-        //dealLock();
+        // 交替打印123
+        // sync();
+        // 死锁
+        // dealLock();
         // 线程优先级
-        //join();
-        //中断线程
-        //interrupt();
+        // join();
+        // 中断线程
+        // interrupt();
     }
 
     private static void interrupt() throws InterruptedException {
         Thread t1 = new Thread() {
-            @Override public void run() {
+            @Override
+            public void run() {
                 while (true) {
                     if (Thread.currentThread().isInterrupted()) {
                         System.out.println(Thread.currentThread().getName() + "----线程已中断");
@@ -44,7 +45,8 @@ public class SynchronizedDemo {
         Object l1 = new Object();
         Object l2 = new Object();
         Thread t1 = new Thread() {
-            @Override public void run() {
+            @Override
+            public void run() {
                 synchronized (l1) {
                     try {
                         Thread.sleep(50);
@@ -57,7 +59,8 @@ public class SynchronizedDemo {
             }
         };
         Thread t2 = new Thread() {
-            @Override public void run() {
+            @Override
+            public void run() {
                 synchronized (l2) {
                     try {
                         Thread.sleep(50);
@@ -159,7 +162,7 @@ public class SynchronizedDemo {
         t3.setName("t3");
         t1.start();
         t2.start();
-        //        t3.start();
+        // t3.start();
         t2.join();
     }
 }

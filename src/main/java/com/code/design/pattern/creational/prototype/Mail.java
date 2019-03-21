@@ -3,11 +3,12 @@ package com.code.design.pattern.creational.prototype;
 /**
  * Created by geely
  */
-public class Mail implements Cloneable{
+public class Mail implements Cloneable {
     private String name;
     private String emailAddress;
     private String content;
-    public Mail(){
+
+    public Mail() {
         System.out.println("Mail Class Constructor");
     }
 
@@ -37,11 +38,8 @@ public class Mail implements Cloneable{
 
     @Override
     public String toString() {
-        return "Mail{" +
-                "name='" + name + '\'' +
-                ", emailAddress='" + emailAddress + '\'' +
-                ", content='" + content + '\'' +
-                '}'+super.toString();
+        return "Mail{" + "name='" + name + '\'' + ", emailAddress='" + emailAddress + '\'' + ", content='" + content
+                + '\'' + '}' + super.toString();
     }
 
     @Override

@@ -9,7 +9,7 @@ public class Course {
     private String courseVideo;
     private String courseArticle;
 
-    //question & answer
+    // question & answer
     private String courseQA;
 
     public String getCourseName() {
@@ -54,12 +54,8 @@ public class Course {
 
     @Override
     public String toString() {
-        return "Course{" +
-                "courseName='" + courseName + '\'' +
-                ", coursePPT='" + coursePPT + '\'' +
-                ", courseVideo='" + courseVideo + '\'' +
-                ", courseArticle='" + courseArticle + '\'' +
-                ", courseQA='" + courseQA + '\'' +
-                '}';
+        return "Course{" + "courseName='" + courseName + '\'' + ", coursePPT='" + coursePPT + '\'' + ", courseVideo='"
+                + courseVideo + '\'' + ", courseArticle='" + courseArticle + '\'' + ", courseQA='" + courseQA + '\''
+                + '}';
     }
 }

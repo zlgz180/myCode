@@ -16,7 +16,8 @@ public class TwoThreadPrint {
     public static void main(String[] args) {
 
         Thread t1 = new Thread() {
-            @Override public void run() {
+            @Override
+            public void run() {
                 while (sum.get() <= 100) {
                     try {
                         reentrantLock.lock();
@@ -31,7 +32,8 @@ public class TwoThreadPrint {
             }
         };
         Thread t2 = new Thread() {
-            @Override public void run() {
+            @Override
+            public void run() {
                 while (sum.get() <= 100) {
                     try {
                         reentrantLock.lock();
@@ -46,7 +48,8 @@ public class TwoThreadPrint {
             }
         };
         Thread t3 = new Thread() {
-            @Override public void run() {
+            @Override
+            public void run() {
                 while (sum.get() <= 100) {
                     try {
                         reentrantLock.lock();

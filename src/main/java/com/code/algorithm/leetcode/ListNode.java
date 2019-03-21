@@ -11,8 +11,8 @@ public class ListNode {
     public static void print(ListNode node) {
         ListNode cur = node;
         while (cur != null) {
-            System.out.println(
-                    "ListNode{" + "val=" + cur.val + (cur.next != null ? ", next=" + cur.next.val : "") + '}');
+            System.out
+                    .println("ListNode{" + "val=" + cur.val + (cur.next != null ? ", next=" + cur.next.val : "") + '}');
             cur = cur.next;
         }
     }

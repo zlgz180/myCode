@@ -8,10 +8,10 @@ import java.util.List;
  */
 public class DemoNode {
     public Boolean isSortTree(Node node) {
-        //中序遍历,得到有序数组
+        // 中序遍历,得到有序数组
         List<Integer> list = new ArrayList();
         fun(list, node);
-        //如果不是有序就不是二叉搜索树
+        // 如果不是有序就不是二叉搜索树
         for (int i = 1; i < list.size(); i++) {
             if (list.get(i) <= list.get(i - 1)) {
                 return false;

@@ -1,8 +1,8 @@
 package com.code.algorithm.leetcode;
 
-import com.alibaba.fastjson.JSON;
-
 import java.util.*;
+
+import com.alibaba.fastjson.JSON;
 
 /**
  * 打印字符串中字符出现的次数，并按次数倒序
@@ -26,7 +26,8 @@ public class StrNumOrder {
         }
         ArrayList<Map.Entry<Character, Integer>> entries = new ArrayList<>(map.entrySet());
         Collections.sort(entries, new Comparator<Map.Entry<Character, Integer>>() {
-            @Override public int compare(Map.Entry<Character, Integer> o1, Map.Entry<Character, Integer> o2) {
+            @Override
+            public int compare(Map.Entry<Character, Integer> o1, Map.Entry<Character, Integer> o2) {
                 return o2.getValue().compareTo(o1.getValue());
             }
         });

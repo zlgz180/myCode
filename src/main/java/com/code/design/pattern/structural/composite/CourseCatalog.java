@@ -12,7 +12,7 @@ public class CourseCatalog extends CatalogComponent {
     private Integer level;
 
 
-    public CourseCatalog(String name,Integer level) {
+    public CourseCatalog(String name, Integer level) {
         this.name = name;
         this.level = level;
     }
@@ -35,9 +35,9 @@ public class CourseCatalog extends CatalogComponent {
     @Override
     public void print() {
         System.out.println(this.name);
-        for(CatalogComponent catalogComponent : items){
-            if(this.level != null){
-                for(int  i = 0; i < this.level; i++){
+        for (CatalogComponent catalogComponent : items) {
+            if (this.level != null) {
+                for (int i = 0; i < this.level; i++) {
                     System.out.print("  ");
                 }
             }

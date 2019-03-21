@@ -10,9 +10,8 @@ public class Coach {
         this.courseBuilder = courseBuilder;
     }
 
-    public Course makeCourse(String courseName,String coursePPT,
-                             String courseVideo,String courseArticle,
-                             String courseQA){
+    public Course makeCourse(String courseName, String coursePPT, String courseVideo, String courseArticle,
+            String courseQA) {
         this.courseBuilder.buildCourseName(courseName);
         this.courseBuilder.buildCoursePPT(coursePPT);
         this.courseBuilder.buildCourseVideo(courseVideo);

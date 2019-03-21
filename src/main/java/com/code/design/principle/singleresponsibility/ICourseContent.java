@@ -5,5 +5,6 @@ package com.code.design.principle.singleresponsibility;
  */
 public interface ICourseContent {
     String getCourseName();
+
     byte[] getCourseVideo();
 }

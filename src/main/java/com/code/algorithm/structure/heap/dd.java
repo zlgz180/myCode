@@ -1,8 +1,8 @@
 package com.code.algorithm.structure.heap;
 
-import com.alibaba.fastjson.JSON;
-
 import java.util.ArrayDeque;
+
+import com.alibaba.fastjson.JSON;
 
 public class dd {
     public static void main(String[] args) {
@@ -11,7 +11,7 @@ public class dd {
         System.out.println(JSON.toJSONString(a));
     }
 
-    public void sort(int sums,int k){
+    public void sort(int sums, int k) {
         ArrayDeque deque = new ArrayDeque();
 
     }

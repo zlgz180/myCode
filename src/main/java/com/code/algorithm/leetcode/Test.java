@@ -1,28 +1,21 @@
 package com.code.algorithm.leetcode;
 
-import com.code.algorithm.structure.array.Array;
-import com.sun.org.apache.regexp.internal.RE;
-import com.sun.rowset.internal.Row;
-import org.hibernate.validator.internal.engine.messageinterpolation.parser.BeginState;
-
-import javax.xml.transform.Result;
-import java.sql.ResultSet;
 import java.util.*;
 
 /**
- * 求斐波那契数列的第N项  n<=39
+ * 求斐波那契数列的第N项 n<=39
  *
  * @author tianwei
  * @since 2019-03-12 22:26
  */
 public class Test {
     public static void main(String[] args) {
-        //        System.out.println(sum + ";" + bengin(39));
+        // System.out.println(sum + ";" + bengin(39));
         System.out.println(sum2 + ";" + bengin2(39));
         System.out.println(bengin6(39));
-        //        System.out.println(bengin3(390));
+        // System.out.println(bengin3(390));
 
-        //        System.out.println(bengin4(39));
+        // System.out.println(bengin4(39));
 
         Integer[] mem2 = new Integer[40];
         System.out.println(bengin7(39, mem2));
@@ -180,7 +173,8 @@ public class Test {
 
     public static int bengin8(int[] nums, int k) {
         PriorityQueue<Integer> queue = new PriorityQueue(k, new Comparator() {
-            @Override public int compare(Object o1, Object o2) {
+            @Override
+            public int compare(Object o1, Object o2) {
                 return (int) o2 - (int) o1;
             }
         });
@@ -200,7 +194,7 @@ public class Test {
         for (int i = 0; i < nums.length; i++) {
             for (int j = i + 1; j < nums.length; j++) {
                 if (i + j == k) {
-                    //return i,j
+                    // return i,j
                 }
             }
         }

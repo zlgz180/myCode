@@ -1,8 +1,8 @@
 package com.code.jdk.thead;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.concurrent.*;
+import java.util.concurrent.DelayQueue;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /**
  * 延时队列

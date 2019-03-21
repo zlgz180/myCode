@@ -89,21 +89,21 @@ public class SampleBrowser {
      */
     public static class LinkedListBasedStack {
 
-//        public static void main(String[] args) {
-//            LinkedListBasedStack stack = new LinkedListBasedStack();
-//            stack.push("A");
-//            stack.push("B");
-//            stack.push("C");
-//            stack.pop();
-//            stack.push("D");
-//            stack.push("E");
-//            stack.pop();
-//            stack.push("F");
-//            stack.print();
-//
-////        String data = stack.getTopData();
-////        System.out.println("Top data == " + data);
-//        }
+        // public static void main(String[] args) {
+        // LinkedListBasedStack stack = new LinkedListBasedStack();
+        // stack.push("A");
+        // stack.push("B");
+        // stack.push("C");
+        // stack.pop();
+        // stack.push("D");
+        // stack.push("E");
+        // stack.pop();
+        // stack.push("F");
+        // stack.print();
+        //
+        //// String data = stack.getTopData();
+        //// System.out.println("Top data == " + data);
+        // }
 
         private int size;
         private Node top;

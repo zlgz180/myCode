@@ -8,7 +8,8 @@ public class ABCBank extends Bank {
         super(account);
     }
 
-    @Override Account openAccount() {
+    @Override
+    Account openAccount() {
         System.out.println("打开中国农业银行账号");
         account.openAccount();
         return account;
