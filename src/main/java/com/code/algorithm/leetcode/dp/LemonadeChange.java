@@ -1,4 +1,4 @@
-package com.my.code.algorithm.leetcode.dp;
+package com.code.algorithm.leetcode.dp;
 
 /**
  * 在柠檬水摊上，每一杯柠檬水的售价为 5 美元。

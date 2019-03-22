@@ -1,4 +1,4 @@
-package com.my.code.algorithm.leetcode.dp;
+package com.code.algorithm.leetcode.dp;
 
 /**
  * 函数要返回数组 A 中所有为等差数组的子数组个数。
