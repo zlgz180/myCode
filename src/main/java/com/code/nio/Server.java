@@ -48,8 +48,6 @@ public class Server {
 
             @Override
             public void failed(Throwable t, Attachment att) {
-
-                Ints.toArray()
                 System.out.println("accept failed");
             }
         });
