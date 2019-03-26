@@ -1,5 +1,7 @@
 package com.code.algorithm.leetcode.dp;
 
+import java.util.Arrays;
+
 /**
  * 一个机器人位于一个 m x n 网格的左上角 （起始点在下图中标记为“Start” ）。
  * 
@@ -24,7 +26,7 @@ package com.code.algorithm.leetcode.dp;
  * @since 2019-03-13 10:56
  */
 public class UniquePaths {
-    static int[][] uniquePath = new int[101][101];
+    private static int[][] uniquePath = new int[101][101];
 
     public static void main(String[] args) {
         int[][] dp = new int[8][4];
@@ -53,6 +55,7 @@ public class UniquePaths {
 
     public static int uniquePaths2(int m, int n) {
         int[][] dp = new int[m][n];
+        Arrays.fill(dp,1);
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 if (i == 0 || j == 0) {

@@ -101,11 +101,6 @@ public class MinPathSum {
      * @return
      */
     public int help3(int[][] grid, int row, int col) {
-        String key = row + "," + col;
-        Integer val = map.get(key);
-        if (val != null) {
-            return val;
-        }
         int m = grid[0].length - 1;
         int n = grid.length - 1;
         if (row == m && col == n) {
@@ -114,6 +109,12 @@ public class MinPathSum {
         if (row > m || col > n) {
             return Integer.MAX_VALUE;
         }
+        String key = row + "," + col;
+        Integer val = map.get(key);
+        if (val != null) {
+            return val;
+        }
+
         int rightSum = help3(grid, row + 1, col);
         int downSum = help3(grid, row, col + 1);
         int result = Math.min(rightSum, downSum) + grid[col][row];
@@ -171,22 +172,45 @@ public class MinPathSum {
         int row = arr.length;
         int col = arr[0].length;
         // 为了原数组不变，得开辟新数组记录每一步的历史和
-        int[][] sums = new int[row][col];
-        sums[0][0] = arr[0][0];
+        int[][] dp = new int[row][col];
+        dp[0][0] = arr[0][0];
         // 第一列累加填充
         for (int i = 1; i < row; i++) {
-            sums[i][0] = arr[i][0] + sums[i - 1][0];
+            dp[i][0] = arr[i][0] + dp[i - 1][0];
         }
         // 第一行累加填充
         for (int i = 1; i < col; i++) {
-            sums[0][i] = arr[0][i] + sums[0][i - 1];
+            dp[0][i] = arr[0][i] + dp[0][i - 1];
         }
         // 从1,1中间开始填充
         for (int i = 1; i < row; i++) {
             for (int j = 1; j < col; j++) {
-                sums[i][j] += Math.min(arr[i][j] + sums[i][j - 1], arr[i][j] + sums[i - 1][j]);
+                dp[i][j] = arr[i][j] + Math.min(dp[i][j - 1], dp[i - 1][j]);
             }
         }
-        return sums[row - 1][col - 1];
+        return dp[row - 1][col - 1];
+    }
+
+
+    public int help6(int[][] arr) {
+        if (arr == null || arr[0] == null) {
+            return 0;
+        }
+        int row = arr.length;
+        int col = arr[0].length;
+        int[][] dp = new int[row][col];
+        dp[0][0] = arr[0][0];
+        for (int i = 1; i < row; i++) {
+            arr[i][0] = arr[i][0] + arr[i - 1][0];
+        }
+        for (int i = 1; i < col; i++) {
+            arr[0][i] = arr[0][i] + arr[0][i - 1];
+        }
+        for (int i = 1; i < row; i++) {
+            for (int j = 1; j < col; j++) {
+                dp[i][j] = arr[i][j] + Math.min(dp[i - 1][j], dp[i][j - 1]);
+            }
+        }
+        return dp[row - 1][col - 1];
     }
 }
