@@ -1,5 +1,7 @@
 package com.code.algorithm.sort;
 
+import java.security.Key;
+
 public class ArraySort {
 
 	public static void main(String[] args) {
@@ -158,4 +160,47 @@ public class ArraySort {
         return start;
     }
 
+    public void fff(int[] arr, int start, int end) {
+        int mid = 0;
+        int left = start;
+        int right = end;
+        int key = arr[left];
+        while (left < right) {
+            while (left < right && key <= arr[right]) {
+                right--;
+            }
+            arr[left] = arr[right];
+            while (left < right && key <= arr[left]) {
+                left++;
+            }
+            arr[right] = arr[left];
+        }
+        mid = left;
+        arr[left] = key;
+        fff(arr, start, mid - 1);
+        fff(arr, mid + 1, end);
+    }
+
+    public int find(int[] n, int k) {
+        int l = 0;
+        int r = n.length - 1;
+        int mid = -1;
+        while (l <= r) {
+            mid = l + (l - r) / 2;
+            if (n[mid] == k) {
+                int tmp=mid;
+                while (n[++tmp]> k){
+                    return tmp;
+                }
+                break;
+            }
+            if (n[mid] > k) {
+                r = mid - 1;
+            }
+            if (n[mid] < k) {
+                l = mid + 1;
+            }
+        }
+        return mid;
+    }
 }
