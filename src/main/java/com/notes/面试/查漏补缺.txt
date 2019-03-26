@@ -1,0 +1,784 @@
+﻿3、 dubbo了解么
+
+4、 dubbo的基本架构，几个组件说一下
+
+5、 服务生产者和消费者怎么进行rpc调用
+
+6、 怎么进行服务注册发现 zk实现具体说说
+
+7、 dubbo的负载均衡怎么做，讲一下具体代码实现。
+
+8、 dubbo的服务容错怎么做，怎么知道服务器宕机了 zk的心跳机制维持服务器连接
+
+
+
+如何判断两个无环单链表有没有交叉点
+如何判断两个有环单链表有没有交叉点
+如何判断一个单链表有没有环, 并找出入环点
+TCP 和 UDP 有什么区别?
+描述一下 TCP 四次挥手的过程中
+TCP 有哪些状态
+TCP 的 LISTEN 状态是什么
+TCP 的 CLOSE_WAIT 状态是什么
+
+
+
+
+spring整体流程
+特殊列
+
+hashMap
+AQS
+并发容器
+并发有序容器
+
+
+tomcat
+
+jvm  类加载器
+
+
+设计模式
+
+
+
+
+电话一面
+
+1、自我介绍、自己做的项目和技术领域
+
+2、项目中的监控：那个监控指标常见的哪些？
+
+3、微服务涉及到的技术以及需要注意的问题有哪些？
+
+4、注册中心你了解了哪些？
+
+5、consul 的可靠性你了解吗？
+
+6、consul 的机制你有没有具体深入过？有没有和其他的注册中心对比过？
+
+7、项目用 Spring 比较多，有没有了解 Spring 的原理？AOP 和 IOC 的原理
+
+8、Spring Boot除了自动配置，相比传统的 Spring 有什么其他的区别？
+
+9、Spring Cloud 有了解多少？
+
+10、Spring Bean 的生命周期
+
+11、HashMap 和 hashTable 区别？
+
+12、Object 的 hashcode 方法重写了，equals 方法要不要改？
+
+13、Hashmap 线程不安全的出现场景
+
+14、线上服务 CPU 很高该怎么做？有哪些措施可以找到问题
+
+15、JDK 中有哪几个线程池？顺带把线程池讲了个遍
+
+16、SQL 优化的常见方法有哪些
+
+17、SQL 索引的顺序，字段的顺序
+
+18、查看 SQL 是不是使用了索引？（有什么工具）
+
+19、TCP 和 UDP 的区别？TCP 数据传输过程中怎么做到可靠的？
+
+20、说下你知道的排序算法吧
+
+21、查找一个数组的中位数？
+
+22、你有什么问题想问我的吗？
+
+电话二面（85 分钟）
+
+1、自我介绍、工作经历、技术栈
+
+2、项目中你学到了什么技术？（把三项目具体描述了很久）
+
+3、微服务划分的粒度
+
+4、微服务的高可用怎么保证的？
+
+5、常用的负载均衡，该怎么用，你能说下吗？
+
+6、网关能够为后端服务带来哪些好处？
+
+7、Spring Bean 的生命周期
+
+8、xml 中配置的 init、destroy 方法怎么可以做到调用具体的方法？
+
+9、反射的机制
+
+10、Object 类中的方法
+
+11、hashcode 和 equals 方法常用地方
+
+12、对象比较是否相同
+
+13、hashmap put 方法存放的时候怎么判断是否是重复的
+
+14、Object toString 方法常用的地方，为什么要重写该方法
+
+15、Set 和 List 区别？
+
+16、ArrayList 和 LinkedList 区别
+
+17、如果存取相同的数据，ArrayList 和 LinkedList 谁占用空间更大？
+
+18、Set 存的顺序是有序的吗？
+
+19、常见 Set 的实现有哪些？
+
+20、TreeSet 对存入对数据有什么要求呢？
+
+21、HashSet 的底层实现呢
+
+22、TreeSet 底层源码有看过吗？
+
+23、HashSet 是不是线程安全的？为什么不是线程安全的？
+
+24、Java 中有哪些线程安全的 Map？
+
+25、Concurrenthashmap 是怎么做到线程安全的？
+
+26、HashTable 你了解过吗？
+
+27、如何保证线程安全问题？
+
+28、synchronized、lock
+
+29、volatile 的原子性问题？为什么 i++ 这种不支持原子性？从计算机原理的设计来讲下不能保证原子性的原因
+
+30、happens before 原理
+
+31、cas 操作
+
+32、lock 和 synchronized 的区别？
+
+33、公平锁和非公平锁
+
+34、Java 读写锁
+
+35、读写锁设计主要解决什么问题？
+
+36、你项目除了写 Java 代码，还有前端代码，那你知道前端有哪些框架吗？
+
+37、MySQL 分页查询语句
+
+38、MySQL 事务特性和隔离级别
+
+39、不可重复读会出现在什么场景？
+
+40、sql having 的使用场景
+
+41、前端浏览器地址的一个 http 请求到后端整个流程是怎么样？能够说下吗？
+
+42、http 默认端口，https 默认端口
+
+43、DNS 你知道是干嘛的吗？
+
+44、你们开发用的 ide 是啥？你能说下 idea 的常用几个快捷键吧？
+
+45、代码版本管理你们用的是啥？
+
+46、git rebase 和 merge 有什么区别？
+
+47、你们公司加班多吗？
+
+48、后面一起聊 high 了，之间扯了些蛋，哈哈哈
+
+
+
+
+
+蚂蚁花呗一面（一个小时）：
+
+1. Java容器有哪些？哪些是同步容器,哪些是并发容器？
+
+2. ArrayList和LinkedList的插入和访问的时间复杂度？
+
+3. java反射原理， 注解原理？
+
+4. 新生代分为几个区？使用什么算法进行垃圾回收？为什么使用这个算法？
+
+5. HashMap在什么情况下会扩容，或者有哪些操作会导致扩容？
+
+6. HashMap push方法的执行过程？
+
+7. HashMap检测到hash冲突后，将元素插入在链表的末尾还是开头？
+
+8. 1.8还采用了红黑树，讲讲红黑树的特性，为什么人家一定要用红黑树而不是AVL、B树之类的？
+
+9. https和http区别，有没有用过其他安全传输手段？
+	证书，公钥，私钥
+
+10. 线程池的工作原理，几个重要参数，然后给了具体几个参数分析线程池会怎么做，最后问阻塞队列的作用是什么？
+
+11.linux怎么查看系统负载情况？ top top -Hp
+
+12. 请详细描述springmvc处理请求全流程？
+
+13. spring 一个bean装配的过程？
+
+14. 讲一讲AtomicInteger，为什么要用CAS而不是synchronized？
+
+蚂蚁花呗二面
+
+1. 查询中哪些情况不会使用索引？
+
+2. 数据库索引，底层是怎样实现的，为什么要用B树索引？
+
+3. Mysql主从同步的实现原理？
+			
+4. MySQL是怎么用B+树？
+
+5. 谈谈数据库乐观锁与悲观锁?
+
+6. 有使用过哪些NoSQL数据库？MongoDB和Redis适用哪些场景？
+
+7. 描述分布式事务之TCC服务设计？
+
+8. Redis和memcache有什么区别？Redis为什么比memcache有优势？
+
+9. 考虑redis的时候，有没有考虑容量？大概数据量会有多少？
+
+蚂蚁花呗三面
+
+1. 介绍项目
+
+2. 各种聊项目，从项目的架构设计到部署流程。
+
+3. solr和mongodb的区别，存数据为什么不用solr？
+
+4. 还是要聊项目
+
+5. 谈谈分布式锁、以及分布式全局唯一ID的实现比较？
+
+6. 集群监控的时候，重点需要关注哪些技术指标？这些指标如何优化？
+
+7. 从千万的数据到亿级的数据，会面临哪些技术挑战？你的技术解决思路？
+
+8. 最近两年遇到的最大的挫折，从挫折中学到了什么？
+
+9. 最近有没有学习过新技术？
+
+10. 有啥想问我的？
+
+以上就是蚂蚁花呗高级java面试题，以下最新总结的最全2018阿里集团高级Java必考题范围和答案，仅用于参考~
+
+如何把java内存的数据全部dump出来
+.如何手动触发全量回收垃圾，如何立即触发垃圾回收
+hashmap如果只有一个写其他全读会出什么问题
+git rebase
+mongodb和hbase的区别
+如何解决并发问题
+volatile的用途
+java线程池（好像之前我的理解有问题）
+mysql的binlog
+代理模式
+mysql是如何实现事务的
+读写分离何时强制要读主库，读哪个从库是通过什么方式决定的，从库的同步mysql用的什么方式
+mysql的存储引擎
+mysql的默认隔离级别，其他隔离级别
+将一个链表反转（用三个指针，但是每次只发转一个）
+spring Aop的实现原理，具体说说
+何时会内存泄漏，内存泄漏会抛哪些异常
+是否用过Autowire注解
+spring的注入bean的方式
+sql语句各种条件的执行顺序，如select， where， order by， group by
+select xx from xx where xx and xx order by xx limit xx； 如何优化这个（看explain）
+四则元算写代码
+统计100G的ip文件中出现ip次数最多的100个ip
+zookeeper的事物，结点，服务提供方挂了如何告知消费方
+5台服务器如何选出leader(选举算法)
+适配器和代理模式的区别
+读写锁
+static加锁
+事务隔离级别
+门面模式，类图(外观模式)
+mybatis如何映射表结构
+二叉树遍历
+主从复制
+mysql引擎区别
+静态内部类加载到了哪个区？方法区
+class文件编译后加载到了哪
+web的http请求如何整体响应时间变长导致处理的请求数变少，该如何处理？用队列，当处理不了那么多http请求时将请求放到队列
+中慢慢处理，web如何实现队列
+线程安全的单例模式
+快速排序性能考虑
+volatile关键字用法
+求表的size，或做数据统计可用什么存储引擎
+
+
+
+
+蚂蚁金服一面
+
+hashmap的实现原理，多线程并发操作hashmap会有什么问题？
+
+原理简述：使用数组加链表的数据结构,根据给出的key -hash到数组的一个下标，如果当前下标有值建立一个链表 指向next， 注意的是新插入的值会在头链表上， 这样的设计思路是 新数据默认更热
+
+发产生的问题：多线程put后可能导致get死循环
+
+多线程put的时候可能导致元素丢失
+
+主要问题出在addEntry方法的new Entry (hash, key, value, e)，如果两个线程都同时取得了e,则他们下一个元素都是e，然后赋值给table元素的时候有一个成功有一个丢失。
+
+put非null元素后get出来的却是null
+
+泛型的反射擦除
+
+泛型只在编译期有效，在运行期会被擦除掉， 所以通过反射的反射往一个要求泛型的集合添加对象，逃过了编译器的检查，
+是可以正常在运行期使用的
+乐观锁了解哪些
+
+B+树和红黑树时间复杂度
+
+二叉树的遍历
+
+前序遍历：根左右
+
+中序遍历：左根右
+
+后续遍历：左右根
+
+算法-java
+
+
+ 
+public void theFirstTraversal(Node node){ printNode(node); if(node.getLeftNode()!=null){ theFirstTraversal(node.getLeftNode()); } if(node.getRightNode()!=null){ theFirstTraversal(node.getRightNode()); } } public void thePostOrderTraversal(Node node){ if(node.getLeftNode()!=null){ thePostOrderTraversal(node.getLeftNode()); } if(node.getRightNode()!=null){ thePostOrderTraversal(node.getRightNode()); } printNode(node); } public void theInOrderTraversal(Node node){ if(node.getLeftNode()!=null){ theInOrderTraversal(node.getLeftNode()); } printNode(node); if(node.getRightNode()!=null){ theInOrderTraversal(node.getRightNode()); } } 
+快排的时间复杂度，冒泡时间复杂度，快排是否稳定，快排的过程
+
+讲一下spring的启动流程
+
+spring启动有几种方法，通过web.xml的监听器，或者ClassPathXmlApplicationContext，
+
+FileSystemXmlApplicationContext，它启动的核心目标是构建spring容器，构建容器需要做以下几个工作 ，实例化对象，
+
+加载配置，装配bean对象，
+
+首先根据路径加载配置文件，也叫元数据 和pojo对象, 根据对应的模板表情进行初始化操作，通过元数据和反射的方式生成对象放入容器中，load的配置也进行初始化，后面会有bean的装配工作和回调工作，
+
+比如实现了InitializingBean 会在容器所有需要设置属性的bean设置完以后调用afterPropertiesSet
+
+this.postProcessBeanFactory(beanFactory);
+
+this.invokeBeanFactoryPostProcessors(beanFactory);
+
+this.registerBeanPostProcessors(beanFactory);
+
+this.initMessageSource();
+
+this.initApplicationEventMulticaster();
+
+this.onRefresh();
+
+this.registerListeners();
+
+this.finishBeanFactoryInitialization(beanFactory);
+
+this.finishRefresh();
+
+AOP是怎么实现的？两种动态代理的应用场景？
+
+通过动态生成字节码，增强代码业务功能，
+
+JDK动态代理， 需要代理的类必须要实现接口
+
+cglib 无需实现接口 速度快
+
+javaassist 也无需实现接口
+
+Java中的新生代和老年代的垃圾回收算法，对应的垃圾收集器
+
+谈谈 synchronized、ReenTrantLock、volatile 三者的区别
+
+synchronized 互斥锁，
+
+即操作互斥，并发线程过来，串行获得锁，串行执行代码。就像一个房间一把钥匙，一个人进去后，下一个人得等第一个人出来得到钥匙才能进入。如果代码写的不好（A），可能出现死锁！（A得到锁，B等待A释放锁，A不释放，B死锁）.
+
+ReenTrantLock 重入锁
+
+在JDK优化之后 synchronized 和reentrantLCOK 锁的性能其实差不多
+
+唯一的区别是
+
+
+ 
+ReenTrantLock可以指定是公平锁还是非公平锁。而synchronized只能是非公平锁。所谓的公平锁就是先等待的线程先获得锁。 ReenTrantLock提供了一个Condition（条件）类，用来实现分组唤醒需要唤醒的线程们，而不是像synchronized要么随机唤醒一个线程要么唤醒全部线程。 ReenTrantLock提供了一种能够中断等待锁的线程的机制，通过lock.lockInterruptibly()来实现这个机制。 
+如果需要使用reentrantlock的这三种独立功能可以使用这个锁 并且ReenTrantLock的力度更细
+
+volatile 是一个关键字 对虚拟机声明标识有该关键字的遍历 不允许重排序和修改马上刷新内存~
+
+示例代码：
+
+蚂蚁金服二面
+
+[Linux]命令 统计，排序，前几问题等
+
+wc、sort、uniq这三个命令都是用于排序。
+
+wc命令很简单，在linux中用来统计文件中的字节数、字数、行数，并且将结果返回
+
+格式：wc [-clmwL] file
+
+-c：统计字节数
+
+-l：统计行数
+
+-m：统计字符数
+
+-w：统计字数，一个字被定义为由空白、跳格或换行字符分隔的字符串
+
+-L：打印最长行的长度
+
+full gc的发生有哪几种情况？
+
+触发MinorGC(Young GC)
+
+
+ 
+虚拟机在进行minorGC之前会判断老年代最大的可用连续空间是否大于新生代的所有对象总空间 1、如果大于的话，直接执行minorGC 2、如果小于，判断是否开启HandlerPromotionFailure，没有开启直接FullGC 3、如果开启了HanlerPromotionFailure, JVM会判断老年代的最大连续内存空间是否大于历次晋升的大小，如果小于直接执行FullGC 4、如果大于的话，执行minorGC 
+触发FullGC
+
+老年代空间不足 如果创建一个大对象，Eden区域当中放不下这个大对象，会直接保存在老年代当中，如果老年代空间也不足，就会触发Full GC。为了避免这种情况，最好就是不要创建太大的对象。
+持久代空间不足
+如果有持久代空间的话，系统当中需要加载的类，调用的方法很多，同时持久代当中没有足够的空间，就出触发一次Full GC
+YGC出现promotion failure
+promotion failure发生在Young GC, 如果Survivor区当中存活对象的年龄达到了设定值，会就将Survivor区当中的对象拷贝到老年代，如果老年代的空间不足，就会发生promotion failure， 接下去就会发生Full GC.
+统计YGC发生时晋升到老年代的平均总大小大于老年代的空闲空间
+在发生YGC是会判断，是否安全，这里的安全指的是，当前老年代空间可以容纳YGC晋升的对象的平均大小，如果不安全，就不会执行YGC,转而执行Full GC。
+显示调用System.gc
+Netty内部结构
+
+mysql有几种引擎，区别？
+
+innodb中聚集索引，非聚集索引
+
+分布式下redis如何保证线程安全
+
+MySQL、Redis、MongoDB各自的应用场景
+
+Redis的存储数据结构，以及持久化区别
+
+蚂蚁金服三面
+
+什么情况索引不会命中，会造成全表扫描
+
+1.应尽量避免在 where 子句中对字段进行 null 值判断，否则将导致引擎放弃使用索引而进行全表扫描，如：
+
+应尽量避免在 where 子句中使用!=或<>操作符，否则将引擎放弃使用索引而进行全表扫描。
+3.应尽量避免在 where 子句中使用 or 来连接条件，否则将导致引擎放弃使用索引而进行全表扫描，如：
+4.in 和 not in 也要慎用，否则会导致全表扫描
+5.'%abc%' like全匹配查询也会导致
+6.应尽量避免在where子句中对字段进行函数操作，这将导致引擎放弃使用索引而进行全表扫描
+JVM性能调优会涉及哪些参数?
+
+Restful、SOAP、RPC、SOA、微服务之间的区别
+
+SpringClound与Dubbo的比较，优劣势
+
+mysql如何实现如何实现分库分表+动态数据源+读写分离
+
+什么是缓存雪崩？服务器雪崩的场景与解决方案
+
+分布式锁的方案，redis和zookeeper哪个好，如果是集群部署，高并发情况下哪个性能更好。
+
+请画一个大型网站分布式集群部署图
+
+秒杀系统的架构设计
+ 
+ 
+ 
+ 
+1. junit用法，before,beforeClass,after, afterClass的执行顺序
+
+2. 分布式锁
+
+3. nginx的请求转发算法，如何配置根据权重转发
+
+4. 用hashmap实现redis有什么问题（死锁，死循环，可用ConcurrentHashmap）
+
+5. 线程的状态
+
+5. 线程的阻塞的方式
+
+6. sleep和wait的区别
+
+7. hashmap的底层实现
+
+8. 一万个人抢100个红包，如何实现（不用队列），如何保证2个人不能抢到同一个红包，可用分布式锁
+
+9. java内存模型，垃圾回收机制，不可达算法
+
+10. 两个Integer的引用对象传给一个swap方法在方法内部交换引用，返回后，两个引用的值是否会发现变化
+
+11. aop的底层实现，动态代理是如何动态，假如有100个对象，如何动态的为这100个对象代理
+
+12. 是否用过maven install。 maven test。git（make install是安装本地jar包）
+
+13. tomcat的各种配置，如何配置docBase
+
+14. spring的bean配置的几种方式
+
+15. web.xml的配置
+
+16. spring的监听器。
+
+17. zookeeper的实现机制，有缓存，如何存储注册服务的
+
+18. IO会阻塞吗？readLine是不是阻塞的
+
+19. 用过spring的线程池还是java的线程池？
+
+20. 字符串的格式化方法 （20，21这两个问题问的太低级了）
+
+21. 时间的格式化方法
+
+22. 定时器用什么做的
+
+23. 线程如何退出结束
+
+24. java有哪些锁？乐观锁 悲观锁 synchronized 可重入锁 读写锁,用过reentrantlock吗？reentrantlock与synmchronized的区别
+
+25. ThreadLocal的使用场景
+
+26. java的内存模型，垃圾回收机制
+
+27. 为什么线程执行要调用start而不是直接run（直接run，跟普通方法没什么区别，先调start，run才会作为一个线程方法运行）
+
+28. qmq消息的实现机制(qmq是去哪儿网自己封装的消息队列)
+
+29. 遍历hashmap的三种方式
+
+30. jvm的一些命令
+
+31. memcache和redis的区别
+
+32. mysql的行级锁加在哪个位置
+
+33. ConcurrentHashmap的锁是如何加的？是不是分段越多越好
+
+34. myisam和innodb的区别（innodb是行级锁，myisam是表级锁）
+
+35. mysql其他的性能优化方式
+
+36. linux系统日志在哪里看
+
+37. 如何查看网络进程
+
+38. 统计一个整数的二进制表示中bit为1的个数
+
+39. jvm内存模型，java内存模型
+
+【阿里巴巴面试题目】
+
+40. 如何把java内存的数据全部dump出来
+
+41. 如何手动触发全量回收垃圾，如何立即触发垃圾回收
+
+42. hashmap如果只有一个写其他全读会出什么问题
+
+43. git rebase
+
+44. mongodb和hbase的区别
+
+45. 如何解决并发问题
+
+46. volatile的用途
+
+47. java线程池（好像之前我的理解有问题）
+
+48. mysql的binlog
+
+49. 代理模式
+
+50. mysql是如何实现事务的
+
+51. 读写分离何时强制要读主库，读哪个从库是通过什么方式决定的，从库的同步mysql用的什么方式
+
+52. mysql的存储引擎
+
+53. mysql的默认隔离级别，其他隔离级别
+
+54. 将一个链表反转（用三个指针，但是每次只发转一个）
+
+55. spring Aop的实现原理，具体说说
+
+56. 何时会内存泄漏，内存泄漏会抛哪些异常
+
+57. 是否用过Autowire注解
+
+58. spring的注入bean的方式
+
+59. sql语句各种条件的执行顺序，如select， where， order by， group by
+
+60. select xx from xx where xx and xx order by xx limit xx； 如何优化这个（看explain）
+
+61. 四则元算写代码
+
+62. 统计100G的ip文件中出现ip次数最多的100个ip
+
+63. zookeeper的事物，结点，服务提供方挂了如何告知消费方
+
+64. 5台服务器如何选出leader(选举算法)
+
+65. 适配器和代理模式的区别
+
+66. 读写锁
+
+67. static加锁
+
+68. 事务隔离级别
+
+69. 门面模式，类图(外观模式)
+
+70. mybatis如何映射表结构
+
+71. 二叉树遍历
+
+72. 主从复制
+
+73. mysql引擎区别
+
+74. 静态内部类加载到了哪个区？方法区
+
+75. class文件编译后加载到了哪
+
+76. web的http请求如何整体响应时间变长导致处理的请求数变少，该如何处理？用队列，当处理不了那么多http请求时将请求放到队列
+
+中慢慢处理，web如何实现队列
+
+77. 线程安全的单例模式
+
+78. 快速排序性能考虑
+
+79. volatile关键字用法
+
+80. 求表的size，或做数据统计可用什么存储引擎
+
+81. 读多写少可用什么引擎
+
+82. 假如要统计多个表应该用什么引擎
+
+83. concurrenhashmap求size是如何加锁的，如果刚求完一段后这段发生了变化该如何处理
+
+84. 1000个苹果放10个篮子，怎么放，能让我拿到所有可能的个数
+
+85. 可重入的读写锁，可重入是如何实现的？
+
+86. 是否用过NIO
+
+87. java的concurrent包用过没
+
+88. sting s=new string("abc")分别在堆栈上新建了哪些对象
+
+89. java虚拟机的区域分配，各区分别存什么
+
+90. 分布式事务（JTA）
+
+91. threadlocal使用时注意的问题（ThreadLocal和Synchonized都用于解决多线程并发访问。但是ThreadLocal与synchronized有本质的区别。synchronized是利用锁的机制，使变量或代码块在某一时该只能被一个线程访问。而ThreadLocal为每一个线程都提供了变量的副本，使得每个线程在某一时间访问到的并不是同一个对象，这样就隔离了多个线程对数据的数据共享。而Synchronized却正好相反，它用于在多个线程间通信时能够获得数据共享）
+
+92. java有哪些容器(集合，tomcat也是一种容器)
+
+93. 二分查找算法
+
+94. myisam的优点，和innodb的区别
+
+95. redis能存哪些类型
+
+96. http协议格式，get和post的区别
+
+97. 可重入锁中对应的wait和notify
+
+98. redis能把内存空间交换进磁盘中吗(这个应该是可以的，但是那个面试官非跟我说不可以)
+
+99. java线程池中基于缓存和基于定长的两种线程池，当请求太多时分别是如何处理的？定长的事用的队列，如果队列也满了呢？交换进磁盘？基于缓存的线程池解决方法呢？
+
+100. synchronized加在方法上用的什么锁
+
+101. 可重入锁中的lock和trylock的区别
+
+102. innodb对一行数据的读会枷锁吗？不枷锁，读实际读的是副本
+
+103. redis做缓存是分布式存的？不同的服务器上存的数据是否重复？guava cache呢？是否重复？不同的机器存的数据不同
+
+104. 用awk统计一个ip文件中top10
+
+105. 对表做统计时可直接看schema info信息，即查看表的系统信息
+
+106. mysql目前用的版本
+
+107. 公司经验丰富的人给了什么帮助？(一般boss面会问这些)
+
+108. 自己相对于一样的应届生有什么优势
+
+109. 自己的好的总结习惯给自己今后的工作带了什么帮助，举例为证
+
+110. 原子类，线程安全的对象，异常的处理方式
+
+111. 4亿个int数，如何找出重复的数（用hash方法，建一个2的32次方个bit的hash数组，每取一个int数，可hash下2的32次方找到它在hash数组中的位置，然后将bit置1表示已存在）
+
+112. 4亿个url，找出其中重复的（考虑内存不够，通过hash算法，将url分配到1000个文件中，不同的文件间肯定就不会重复了，再分别找出重复的）
+
+有1万个数组，每个数组有1000个整数，每个数组都是降序的，从中找出最大的N个数，N<1000
+
+113. LinkedHashmap的底层实现
+
+114. 类序列化时类的版本号的用途，如果没有指定一个版本号，系统是怎么处理的？如果加了字段会怎么样？
+
+115. Override和Overload的区别，分别用在什么场景
+
+116. java的反射是如何实现的
+
+【阿里巴巴面试题目含答案】
+
+1，mysql的三大引擎是啥？
+
+mysql常用的引擎有InnoDB，MyISAM，Memory，默认是InnoDB
+
+InnoDB：磁盘表，支持事务，支持行级锁，B+Tree索引
+
+ps:优点： 具有良好的ACID特性。适用于高并发，更新操作比较多的表。需要使用事务的表。对自动灾难恢复有要求的表。
+
+缺点：读写效率相对MYISAM比较差。占用的磁盘空间比较大。
+
+mysql的4大特性+4种隔离级别：
+
+MyISAM：磁盘表，不支持事务，支持表级锁，B+Tree索引
+
+ps: 优点：占用空间小，处理速度快（相对InnoDB来说）
+
+缺点：不支持事务的完整性和并发性
+
+MEMORY(Heap)：内存表，不支持事务，表级锁，Hash索引，不支持Blob,Text大类型
+
+ps: 优点：速度要求快的，临时数据
+
+缺点：丢失以后，对项目整体没有或者负面影响不大的时候。
+
+2，redis的hash算法用的是啥？
+
+redis应该是使用一致性hash算法---MurmurHash3 算法，具有低碰撞率优点，google改进的版本cityhash也是redis中用到的哈希算法。
+
+现有的主流的大数据系统都是用的 MurmurHash本身或者改进
+
+3，nosql为啥比sql快？
+
+Nosql是非关系型数据库，因为不需要满足关系数据库数据一致性等复杂特性所以速度快；
+
+sql是关系型数据库，功能强大，但是效率上有瓶颈
+
+4，什么是索引为啥nosql没索引？nosql有索引滴
+
+索引分为聚簇索引和非聚簇索引两种，聚簇索引是按照数据存放的物理位置为顺序的，而非聚簇索引就不一样了；聚簇索引能提高多行检索的速度，而非聚簇索引对于单行的检索很快。
+
+聚簇索引：有主键时，根据主键创建聚簇索引；没有主键时，会用一个唯一且不为空的索引列做为主键，成为此表的聚簇索引；如果以上两个都不满足那innodb自己创建一个虚拟的聚集索引
+
+非聚簇索引：非聚簇索引都是辅助索引，像复合索引、前缀索引、唯一索引
+
+5，B+树和B树区别？
+
+B树的非叶子节点存储实际记录的指针，而B+树的叶子节点存储实际记录的指针
+
+B+树的叶子节点通过指针连起来了, 适合扫描区间和顺序查找。

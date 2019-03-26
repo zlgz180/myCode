@@ -1,0 +1,75 @@
+1.spring中用了哪些设计模式
+	简单工厂模式：beanfactory通过一个简单的bean id或者bean name获取相应的bean对象
+	工厂方法模式：通过配置文件中指定factory-method方法指定构造方法，创建对象的权利移交给spring容器管理
+			单例模式：通过scope指定单例，提供了全局的访问点BeanFactory。但没有从构造器级别去控制单例，这是因为spring管理的是是任意的java对象。 
+		适配器模式：AOP，通过动态代理或GCLib生成被代理类的代理类，并在代理类的方法前后追加方法，增强了代理方法的功能，实现的面向切面编程。
+		  代理模式：AOP动态代理和GClib，一个是通过jdk动态代理生成代理对象（被代理类必须有接口），如果没有接口只能使用gclib，生成一个代理对象的子类
+		观察者模式：ApplicationListener使用的是观察者模式，定义对象间的一种一对多的依赖关系，当一个对象的状态发生改变时，所有依赖于它的对象都得到通知并被自动更新。
+			策略模式：SimpleInstantiationStrategy中有使用，定义一系列的算法，把它们一个个封装起来，并且使它们可相互替换。本模式使得算法可独立于使用它的客户而变化。
+	模板方法模式：例如JdbcTemplate，模板方法模式和回调模式的结合，spring扩展时必用的设计模式，由抽象父类控制顶级逻辑，并把基本操作的实现推迟到子类去实现，这是通过继承的手段来达到对象的复用。
+
+	spring主要通过模版方法实现扩展的
+		1.模版方法里暴露抽象方法，让子类去实现
+		2.模版方法调用时传入调用钩子方法进行回调
+	
+2.ioc依赖注入
+	IOC总的来说就是spring根据描述文件，标签，和bean的定义提前生成维护一套bean对象，在你用的时候直接取。
+	springIOC 核心维护一个hashmap用于存放bean，通过beanfactory规范生成对象获取对象的步骤
+	
+	依赖注入的过程
+	1.容器依赖初始化，加载解析配置文件：通过ResourceLoader加载各种配置文件解析生成BeanDefinition，存放在BeanFactory的beanDefinitionMap中，完成初始化工作
+	2.生成对象：通过反射调用默认构造方法或者调用特定的工厂方法生成实例，也可以用gclib创建对象，放入beanfactory的hashmap中
+	3.注入对象和属性：通过BeanWrapper对bean的属性进行注入
+	
+	IOC创建对象的方式
+	a.默认调用对象的默认构造方法
+	b.利用静态工厂创建，利用配置文件中指定的factory-mehtod属性
+	
+	IOC创建对象是如何保证单例的
+	使用了双重判断加锁的单例模式，首先从缓存中获取bean实例，如果为null，对缓存map加锁，然后再从缓存中获取bean，如果继续为null，就创建一个bean。
+	
+	IOC创建对象是如何保证线程安全的
+	通过threadlocal封装对象，利用空间换取安全的方式，给每个线程独立分配对象，例如（RequestContextHolder、TransactionSynchronizationManager、LocaleContextHolder等）
+
+	IOC创建对象的时机
+		lazy-init="default/true/false"
+		default/false: 在启动spring容器的时候创建对象；
+		true ：在context.getBean时就要创建对象；
+	
+	IOC依赖注入的时机
+		和创建对象的时机一致
+
+3.AOP
+
+	
+threadlocal的如何监听线程运行完毕，同步异步
+	shutdown（） isterminor();
+
+
+4.jvm架构图
+
+5.jvm优化方向
+	1.代码  避免内存泄漏
+	2.jvm空间优化，新生代，年老代，持久代，线程栈空间优化
+	3.垃圾回收器优化
+
+6.jvm什么时候会触发full gc
+	1.年老代空间不足	 内存泄漏
+	2.持久代空间不足   class类,反射多，常量过多
+	3.新生代平均晋升对象大小超过年老代空间
+	4.cms并发标记失败，可用内存68&以下就会串行GC
+	5.system.gc()
+	6.启用了RMIjava远程过程调用，每小时一次full gc
+
+7.高并发优化方向
+	a.充分利用多线程提高程序运行效率
+		1.同步转异步   把耗时但不影响最终结果的任务用异步线程去搞定
+		2.线程池   ThreadPoolExcutor
+		3.生产者消费者模式MQ
+		4.NIO reactor多路复用selector
+	b.在高并发环境下保证线程安全
+		1.发布一个无状态的对象，永远是安全的   例如final修饰的类
+		2.线程封闭隔离，threadlocal隔离线程局部变量
+		3.
+
+	
