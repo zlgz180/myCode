@@ -1,6 +1,7 @@
 package com.code.algorithm.structure.tree;
 
 import java.util.ArrayDeque;
+import java.util.LinkedList;
 import java.util.Stack;
 
 /**
@@ -24,7 +25,9 @@ public class BinarySearchTree {
         // binarySearchTree.preOrder2(root);
 
         // binarySearchTree.inOrder2(root);
-        System.out.println(binarySearchTree.deptth(root));
+        //        System.out.println(binarySearchTree.deptth(root));
+
+        binarySearchTree.printByRow2(root);
     }
 
     /**
@@ -34,17 +37,77 @@ public class BinarySearchTree {
      * @return
      */
     public void printByRow(Node root) {
-        // LinkedList<Node> list = new LinkedList<>();
-        ArrayDeque<Node> list = new ArrayDeque<>();
+        LinkedList<Node> list = new LinkedList();
         list.add(root);
         while (!list.isEmpty()) {
-            Node curr = list.poll();
-            System.out.println(curr.data);
-            if (curr.left != null) {
-                list.add(curr.left);
+            Node node = list.poll();
+            System.out.println(node.data);
+            if (node.left != null) {
+                list.add(node.left);
             }
-            if (curr.right != null) {
-                list.add(curr.right);
+            if (node.right != null) {
+                list.add(node.right);
+            }
+        }
+    }
+
+    /**
+     * 给出一棵二叉树，返回其节点值的锯齿形层次遍历（先从左往右，下一层再从右往左，层与层之间交替进行）
+     * 样例
+     * 例1:
+     * <p>
+     * 输入:
+     * {1,2,3}
+     * 输出:
+     * [[1],[3,2]]
+     * 解释:
+     * 1
+     * / \
+     * 2   3
+     * 例2:
+     * <p>
+     * 输入:
+     * {3,9,20,#,#,15,7}
+     * 输出:
+     * [
+     * [3],
+     * [20,9],
+     * [15,7]
+     * ]
+     * 解释:
+     * 3
+     * / \
+     * 9  20
+     * /  \
+     * 15   7
+     *
+     * @param root
+     * @return
+     */
+    public void printByRow2(Node root) {
+        LinkedList<Node> list = new LinkedList();
+        Stack<Node> stack = new Stack<>();
+        Boolean isLeft = true;
+        list.add(root);
+        while (!list.isEmpty()) {
+            Node node = list.poll();
+            System.out.println(node.data);
+            if (isLeft) {
+                if (node.left != null) {
+                    list.add(node.left);
+                }
+                if (node.right != null) {
+                    list.add(node.right);
+                }
+                isLeft = false;
+            } else {
+                if (node.left != null) {
+                    stack.add(node.left);
+                }
+                if (node.right != null) {
+                    stack.add(node.right);
+                }
+                isLeft = true;
             }
         }
     }
