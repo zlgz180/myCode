@@ -1,10 +1,13 @@
 package com.code.jdk.guava;
 
-import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.TimeUnit;
 
-import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
+import com.google.common.cache.CacheLoader;
+import com.google.common.cache.LoadingCache;
+import com.google.common.cache.Weigher;
 
 /**
  * @author tianwei
@@ -12,14 +15,24 @@ import com.google.common.cache.CacheBuilder;
  */
 public class GuavaCacheDemo {
     public static void main(String[] args) throws ExecutionException {
-        Cache<Object, Object> cache = CacheBuilder.newBuilder().concurrencyLevel(2).build();
-        cache.put(1, "tianwei");
-        Object o = cache.get(1, new Callable<Object>() {
-            @Override
-            public Object call() throws Exception {
-                return null;
-            }
-        });
-        System.out.println(o);
+        LoadingCache<String, String> cache = CacheBuilder.newBuilder().maximumWeight(1000)
+                .weigher(new Weigher<String, String>() {
+                    @Override
+                    public int weigh(String key, String value) {
+                        return key.length();
+                    }
+                }).expireAfterAccess(10, TimeUnit.MINUTES).build(new CacheLoader<String, String>() {
+                    @Override
+                    public String load(String key) throws Exception {
+                        return key + "cache";
+                    }
+                });
+        cache.put("test", "23333");
+        System.out.println(cache.get("test"));
+        System.out.println(cache.get("scj"));
+
+        // output
+        // 2333
+        // scjcache
     }
 }

@@ -1,5 +1,7 @@
 package com.code.jdk.guava;
 
+import java.util.concurrent.TimeUnit;
+
 import com.google.common.util.concurrent.RateLimiter;
 
 /**
@@ -8,7 +10,7 @@ import com.google.common.util.concurrent.RateLimiter;
  */
 public class GuavaRateLimiterDemo {
     public static void main(String[] args) {
-        RateLimiter limiter = RateLimiter.create(2.0);
+        RateLimiter limiter = RateLimiter.create(2.0, 3, TimeUnit.SECONDS);
         // 批量调用
         for (int i = 0; i < 10; i++) {
             double acquire = limiter.acquire();
