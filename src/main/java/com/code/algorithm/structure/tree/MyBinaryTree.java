@@ -14,6 +14,7 @@ import com.code.algorithm.leetcode.ListNode;
  */
 public class MyBinaryTree {
     private static boolean result = true;
+    private static int sum = 0;
     private Node tree;
 
     public static void main(String[] args) {
@@ -25,9 +26,12 @@ public class MyBinaryTree {
         root.right.left = new Node(6);
         root.right.right = new Node(7);
         // preOrder(root);
-        inOrder(root);
+        // inOrder(root);
         // postOrder(root);
         // printByRow(root);
+
+        int i = sumOfLeftLeaves3(root);
+        System.out.println(i);
     }
 
     /**
@@ -150,6 +154,38 @@ public class MyBinaryTree {
         System.out.println(root.data);
     }
 
+    public static int sumOfLeftLeaves(Node root) {
+        if (root == null) {
+            return sum;
+        }
+        if (root.left != null) {
+            if (root.left.left == null && root.left.right == null) {
+                sum += root.left.data;
+            }
+        }
+        sumOfLeftLeaves(root.left);
+        sumOfLeftLeaves(root.right);
+        return sum;
+    }
+
+    public static int sumOfLeftLeaves3(Node node) {
+        Stack<Node> stack = new Stack<>();
+        stack.add(node);
+        int sum = 0;
+        while (!stack.isEmpty()) {
+            Node cur = stack.pop();
+            if (cur.left == null && cur.right == null) {
+                sum += cur.data;
+            }
+            if (cur.right != null && cur.right.left != null && cur.right.right != null) {
+                stack.push(cur.right);
+            }
+            if (cur.left != null) {
+                stack.push(cur.left);
+            }
+        }
+        return sum;
+    }
 
     public void preOrder3(Node root) {
         Stack<Node> stack = new Stack<>();

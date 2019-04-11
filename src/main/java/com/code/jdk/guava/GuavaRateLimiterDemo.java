@@ -1,5 +1,7 @@
 package com.code.jdk.guava;
 
+import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.concurrent.TimeUnit;
 
 import com.google.common.util.concurrent.RateLimiter;
@@ -15,6 +17,11 @@ public class GuavaRateLimiterDemo {
         for (int i = 0; i < 10; i++) {
             double acquire = limiter.acquire();
             System.out.println("获取令牌成功!,消耗=" + acquire);
+        }
+
+        LinkedList<Integer> list = new LinkedList<>();
+        for (Iterator<Integer> it = list.iterator(); it.hasNext();) {
+            Integer next = it.next();
         }
     }
 }
