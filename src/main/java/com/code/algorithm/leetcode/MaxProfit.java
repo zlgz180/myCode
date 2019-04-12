@@ -1,26 +1,28 @@
 package com.code.algorithm.leetcode;
 
+import java.util.LinkedHashMap;
+
 /**
  * 给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。
- * 
+ * <p>
  * 如果你最多只允许完成一笔交易（即买入和卖出一支股票），设计一个算法来计算你所能获取的最大利润。
- * 
+ * <p>
  * 注意你不能在买入股票前卖出股票。
- * 
+ * <p>
  * 示例 1:
- * 
+ * <p>
  * 输入: [7,1,5,3,6,4] 输出: 5 解释: 在第 2 天（股票价格 = 1）的时候买入，在第 5 天（股票价格 = 6）的时候卖出，最大利润
  * = 6-1 = 5 。 注意利润不能是 7-1 = 6, 因为卖出价格需要大于买入价格。 示例 2:
- * 
+ * <p>
  * 输入: [7,6,4,3,1] 输出: 0 解释: 在这种情况下, 没有交易完成, 所以最大利润为 0。
- * 
+ *
  * @author tianwei
  */
 public class MaxProfit {
 
     /**
      * 求最大差
-     * 
+     *
      * @param prices
      * @return
      */
@@ -38,8 +40,52 @@ public class MaxProfit {
         return max;
     }
 
+    /**
+     * 最多买卖一次，找出最大利润
+     * 
+     * @param prices
+     * @return
+     */
+    public static int maxProfit2(int[] prices) {
+        int length;
+        if (prices == null || (length = prices.length) <= 1) {
+            return 0;
+        }
+        // 动态规划 前i天的最大收益 = max{前i-1天的最大收益，第i天的价格-前i-1天中的最小价格}
+        int maxNum = 0;
+        int minNum = prices[0];
+        for (int i = 0; i < length; i++) {
+            if (prices[i] < minNum) {
+                minNum = prices[i];
+            }
+            maxNum = prices[i] - minNum;
+            // maxNum = Math.max(maxNum, prices[i] - minNum);
+        }
+        return maxNum;
+    }
+
+    /**
+     * 每天可以多次买卖
+     * 
+     * @param prices
+     * @return
+     */
+    public static int maxProfit3(int[] prices) {
+        int length;
+        if (prices == null || (length = prices.length) <= 1) {
+            return 0;
+        }
+        int maxNum = 0;
+        for (int i = 1; i < length; i++) {
+            if (prices[i] > prices[i - 1]) {
+                maxNum += prices[i] - prices[i - 1];
+            }
+        }
+        return maxNum;
+    }
+
     public static void main(String[] args) {
-        int[] tmp = new int[] { 7, 1, 5, 3, 6, 4 };
-        System.out.println(maxProfit(tmp));
+        int[] tmp = new int[] { 2, 4, 1 };
+        System.out.println(maxProfit2(tmp));
     }
 }

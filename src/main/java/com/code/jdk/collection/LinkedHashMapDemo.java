@@ -9,10 +9,10 @@ import java.util.Map;
  */
 public class LinkedHashMapDemo {
     public static void main(String[] args) {
-        LinkedHashMap<String, String> map = new LinkedHashMap<String, String>(16, 0.75F, true) {
+        LinkedHashMap<String, String> map = new LinkedHashMap<String, String>(100, 0.75f, false) {
             @Override
-            protected boolean removeEldestEntry(Map.Entry<String, String> eldest) { // 实现自定义删除策略，否则行为就和普遍 Map 没有区别
-                return size() > 3;
+            protected boolean removeEldestEntry(Map.Entry<String, String> eldest) {
+                return this.size() > 3;
             }
         };
         map.put("Project1", "Valhalla");

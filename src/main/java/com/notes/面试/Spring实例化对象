@@ -16,7 +16,9 @@
 检查缓存是否重复实例化
 实例化（jdk反射，cglib）
 依赖注入属性和引用（构造器，set，initMethon）
-beanPostProcesscer
+beanPostProcesscer前置处理器
+调用初始化方法
+beanPostProcesscer后置处理器
 
 
 如何解决循环依赖

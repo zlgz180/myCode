@@ -28,10 +28,10 @@ public class MyBinaryTree {
         // preOrder(root);
         // inOrder(root);
         // postOrder(root);
-        // printByRow(root);
+         printByRow(root);
 
-        int i = sumOfLeftLeaves3(root);
-        System.out.println(i);
+//        int i = sumOfLeftLeaves3(root);
+//        System.out.println(i);
     }
 
     /**
