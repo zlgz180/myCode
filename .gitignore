@@ -25,3 +25,4 @@ config_center_client.log
 .svn
 rebel.xml
 dev-local.properties
+~$*
