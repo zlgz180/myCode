@@ -12,9 +12,8 @@ import io.netty.handler.codec.protobuf.ProtobufEncoder;
 import io.netty.handler.codec.protobuf.ProtobufVarint32LengthFieldPrepender;
 
 /**
- * @author Mark老师   享学课堂 https://enjoy.ke.qq.com
- * 往期课程和VIP课程咨询 依娜老师  QQ：2133576719
- * 类说明：
+ * @author Mark老师 享学课堂 https://enjoy.ke.qq.com 往期课程和VIP课程咨询 依娜老师 QQ：2133576719
+ *         类说明：
  */
 public class ProtoBufClient {
     public void connect(int port, String host) throws Exception {
@@ -22,21 +21,16 @@ public class ProtoBufClient {
         EventLoopGroup group = new NioEventLoopGroup();
         try {
             Bootstrap b = new Bootstrap();
-            b.group(group)
-                    .channel(NioSocketChannel.class)
-                    .option(ChannelOption.TCP_NODELAY, true)
+            b.group(group).channel(NioSocketChannel.class).option(ChannelOption.TCP_NODELAY, true)
                     .handler(new ChannelInitializer<SocketChannel>() {
                         @Override
-                        public void initChannel(SocketChannel ch)
-                                throws Exception {
+                        public void initChannel(SocketChannel ch) throws Exception {
                             // 用来添加报文长度字段
-                            ch.pipeline().addLast(
-                                    new ProtobufVarint32LengthFieldPrepender());
-                            //添加 ProtobufEncoder 进行序列化将实体类编码为字节
+                            ch.pipeline().addLast(new ProtobufVarint32LengthFieldPrepender());
+                            // 添加 ProtobufEncoder 进行序列化将实体类编码为字节
                             ch.pipeline().addLast(new ProtobufEncoder());
-                            //添加自己的业务Handler
-                            ch.pipeline().addLast(
-                                    new ProtoBufClientHandler());
+                            // 添加自己的业务Handler
+                            ch.pipeline().addLast(new ProtoBufClientHandler());
                         }
                     });
 

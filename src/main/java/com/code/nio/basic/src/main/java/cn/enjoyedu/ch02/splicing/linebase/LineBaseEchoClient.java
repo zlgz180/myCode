@@ -1,5 +1,7 @@
 package com.code.nio.basic.src.main.java.cn.enjoyedu.ch02.splicing.linebase;
 
+import java.net.InetSocketAddress;
+
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
@@ -9,12 +11,8 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.handler.codec.LineBasedFrameDecoder;
 
-import java.net.InetSocketAddress;
-
 /**
- * 作者：Mark/Maoke
- * 创建日期：2018/08/26
- * 类说明：
+ * 作者：Mark/Maoke 创建日期：2018/08/26 类说明：
  */
 public class LineBaseEchoClient {
 
@@ -25,13 +23,14 @@ public class LineBaseEchoClient {
     }
 
     public void start() throws InterruptedException {
-        EventLoopGroup group = new NioEventLoopGroup();/*线程组*/
+        EventLoopGroup group = new NioEventLoopGroup();/* 线程组 */
         try {
-            final Bootstrap b = new Bootstrap();;/*客户端启动必须*/
-            b.group(group)/*将线程组传入*/
-                    .channel(NioSocketChannel.class)/*指定使用NIO进行网络传输*/
-                    .remoteAddress(new InetSocketAddress(host,LineBaseEchoServer.PORT))/*配置要连接服务器的ip地址和端口*/
-                    .handler(new ChannelInitializerImp());
+            final Bootstrap b = new Bootstrap();
+            ;/* 客户端启动必须 */
+            b.group(group)/* 将线程组传入 */
+            .channel(NioSocketChannel.class)/* 指定使用NIO进行网络传输 */
+            .remoteAddress(new InetSocketAddress(host, LineBaseEchoServer.PORT))/* 配置要连接服务器的ip地址和端口 */
+            .handler(new ChannelInitializerImp());
             ChannelFuture f = b.connect().sync();
             System.out.println("已连接到服务器.....");
             f.channel().closeFuture().sync();
@@ -44,8 +43,8 @@ public class LineBaseEchoClient {
 
         @Override
         protected void initChannel(Channel ch) throws Exception {
-            //	加分割符：系统回车符
-            ch.pipeline().addLast(new LineBasedFrameDecoder(1024*100000));
+            // 加分割符：系统回车符
+            ch.pipeline().addLast(new LineBasedFrameDecoder(1024 * 100000));
             ch.pipeline().addLast(new LineBaseClientHandler());
         }
     }

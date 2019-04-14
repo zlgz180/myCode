@@ -1,6 +1,9 @@
 package com.code.nio.basic.src.main.java.cn.enjoyedu.ch02.splicing.fixed;
 
+import java.net.InetSocketAddress;
+
 import com.code.nio.basic.src.main.java.cn.enjoyedu.ch02.embedded.FixedLengthFrameDecoder;
+
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
@@ -8,8 +11,6 @@ import io.netty.channel.ChannelInitializer;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
-
-import java.net.InetSocketAddress;
 
 /**
  * 作者：Mark/Maoke 创建日期：2018/08/25 类说明：
