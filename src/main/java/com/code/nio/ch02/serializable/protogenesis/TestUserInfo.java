@@ -1,4 +1,4 @@
-package cn.enjoyedu.ch02.serializable.protogenesis;
+package com.code.nio.ch02.serializable.protogenesis;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

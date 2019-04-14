@@ -1,4 +1,4 @@
-package cn.enjoyedu.ch02.serializable.protobuf;
+package com.code.nio.ch02.serializable.protobuf;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;

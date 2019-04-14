@@ -9,12 +9,12 @@ import java.util.Scanner;
  */
 public class NioClient {
 
-    private static cn.enjoyedu.ch01.nio.NioClientHandle nioClientHandle;
+    private static NioClientHandle nioClientHandle;
 
     public static void start() {
         if (nioClientHandle != null)
             nioClientHandle.stop();
-        nioClientHandle = new cn.enjoyedu.ch01.nio.NioClientHandle(Ch01Const.DEFAULT_SERVER_IP, Ch01Const.DEFAULT_PORT);
+        nioClientHandle = new NioClientHandle(Ch01Const.DEFAULT_SERVER_IP, Ch01Const.DEFAULT_PORT);
         new Thread(nioClientHandle, "Client").start();
     }
 

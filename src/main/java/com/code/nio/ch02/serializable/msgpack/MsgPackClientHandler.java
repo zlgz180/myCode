@@ -1,4 +1,4 @@
-package cn.enjoyedu.ch02.serializable.msgpack;
+package com.code.nio.ch02.serializable.msgpack;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
@@ -55,7 +55,7 @@ public class MsgPackClientHandler extends SimpleChannelInboundHandler<ByteBuf> {
             user.setUserName(userName);
             user.setId("No:"+(sendNumber-i));
             user.setUserContact(
-                    new UserContact(userName+"@xiangxue.com","133"));
+                    new  UserContact(userName+"@xiangxue.com","133"));
             users[i]=user;
         }
         return users;

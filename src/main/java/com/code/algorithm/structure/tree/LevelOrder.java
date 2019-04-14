@@ -24,10 +24,6 @@ import java.util.List;
  * @since 2019/4/12 15:57
  */
 public class LevelOrder {
-    public List<List<Integer>> levelOrder(Node root) {
-
-    }
-
     public static class Node {
         private int data;
         private MyBinaryTree.Node left;

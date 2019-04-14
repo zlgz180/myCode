@@ -1,4 +1,4 @@
-package cn.enjoyedu.ch02.splicing.fixed;
+package com.code.nio.ch02.splicing.fixed;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;

@@ -1,4 +1,4 @@
-package cn.enjoyedu.ch02.embedded;
+package com.code.nio.ch02.embedded;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;

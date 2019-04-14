@@ -27,7 +27,7 @@ public class EchoClient {
             Bootstrap b = new Bootstrap();/* 客户端启动必备 */
             b.group(group).channel(NioSocketChannel.class)/* 指明使用NIO进行网络通讯 */
             .remoteAddress(new InetSocketAddress(host, port))/* 配置远程服务器的地址 */
-            .handler(new cn.enjoyedu.ch02.echo.EchoClientHandler());
+            .handler(new EchoClientHandler());
             ChannelFuture f = b.connect().sync();/* 连接到远程节点，阻塞等待直到连接完成 */
             /* 阻塞，直到channel关闭 */
             f.channel().closeFuture().sync();

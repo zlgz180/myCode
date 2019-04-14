@@ -1,4 +1,4 @@
-package cn.enjoyedu.ch02.serializable.protobuf;
+package com.code.nio.ch02.serializable.protobuf;
 
 /**
  * @author Mark老师   享学课堂 https://enjoy.ke.qq.com

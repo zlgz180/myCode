@@ -1,4 +1,4 @@
-package cn.enjoyedu.ch02.serializable.msgpack;
+package com.code.nio.ch02.serializable.msgpack;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.Channel;

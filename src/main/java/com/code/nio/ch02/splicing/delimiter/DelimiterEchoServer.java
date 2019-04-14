@@ -1,4 +1,4 @@
-package cn.enjoyedu.ch02.splicing.delimiter;
+package com.code.nio.ch02.splicing.delimiter;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.buffer.ByteBuf;

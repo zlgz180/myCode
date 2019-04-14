@@ -1,4 +1,6 @@
-package cn.enjoyedu.ch01.nio;
+package com.code.nio.ch01.nio;
+
+import static com.code.nio.ch01.Ch01Const.response;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -9,8 +11,6 @@ import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
 import java.util.Iterator;
 import java.util.Set;
-
-import static cn.enjoyedu.ch01.Ch01Const.response;
 
 /**
  * @author Mark老师   享学课堂 https://enjoy.ke.qq.com

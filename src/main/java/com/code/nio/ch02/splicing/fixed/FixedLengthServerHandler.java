@@ -1,4 +1,4 @@
-package cn.enjoyedu.ch02.splicing.fixed;
+package com.code.nio.ch02.splicing.fixed;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;

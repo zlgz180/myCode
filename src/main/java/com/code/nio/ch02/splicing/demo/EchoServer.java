@@ -1,4 +1,4 @@
-package cn.enjoyedu.ch02.splicing.demo;
+package com.code.nio.ch02.splicing.demo;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;

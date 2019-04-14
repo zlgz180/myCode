@@ -1,4 +1,4 @@
-package cn.enjoyedu.ch02.splicing.linebase;
+package com.code.nio.ch02.splicing.linebase;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.Channel;

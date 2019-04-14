@@ -88,7 +88,7 @@ public class AioClientHandler
         所以将writeBuffer作为附件传递给AioClientWriteHandler。
         */
         clientChannel.write(writeBuffer,writeBuffer,
-                new cn.enjoyedu.ch01.aio.client.AioClientWriteHandler(clientChannel,latch));
+                new  AioClientWriteHandler(clientChannel,latch));
 
 
     }

@@ -1,10 +1,7 @@
-package cn.enjoyedu.ch02.serializable.msgpack;
-
-import org.msgpack.annotation.Message;
+package com.code.nio.ch02.serializable.msgpack;
 
 /**
- * @author Mark老师   享学课堂 https://enjoy.ke.qq.com
- * 类说明：
+ * @author Mark老师 享学课堂 https://enjoy.ke.qq.com 类说明：
  */
 public class UserContact {
     private String mail;
@@ -36,9 +33,6 @@ public class UserContact {
 
     @Override
     public String toString() {
-        return "UserContact{" +
-                "mail='" + mail + '\'' +
-                ", phone='" + phone + '\'' +
-                '}';
+        return "UserContact{" + "mail='" + mail + '\'' + ", phone='" + phone + '\'' + '}';
     }
 }

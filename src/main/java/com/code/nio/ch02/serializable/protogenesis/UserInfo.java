@@ -1,4 +1,4 @@
-package cn.enjoyedu.ch02.serializable.protogenesis;
+package com.code.nio.ch02.serializable.protogenesis;
 
 import java.io.Serializable;
 import java.nio.ByteBuffer;
