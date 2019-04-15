@@ -1,6 +1,8 @@
 package com.code.jdk.thead;
 
-import java.util.concurrent.locks.*;
+import java.util.concurrent.locks.AbstractQueuedSynchronizer;
+import java.util.concurrent.locks.ReentrantLock;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 /**
  * @author tianwei

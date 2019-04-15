@@ -1,14 +1,15 @@
 package com.code.nio.comet.src.main.java.cn.enjoyedu.servlet3;
 
+import java.util.Random;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.context.request.async.DeferredResult;
-
-import javax.servlet.http.HttpServletRequest;
-import java.util.Random;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 /**
  * @author Mark老师   享学课堂 https://enjoy.ke.qq.com

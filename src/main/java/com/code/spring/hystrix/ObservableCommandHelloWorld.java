@@ -1,11 +1,11 @@
 package com.my.code.jdk.hystrix;
 
-import com.netflix.hystrix.HystrixCommandGroupKey;
-import com.netflix.hystrix.HystrixObservableCommand;
-
 import rx.Observable;
 import rx.Subscriber;
 import rx.schedulers.Schedulers;
+
+import com.netflix.hystrix.HystrixCommandGroupKey;
+import com.netflix.hystrix.HystrixObservableCommand;
 
 public class ObservableCommandHelloWorld extends HystrixObservableCommand<String> {
 

@@ -1,9 +1,9 @@
 package com.code.jvm.ch03.deencrpt.Encrpt;
 
+import java.io.File;
+
 import com.code.jvm.ch03.deencrpt.service.DemoXorEncrpt;
 import com.code.jvm.ch03.deencrpt.service.IDemoEncryptUtil;
-
-import java.io.File;
 
 public class DemoEncrptClass {
     public static void main(String[] args) throws Exception {

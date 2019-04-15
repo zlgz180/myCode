@@ -1,14 +1,15 @@
 package com.code.nio.comet.src.main.java.cn.enjoyedu.sse;
 
+import java.io.PrintWriter;
+import java.util.Random;
+
+import javax.servlet.http.HttpServletResponse;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import javax.servlet.http.HttpServletResponse;
-import java.io.PrintWriter;
-import java.util.Random;
 
 /**
  * @author Mark老师   享学课堂 https://enjoy.ke.qq.com

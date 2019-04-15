@@ -1,6 +1,7 @@
 package com.code.nio.advantage.src.main.java.cn.enjoyedu.kryocodec;
 
 import com.code.nio.advantage.src.main.java.cn.enjoyedu.vo.MyMessage;
+
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToByteEncoder;

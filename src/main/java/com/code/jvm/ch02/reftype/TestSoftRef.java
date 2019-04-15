@@ -4,8 +4,6 @@ import java.lang.ref.SoftReference;
 import java.util.LinkedList;
 import java.util.List;
 
-import com.sun.swing.internal.plaf.synth.resources.synth;
-
 public class TestSoftRef {
 	
 	public static class User{

@@ -1,12 +1,12 @@
 package com.code.nio.udp.src.main.java.cn.enjoyedu.unicast;
 
+import java.util.Random;
+
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.channel.socket.DatagramPacket;
 import io.netty.util.CharsetUtil;
-
-import java.util.Random;
 
 /**
  * @author Mark老师   享学课堂 https://enjoy.ke.qq.com

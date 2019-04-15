@@ -1,10 +1,9 @@
 package com.code.jvm.ch03.deencrpt;
 
+import java.io.File;
 
 import com.code.jvm.ch03.deencrpt.service.DemoXorEncrpt;
 import com.code.jvm.ch03.deencrpt.service.IDemoEncryptUtil;
-
-import java.io.File;
 
 /**
  * 动脑学院-Mark老师

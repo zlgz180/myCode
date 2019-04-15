@@ -1,7 +1,5 @@
 package com.code.algorithm.sort;
 
-import java.security.Key;
-
 public class ArraySort {
 
 	public static void main(String[] args) {

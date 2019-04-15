@@ -1,14 +1,16 @@
 package com.code.nio.advantage.src.main.java.cn.enjoyedu;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 import com.code.nio.advantage.src.main.java.cn.enjoyedu.server.ServerInit;
 import com.code.nio.advantage.src.main.java.cn.enjoyedu.vo.NettyConstant;
+
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelOption;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 
 /**
  * @author Mark老师   享学课堂 https://enjoy.ke.qq.com

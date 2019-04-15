@@ -1,10 +1,20 @@
 package com.code.nio.advantage.src.main.java.cn.enjoyedu;
 
+import java.net.InetSocketAddress;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 import com.code.nio.advantage.src.main.java.cn.enjoyedu.client.ClientInit;
 import com.code.nio.advantage.src.main.java.cn.enjoyedu.vo.MessageType;
 import com.code.nio.advantage.src.main.java.cn.enjoyedu.vo.MyHeader;
 import com.code.nio.advantage.src.main.java.cn.enjoyedu.vo.MyMessage;
 import com.code.nio.advantage.src.main.java.cn.enjoyedu.vo.NettyConstant;
+
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
@@ -12,14 +22,6 @@ import io.netty.channel.ChannelOption;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioSocketChannel;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
-import java.net.InetSocketAddress;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @author Mark老师   享学课堂 https://enjoy.ke.qq.com
