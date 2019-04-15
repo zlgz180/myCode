@@ -26,3 +26,4 @@ config_center_client.log
 rebel.xml
 dev-local.properties
 ~$*
+*.bak
