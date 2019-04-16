@@ -1,8 +1,8 @@
 package com.code.design.enjoy.action.template;
 
-import com.code.design.enjoy.entity.Fruit;
-
 import java.util.List;
+
+import com.code.design.enjoy.entity.Fruit;
 
 /**
  * 模板方法模式 购物车费用结算过程

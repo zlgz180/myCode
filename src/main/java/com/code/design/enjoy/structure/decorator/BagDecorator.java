@@ -10,7 +10,8 @@ public class BagDecorator implements Bag {
         this.bag = bag;
     }
 
-    @Override public void pack() {
+    @Override
+    public void pack() {
         bag.pack();
     }
 }

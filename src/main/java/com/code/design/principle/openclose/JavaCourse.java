@@ -14,15 +14,18 @@ public class JavaCourse implements ICourse {
         this.price = price;
     }
 
-    @Override public Integer getId() {
+    @Override
+    public Integer getId() {
         return this.Id;
     }
 
-    @Override public String getName() {
+    @Override
+    public String getName() {
         return this.name;
     }
 
-    @Override public Double getPrice() {
+    @Override
+    public Double getPrice() {
         return this.price;
     }
 

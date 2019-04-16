@@ -24,7 +24,8 @@ public class Banana implements Fruit {
         System.out.print("仙人蕉");
     }
 
-    @Override public int accept(Visit visit) {
+    @Override
+    public int accept(Visit visit) {
         return visit.sell(this);
     }
 

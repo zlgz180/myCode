@@ -46,7 +46,8 @@ public class Sheep implements Cloneable {
     }
 
     // 调用Object的clone方法
-    @Override public Sheep clone() {
+    @Override
+    public Sheep clone() {
         Sheep sheep = null;
         try {
             sheep = (Sheep) super.clone();

@@ -4,7 +4,7 @@ import com.code.design.enjoy.entity.fruit.Apple;
 import com.code.design.enjoy.entity.fruit.Banana;
 import com.code.design.enjoy.entity.fruit.Orange;
 
-//创建一个水果套餐Meal类
+// 创建一个水果套餐Meal类
 public class FruitMeal {
 
     private Apple apple;// 苹果--价格

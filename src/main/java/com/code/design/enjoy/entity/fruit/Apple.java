@@ -36,7 +36,8 @@ public class Apple implements Fruit {
         this.price = price;
     }
 
-    @Override public int accept(Visit visit) {
+    @Override
+    public int accept(Visit visit) {
         return visit.sell(this);// 指针可以传递真实类型
     }
 

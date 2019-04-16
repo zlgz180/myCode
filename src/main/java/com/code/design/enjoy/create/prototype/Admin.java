@@ -22,7 +22,8 @@ public class Admin implements Cloneable {
         this.sex = sex;
     }
 
-    @Override public Admin clone() {
+    @Override
+    public Admin clone() {
         try {
             return (Admin) super.clone();
         } catch (CloneNotSupportedException e) {

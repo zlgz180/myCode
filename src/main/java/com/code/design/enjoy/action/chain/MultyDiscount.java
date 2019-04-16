@@ -12,7 +12,8 @@ public abstract class MultyDiscount implements Discount {
         this.nextMultyDiscount = nextMultyDiscount;
     }
 
-    @Override public int calculate(int money) {
+    @Override
+    public int calculate(int money) {
         if (this.nextMultyDiscount != null) {
             return this.nextMultyDiscount.calculate(money);
         }
