@@ -11,28 +11,26 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 
 /**
- * @author Mark老师   享学课堂 https://enjoy.ke.qq.com
- * 往期课程和VIP课程咨询 依娜老师  QQ：2133576719
- * 类说明：发起登录请求
+ * @author Mark老师 享学课堂 https://enjoy.ke.qq.com 往期课程和VIP课程咨询 依娜老师 QQ：2133576719
+ *         类说明：发起登录请求
  */
 public class LoginAuthReqHandler extends ChannelInboundHandlerAdapter {
 
     private static final Log LOG = LogFactory.getLog(LoginAuthReqHandler.class);
 
-    /*建立连接后，发出登录请求*/
-    @Override public void channelActive(ChannelHandlerContext ctx) throws Exception {
+    /* 建立连接后，发出登录请求 */
+    @Override
+    public void channelActive(ChannelHandlerContext ctx) throws Exception {
         ctx.writeAndFlush(buildLoginReq());
     }
 
 
-    @Override public void channelRead(ChannelHandlerContext ctx, Object msg)
-            throws Exception {
+    @Override
+    public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         MyMessage message = (MyMessage) msg;
 
         // 如果是登录/业务握手应答消息，需要判断是否认证成功
-        if (message.getMyHeader() != null
-                && message.getMyHeader().getType() == MessageType.LOGIN_RESP
-                .value()) {
+        if (message.getMyHeader() != null && message.getMyHeader().getType() == MessageType.LOGIN_RESP.value()) {
             byte loginResult = (byte) message.getBody();
             if (loginResult != (byte) 0) {
                 // 握手失败，关闭连接
@@ -54,8 +52,8 @@ public class LoginAuthReqHandler extends ChannelInboundHandlerAdapter {
         return message;
     }
 
-    @Override public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause)
-            throws Exception {
+    @Override
+    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
         ctx.fireExceptionCaught(cause);
     }
 }
