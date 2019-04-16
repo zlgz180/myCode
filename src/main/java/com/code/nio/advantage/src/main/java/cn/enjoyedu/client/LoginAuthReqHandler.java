@@ -20,12 +20,12 @@ public class LoginAuthReqHandler extends ChannelInboundHandlerAdapter {
     private static final Log LOG = LogFactory.getLog(LoginAuthReqHandler.class);
 
     /*建立连接后，发出登录请求*/
-    public void channelActive(ChannelHandlerContext ctx) throws Exception {
+    @Override public void channelActive(ChannelHandlerContext ctx) throws Exception {
         ctx.writeAndFlush(buildLoginReq());
     }
 
 
-    public void channelRead(ChannelHandlerContext ctx, Object msg)
+    @Override public void channelRead(ChannelHandlerContext ctx, Object msg)
             throws Exception {
         MyMessage message = (MyMessage) msg;
 
@@ -41,8 +41,9 @@ public class LoginAuthReqHandler extends ChannelInboundHandlerAdapter {
                 LOG.info("Login is ok : " + message);
                 ctx.fireChannelRead(msg);
             }
-        } else
+        } else {
             ctx.fireChannelRead(msg);
+        }
     }
 
     private MyMessage buildLoginReq() {
@@ -53,7 +54,7 @@ public class LoginAuthReqHandler extends ChannelInboundHandlerAdapter {
         return message;
     }
 
-    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause)
+    @Override public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause)
             throws Exception {
         ctx.fireExceptionCaught(cause);
     }

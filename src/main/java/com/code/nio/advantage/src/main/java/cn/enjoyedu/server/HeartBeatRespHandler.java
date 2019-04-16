@@ -20,7 +20,7 @@ public class HeartBeatRespHandler extends ChannelInboundHandlerAdapter {
 
 	private static final Log LOG = LogFactory.getLog(HeartBeatRespHandler.class);
 
-    public void channelRead(ChannelHandlerContext ctx, Object msg)
+    @Override public void channelRead(ChannelHandlerContext ctx, Object msg)
 	    throws Exception {
 		MyMessage message = (MyMessage) msg;
 		// 返回心跳应答消息
@@ -34,8 +34,9 @@ public class HeartBeatRespHandler extends ChannelInboundHandlerAdapter {
 //					+ heartBeat);
 			ctx.writeAndFlush(heartBeat);
 			ReferenceCountUtil.release(msg);
-		} else
-			ctx.fireChannelRead(msg);
+		} else {
+            ctx.fireChannelRead(msg);
+        }
     }
 
     /*心跳应答报文*/

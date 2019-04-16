@@ -20,11 +20,11 @@ public class SpeakerBox implements Item {
         this.price = price;
     }
 
-    public String name() {
+    @Override public String name() {
         return name;
     }
 
-    public float price() {
+    @Override public float price() {
         return price;
     }
 

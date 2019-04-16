@@ -13,8 +13,9 @@ public class NioClient {
     private static NioClientHandle nioClientHandle;
 
     public static void start() {
-        if (nioClientHandle != null)
+        if (nioClientHandle != null) {
             nioClientHandle.stop();
+        }
         nioClientHandle = new NioClientHandle(DEFAULT_SERVER_IP, DEFAULT_PORT);
         new Thread(nioClientHandle, "Client").start();
     }
@@ -28,8 +29,9 @@ public class NioClient {
     public static void main(String[] args) throws Exception {
         start();
         Scanner scanner = new Scanner(System.in);
-        while (NioClient.sendMsg(scanner.next()))
+        while (NioClient.sendMsg(scanner.next())) {
             ;
+        }
     }
 
 }

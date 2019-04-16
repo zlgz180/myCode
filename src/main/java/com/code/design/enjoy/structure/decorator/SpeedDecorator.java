@@ -7,6 +7,7 @@ public class SpeedDecorator extends BagDecorator {
         super(bag);
     }
 
+    @Override
     public void pack() {
         super.pack(); // 调用原有业务方法
         speedy();

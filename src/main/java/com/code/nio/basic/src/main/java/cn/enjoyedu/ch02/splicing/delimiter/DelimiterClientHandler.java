@@ -16,7 +16,7 @@ public class DelimiterClientHandler extends SimpleChannelInboundHandler<ByteBuf>
     private AtomicInteger counter = new AtomicInteger(0);
 
     /*** 客户端读取到网络数据后的处理 */
-    protected void channelRead0(ChannelHandlerContext ctx, ByteBuf msg) throws Exception {
+    @Override protected void channelRead0(ChannelHandlerContext ctx, ByteBuf msg) throws Exception {
         System.out.println("client Accept[" + msg.toString(CharsetUtil.UTF_8) + "] and the counter is:"
                 + counter.incrementAndGet());
     }

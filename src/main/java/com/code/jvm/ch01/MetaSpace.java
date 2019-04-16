@@ -11,7 +11,9 @@ public class MetaSpace {
 		int i=0;
 		while(true) {
 			i++;
-			if(i%10000==0) System.out.println("i="+i);
+			if(i%10000==0) {
+                System.out.println("i=" + i);
+            }
 			list.add(new Object());
 		}
 		

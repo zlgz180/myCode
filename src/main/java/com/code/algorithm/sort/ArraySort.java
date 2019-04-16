@@ -44,8 +44,9 @@ public class ArraySort {
                 array[index] = temp;
             }
         }
-        for (int i : array)
+        for (int i : array) {
             System.out.print(i + ",");
+        }
     }
 
 	/**
@@ -68,8 +69,9 @@ public class ArraySort {
 				array[j]=array[j-1];*/
             array[j] = key;
         }
-        for (int i : array)
+        for (int i : array) {
             System.out.print(i + ",");
+        }
     }
 
     /**
@@ -108,8 +110,9 @@ public class ArraySort {
                 }
             }
         }
-        for (int i : array)
+        for (int i : array) {
             System.out.print(i + ",");
+        }
     }
 
 	/**
@@ -120,8 +123,9 @@ public class ArraySort {
 	 * 上述步骤，直到结束
 	 */
     public static void quickSort(int[] array, int start, int end) {
-        if (start >= end)
+        if (start >= end) {
             return;   //递归出口，所有递归支路都会出现上下标相等，这是递归结束
+        }
         int l = start, r = end;
         int mid;
         int key = array[l];//因为key值取出，故整个数组有一个空的位置给予数组移动

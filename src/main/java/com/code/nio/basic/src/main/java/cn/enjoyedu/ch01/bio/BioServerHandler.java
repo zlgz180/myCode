@@ -18,7 +18,7 @@ public class BioServerHandler implements Runnable {
         this.socket = socket;
     }
 
-    public void run() {
+    @Override public void run() {
         try (// 负责socket读写的输出、输入流
         BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
                 PrintWriter out = new PrintWriter(socket.getOutputStream(), true)) {

@@ -11,8 +11,9 @@ public class AioServer {
     public volatile static long clientCount = 0;
 
     public static void start() {
-        if (serverHandle != null)
+        if (serverHandle != null) {
             return;
+        }
         serverHandle = new AioServerHandler(DEFAULT_PORT);
         new Thread(serverHandle, "Server").start();
     }

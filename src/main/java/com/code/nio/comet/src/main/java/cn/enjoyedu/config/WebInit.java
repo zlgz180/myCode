@@ -15,7 +15,7 @@ import org.springframework.web.servlet.DispatcherServlet;
  */
 public class WebInit implements WebApplicationInitializer {
 
-    public void onStartup(ServletContext servletContext)
+    @Override public void onStartup(ServletContext servletContext)
             throws ServletException {
 
         AnnotationConfigWebApplicationContext ctx

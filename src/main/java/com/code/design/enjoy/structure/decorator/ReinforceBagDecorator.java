@@ -7,7 +7,7 @@ public class ReinforceBagDecorator extends BagDecorator {
         super(bag);
     }
 
-    public void pack() {
+    @Override public void pack() {
         super.pack(); // 调用原有业务方法
         reinforce();
     }

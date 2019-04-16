@@ -29,7 +29,7 @@ public class LoginAuthRespHandler extends ChannelInboundHandlerAdapter {
     //用户登录的白名单
     private String[] whitekList = { "127.0.0.1"};
 
-    public void channelRead(ChannelHandlerContext ctx, Object msg)
+    @Override public void channelRead(ChannelHandlerContext ctx, Object msg)
 	    throws Exception {
 		MyMessage message = (MyMessage) msg;
 
@@ -56,8 +56,9 @@ public class LoginAuthRespHandler extends ChannelInboundHandlerAdapter {
 				}
 				loginResp = isOK ? buildResponse((byte) 0)
 					: buildResponse((byte) -1);
-				if (isOK)
-					nodeCheck.put(nodeIndex, true);
+				if (isOK) {
+                    nodeCheck.put(nodeIndex, true);
+                }
 			}
 			LOG.info("The login response is : " + loginResp
 				+ " body [" + loginResp.getBody() + "]");
@@ -80,7 +81,7 @@ public class LoginAuthRespHandler extends ChannelInboundHandlerAdapter {
     }
 
     /*客户端突然断线,清除本地缓冲*/
-    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause)
+    @Override public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause)
 	    throws Exception {
 		cause.printStackTrace();
         // 删除缓存

@@ -24,8 +24,9 @@ public class AioClient {
 
     // 向服务器发送消息
     public static boolean sendMsg(String msg) throws Exception {
-        if (msg.equals("q"))
+        if (msg.equals("q")) {
             return false;
+        }
         clientHandle.sendMessag(msg);
         return true;
     }
@@ -34,8 +35,9 @@ public class AioClient {
         AioClient.start();
         System.out.println("请输入请求消息：");
         Scanner scanner = new Scanner(System.in);
-        while (AioClient.sendMsg(scanner.nextLine()))
+        while (AioClient.sendMsg(scanner.nextLine())) {
             ;
+        }
     }
 
 }

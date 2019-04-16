@@ -167,14 +167,14 @@ public final class PersonProto {
         /**
          * <code>required int32 id = 1;</code>
          */
-        public boolean hasId() {
+        @Override public boolean hasId() {
             return ((bitField0_ & 0x00000001) == 0x00000001);
         }
 
         /**
          * <code>required int32 id = 1;</code>
          */
-        public int getId() {
+        @Override public int getId() {
             return id_;
         }
 
@@ -184,14 +184,14 @@ public final class PersonProto {
         /**
          * <code>required string name = 2;</code>
          */
-        public boolean hasName() {
+        @Override public boolean hasName() {
             return ((bitField0_ & 0x00000002) == 0x00000002);
         }
 
         /**
          * <code>required string name = 2;</code>
          */
-        public String getName() {
+        @Override public String getName() {
             Object ref = name_;
             if (ref instanceof String) {
                 return (String) ref;
@@ -208,7 +208,7 @@ public final class PersonProto {
         /**
          * <code>required string name = 2;</code>
          */
-        public com.google.protobuf.ByteString getNameBytes() {
+        @Override public com.google.protobuf.ByteString getNameBytes() {
             Object ref = name_;
             if (ref instanceof String) {
                 com.google.protobuf.ByteString b = com.google.protobuf.ByteString.copyFromUtf8((String) ref);
@@ -225,14 +225,14 @@ public final class PersonProto {
         /**
          * <code>optional string email = 3;</code>
          */
-        public boolean hasEmail() {
+        @Override public boolean hasEmail() {
             return ((bitField0_ & 0x00000004) == 0x00000004);
         }
 
         /**
          * <code>optional string email = 3;</code>
          */
-        public String getEmail() {
+        @Override public String getEmail() {
             Object ref = email_;
             if (ref instanceof String) {
                 return (String) ref;
@@ -249,7 +249,7 @@ public final class PersonProto {
         /**
          * <code>optional string email = 3;</code>
          */
-        public com.google.protobuf.ByteString getEmailBytes() {
+        @Override public com.google.protobuf.ByteString getEmailBytes() {
             Object ref = email_;
             if (ref instanceof String) {
                 com.google.protobuf.ByteString b = com.google.protobuf.ByteString.copyFromUtf8((String) ref);
@@ -270,10 +270,12 @@ public final class PersonProto {
 
         public final boolean isInitialized() {
             byte isInitialized = memoizedIsInitialized;
-            if (isInitialized == 1)
+            if (isInitialized == 1) {
                 return true;
-            if (isInitialized == 0)
+            }
+            if (isInitialized == 0) {
                 return false;
+            }
 
             if (!hasId()) {
                 memoizedIsInitialized = 0;
@@ -305,8 +307,9 @@ public final class PersonProto {
 
         public int getSerializedSize() {
             int size = memoizedSerializedSize;
-            if (size != -1)
+            if (size != -1) {
                 return size;
+            }
 
             size = 0;
             if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -495,8 +498,9 @@ public final class PersonProto {
             }
 
             public Builder mergeFrom(Person other) {
-                if (other == Person.getDefaultInstance())
+                if (other == Person.getDefaultInstance()) {
                     return this;
+                }
                 if (other.hasId()) {
                     setId(other.getId());
                 }
@@ -549,14 +553,14 @@ public final class PersonProto {
             /**
              * <code>required int32 id = 1;</code>
              */
-            public boolean hasId() {
+            @Override public boolean hasId() {
                 return ((bitField0_ & 0x00000001) == 0x00000001);
             }
 
             /**
              * <code>required int32 id = 1;</code>
              */
-            public int getId() {
+            @Override public int getId() {
                 return id_;
             }
 
@@ -585,14 +589,14 @@ public final class PersonProto {
             /**
              * <code>required string name = 2;</code>
              */
-            public boolean hasName() {
+            @Override public boolean hasName() {
                 return ((bitField0_ & 0x00000002) == 0x00000002);
             }
 
             /**
              * <code>required string name = 2;</code>
              */
-            public String getName() {
+            @Override public String getName() {
                 Object ref = name_;
                 if (!(ref instanceof String)) {
                     com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
@@ -609,7 +613,7 @@ public final class PersonProto {
             /**
              * <code>required string name = 2;</code>
              */
-            public com.google.protobuf.ByteString getNameBytes() {
+            @Override public com.google.protobuf.ByteString getNameBytes() {
                 Object ref = name_;
                 if (ref instanceof String) {
                     com.google.protobuf.ByteString b = com.google.protobuf.ByteString.copyFromUtf8((String) ref);
@@ -661,14 +665,14 @@ public final class PersonProto {
             /**
              * <code>optional string email = 3;</code>
              */
-            public boolean hasEmail() {
+            @Override public boolean hasEmail() {
                 return ((bitField0_ & 0x00000004) == 0x00000004);
             }
 
             /**
              * <code>optional string email = 3;</code>
              */
-            public String getEmail() {
+            @Override public String getEmail() {
                 Object ref = email_;
                 if (!(ref instanceof String)) {
                     com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
@@ -685,7 +689,7 @@ public final class PersonProto {
             /**
              * <code>optional string email = 3;</code>
              */
-            public com.google.protobuf.ByteString getEmailBytes() {
+            @Override public com.google.protobuf.ByteString getEmailBytes() {
                 Object ref = email_;
                 if (ref instanceof String) {
                     com.google.protobuf.ByteString b = com.google.protobuf.ByteString.copyFromUtf8((String) ref);

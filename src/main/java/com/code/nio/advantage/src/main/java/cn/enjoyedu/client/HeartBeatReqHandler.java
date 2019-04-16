@@ -26,7 +26,7 @@ public class HeartBeatReqHandler extends ChannelInboundHandlerAdapter {
 
     private volatile ScheduledFuture<?> heartBeat;
 
-    public void channelRead(ChannelHandlerContext ctx, Object msg)
+    @Override public void channelRead(ChannelHandlerContext ctx, Object msg)
             throws Exception {
         MyMessage message = (MyMessage) msg;
         // 握手或者说登录成功，主动发送心跳消息
@@ -45,8 +45,9 @@ public class HeartBeatReqHandler extends ChannelInboundHandlerAdapter {
 //            LOG.info("Client receive server heart beat message : ---> ");
             ReferenceCountUtil.release(msg);
         //如果是其他报文，传播给后面的Handler
-        } else
+        } else {
             ctx.fireChannelRead(msg);
+        }
     }
 
     /*心跳请求任务*/

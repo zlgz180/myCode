@@ -7,7 +7,7 @@ public class CheckedBagDecorator extends BagDecorator {
         super(bag);
     }
 
-    public void pack() {
+    @Override public void pack() {
         super.pack(); // 调用原有业务方法
         checked(); // 打印防伪标识
     }
