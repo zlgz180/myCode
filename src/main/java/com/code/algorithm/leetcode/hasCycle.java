@@ -4,13 +4,16 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Solution {
+/**
+ * @author tianwei
+ */
+public class hasCycle {
     public static void main(String[] args) {
         int[] ss = { 9 };
         // int[] ints = new Solution().plusOne(ss);
 
         int[][] sss = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
-        System.out.println(Arrays.toString(new Solution().transpose(sss)));
+        System.out.println(Arrays.toString(new hasCycle().transpose(sss)));
     }
 
     public boolean hasCycle(ListNode head) {
