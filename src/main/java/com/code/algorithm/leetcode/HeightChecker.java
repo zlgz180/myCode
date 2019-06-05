@@ -1,4 +1,4 @@
-package com.code.algorithm;
+package com.code.algorithm.leetcode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -48,14 +48,35 @@ public class HeightChecker {
 
         // judgeSquareSum(4);
 
-        isPerfectSquare2(2147483647);
+        // isPerfectSquare2(16);
+        // System.out.println(mySqrt(19));
+        System.out.println(myPow(2, -2));
+    }
+
+    public static int mySqrt(int x) {
+        long l = 0;
+        long r = x;
+        while (l <= r) {
+            long mid = l + ((r - l) >> 1);
+            long tmp = mid * mid;
+            if (tmp == x) {
+                return (int) mid;
+            }
+            if (tmp > x) {
+                r = mid - 1;
+            }
+            if (tmp < x) {
+                l = mid + 1;
+            }
+        }
+        return (int) r;
     }
 
     public static boolean isPerfectSquare2(int num) {
         long l = 1;
         long r = num;
         while (l <= r) {
-            long mid = l + (r - l) >> 1;
+            long mid = l + ((r - l) >> 1);
             // int mid = (h + l) / 2;
             long tmp = mid * mid;
             if (tmp == num) {
@@ -96,6 +117,21 @@ public class HeightChecker {
         return false;
     }
 
+    public static double myPow(double x, int n) {
+        double result = x;
+        if (n == 0) {
+            return 1;
+        }
+        boolean flag = false;
+        if (n < 0) {
+            flag = true;
+            n = -n;
+        }
+        for (int i = 1; i < n; i++) {
+            result *= x;
+        }
+        return flag ? 1 / result : result;
+    }
 
     /**
      * 在歌曲列表中，第 i 首歌曲的持续时间为 time[i] 秒。
