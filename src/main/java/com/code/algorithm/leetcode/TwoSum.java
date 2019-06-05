@@ -16,16 +16,23 @@ import java.util.HashSet;
  */
 public class TwoSum {
     public static void main(String[] args) {
-        // int[] nums = { 2, 7, 11, 15 };
         // int[] nums = { 3, 3 };
-        //        int[] nums = { 2, 5, 5, 11 };
-        int[] nums = { 3, 2, 4 };
-        System.out.println(Arrays.toString(twoSum(nums, 10)));
+        // int[] nums = { 2, 5, 5, 11 };
+        int[] nums = { 2, 7, 11, 15 };
+        // int[] nums = { 3, 2, 4 };
+        // System.out.println(Arrays.toString(twoSum(nums, 10)));
 
-        System.out.println(Arrays.toString(twoSum3(nums, 10)));
+        System.out.println(Arrays.toString(fourSum(nums, 18)));
 
     }
 
+    /**
+     * n,空间复杂度
+     * 
+     * @param nums1
+     * @param m
+     * @return
+     */
     public static int[] twoSum2(int[] nums1, int m) {
         HashSet<Integer> set = new HashSet<>();
         int[] result = new int[2];
@@ -61,6 +68,13 @@ public class TwoSum {
         return result;
     }
 
+    /**
+     * n*n
+     * 
+     * @param nums
+     * @param target
+     * @return
+     */
     public static int[] twoSum(int[] nums, int target) {
         int[] temp = new int[2];
         for (int i = 0; i < nums.length; i++) {
@@ -75,12 +89,29 @@ public class TwoSum {
         return temp;
     }
 
+    /**
+     * log(n)
+     * 
+     * @param nums
+     * @param target
+     * @return
+     */
     public static int[] fourSum(int[] nums, int target) {
-        int[] temp = new int[4];
+        int[] temp = new int[2];
         Arrays.sort(nums);
-        for (int i = 0; i < nums.length; i++) {
-            int ii = target - i;
-
+        int start = 0;
+        int end = nums.length - 1;
+        while (start < end) {
+            int tmp = nums[start] + nums[end];
+            if (tmp == target) {
+                temp[0] = start;
+                temp[1] = end;
+                return temp;
+            } else if (tmp < target) {
+                start++;
+            } else {
+                end--;
+            }
         }
         return temp;
     }

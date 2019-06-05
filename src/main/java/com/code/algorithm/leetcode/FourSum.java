@@ -1,6 +1,7 @@
 package com.code.algorithm.leetcode;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -46,6 +47,25 @@ public class FourSum {
                         }
                     }
                 }
+            }
+        }
+        return result;
+    }
+
+
+    public int fourSumCount(int[] A, int[] B, int[] C, int[] D) {
+        int result = 0;
+        HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+        for (int i = 0; i < A.length; i++) {
+            for (int j = 0; j < B.length; j++) {
+                int tmp = A[i] + B[j];
+                map.put(tmp, map.getOrDefault(tmp, 0) + 1);
+            }
+        }
+        for (int c : C) {
+            for (int d : D) {
+                int tmp = -(c + d);
+                result += map.getOrDefault(tmp, 0);
             }
         }
         return result;
