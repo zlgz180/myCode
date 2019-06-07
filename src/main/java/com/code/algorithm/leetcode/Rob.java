@@ -1,11 +1,13 @@
 package com.code.algorithm.leetcode;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Stack;
 
 /**
- * 你是一个专业的小偷，计划偷窃沿街的房屋。每间房内都藏有一定的现金，影响你偷窃的唯一制约因素就是相邻的房屋装有相互连通的防盗系统，如果两间相邻的房屋在同一晚上被小偷闯入，系统会自动报警。
+ * 你是一个专业的小偷，计划偷窃沿街的房屋。每间房内都藏有一定的现金，影响你偷窃的唯一制约因素就是相邻的房屋装有相互连通的防盗系统，
+ * 如果两间相邻的房屋在同一晚上被小偷闯入，系统会自动报警。
  * <p>
  * 给定一个代表每个房屋存放金额的非负整数数组，计算你在不触动警报装置的情况下，能够偷窃到的最高金额。
  * <p>
@@ -21,7 +23,8 @@ import java.util.Stack;
 public class Rob {
     public static void main(String[] args) {
         int[] nums = { 2, 1, 1, 2 };
-        System.out.println(rob(nums));
+        // System.out.println(rob(nums));
+        System.out.println(isHappy(7));
     }
 
     public static int rob(int[] nums) {
@@ -93,4 +96,43 @@ public class Rob {
         return false;
     }
 
+    /**
+     * 编写一个算法来判断一个数是不是“快乐数”。
+     * 
+     * 一个“快乐数”定义为：对于一个正整数，每一次将该数替换为它每个位置上的数字的平方和，然后重复这个过程直到这个数变为
+     * 1，也可能是无限循环但始终变不到 1。如果可以变为 1，那么这个数就是快乐数。
+     * 
+     * 示例:
+     * 
+     * 输入: 19 输出: true 解释: 12 + 92 = 82 82 + 22 = 68 62 + 82 = 100 12 + 02 + 02
+     * = 1
+     * 
+     * @param n
+     * @return
+     */
+    public static boolean isHappy(int n) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i <= 9; i++) {
+            map.put(i, i * i);
+        }
+        return sdd(n, map);
+    }
+
+    private static Integer sum = 0;
+
+    private static boolean sdd(int n, HashMap<Integer, Integer> map) {
+        if (sum > 20) {
+            return false;
+        }
+        sum++;
+        char[] chars = String.valueOf(n).toCharArray();
+        int sum = 0;
+        for (char i : chars) {
+            sum += map.get(i - 48);
+        }
+        if (sum == 1) {
+            return true;
+        }
+        return sdd(sum, map);
+    }
 }

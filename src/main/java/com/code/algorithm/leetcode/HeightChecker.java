@@ -42,17 +42,6 @@ public class HeightChecker {
         return false;
     }
 
-    public static void main(String[] args) {
-        int[] heights = { 1, 1, 4, 2, 1, 3 };
-        // heightChecker(heights);
-
-        // judgeSquareSum(4);
-
-        // isPerfectSquare2(16);
-        // System.out.println(mySqrt(19));
-        System.out.println(myPow(2, -2));
-    }
-
     public static int mySqrt(int x) {
         long l = 0;
         long r = x;
@@ -136,8 +125,8 @@ public class HeightChecker {
     /**
      * 在歌曲列表中，第 i 首歌曲的持续时间为 time[i] 秒。
      * <p>
-     * 返回其总持续时间（以秒为单位）可被 60 整除的歌曲对的数量。形式上，我们希望索引的数字 i < j 且有 (time[i] + time[j]) %
-     * 60 == 0。
+     * 返回其总持续时间（以秒为单位）可被 60 整除的歌曲对的数量。形式上，我们希望索引的数字 i < j 且有 (time[i] + time[j])
+     * % 60 == 0。
      * <p>
      * <p>
      * <p>
@@ -170,8 +159,8 @@ public class HeightChecker {
     }
 
     /**
-     * 给定长度为 2n 的数组, 你的任务是将这些数分成 n 对, 例如 (a1, b1), (a2, b2), ..., (an, bn) ，使得从1 到 n
-     * 的 min(ai, bi) 总和最大。
+     * 给定长度为 2n 的数组, 你的任务是将这些数分成 n 对, 例如 (a1, b1), (a2, b2), ..., (an, bn) ，使得从1
+     * 到 n 的 min(ai, bi) 总和最大。
      *
      * 示例 1:
      *
@@ -218,23 +207,73 @@ public class HeightChecker {
      * <p>
      * 示例 1:
      * <p>
-     * 输入: n = 12 输出: 3 解释: 12 = 4 + 4 + 4. 示例 2:
+     * 输入: n = 12 输出: 3 解释: 12 = 4 + 4 + 4.
+     *
+     * 示例 2:
      * <p>
      * 输入: n = 13 输出: 2 解释: 13 = 4 + 9.
      *
      * @param n
-     * @return
+     * @return 12
      */
-    public int numSquares(int n) {
+    public static int numSquares(int n) {
+        // 1 4 9 16
         List<Integer> list = new ArrayList<>();
-        int tmp = 1;
         int sum = 0;
-        while (sum >= n) {
-            int i = tmp * tmp;
-            list.add(i);
-            tmp++;
-            sum = sum + i;
+        int i = 1;
+        while (n >= sum) {
+            int tmp = i * i;
+            int size = list.size();
+            if (size > 0 && list.get(size - 1) + tmp > n) {
+                break;
+            }
+            sum += tmp;
+            list.add(tmp);
+            i++;
+        }
+        int res = 0;
+        int len = list.size() - 1;
+        while (n >= 0 && len >= 0) {
+            n = n - list.get(len);
+            if (n == 0) {
+                res++;
+                return res;
+            } else if (n > 0) {
+                len--;
+                res++;
+            } else {
+                len--;
+            }
+        }
+        return res;
+    }
+
+    public static int coinChange(int[] coins, int amount) {
+        if (coins.length == 0 || amount == 0) {
+            return 0;
+        }
+        int res=Integer.MAX_VALUE
+        for (int coin : coins) {
+            if (amount > coin) {
+                //不够扣的，换一个
+                continue;
+            }
+            int tmp = coinChange(coins, amount - coin);
+
         }
         return 0;
+    }
+
+    public static void main(String[] args) {
+        int[] heights = { 1, 1, 4, 2, 1, 3 };
+        // heightChecker(heights);
+
+        // judgeSquareSum(4);
+
+        // isPerfectSquare2(16);
+        // System.out.println(mySqrt(19));
+        // System.out.println(myPow(2, -2));
+
+        System.out.println(numSquares(12));
     }
 }

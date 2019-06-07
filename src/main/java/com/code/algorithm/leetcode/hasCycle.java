@@ -157,4 +157,39 @@ public class hasCycle {
         }
         return dp[0];
     }
+
+    public boolean hasCycle3(ListNode head) {
+        if (head == null) {
+            return false;
+        }
+        ListNode slow = head;
+        ListNode fast = head;
+        while (slow != null && fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow == null || fast == null || fast.next == null || fast.next.next == null) {
+                return false;
+            }
+            if (slow.val == fast.val) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    public ListNode reverseList(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        ListNode pre = null;
+        ListNode cur = head;
+        while (cur != null) {
+            ListNode next = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = next;
+        }
+        return pre;
+    }
 }
