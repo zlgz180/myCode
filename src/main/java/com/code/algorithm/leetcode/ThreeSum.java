@@ -2,8 +2,8 @@ package com.code.algorithm.leetcode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.LinkedList;
 import java.util.List;
+import java.util.TreeSet;
 
 import com.alibaba.fastjson.JSON;
 
@@ -23,7 +23,7 @@ import com.alibaba.fastjson.JSON;
 public class ThreeSum {
     public static void main(String[] args) {
         int[] nums = { -1, 0, 1, 2, -1, -4 };
-        System.out.println(JSON.toJSONString(threeSum4(nums)));
+        System.out.println(JSON.toJSONString(myImpl(nums)));
     }
 
     public static List<List<Integer>> threeSum3(int[] nums) {
@@ -33,8 +33,8 @@ public class ThreeSum {
             int j = i + 1;
             int k = nums.length - 1;
             while (j < k) {
-                int tmp = nums[i] + nums[j] + nums[k];
-                if (tmp == 0) {
+                int tmp = nums[i] + nums[j];
+                if (tmp == -nums[k]) {
                     List<Integer> list = new ArrayList<>();
                     list.add(nums[i]);
                     list.add(nums[j]);
@@ -42,13 +42,13 @@ public class ThreeSum {
                     result.add(list);
                     break;
                 }
-                if (tmp > 0) {
-                    while (j < k && nums[k] == nums[k - 1]) {
+                if (tmp > -nums[k]) {
+                    while (j < k) {
                         k = k - 1;
                     }
                 }
-                if (tmp < 0) {
-                    while (j < k && nums[j] == nums[j + 1]) {
+                if (tmp < nums[k]) {
+                    while (j < k) {
                         j = j + 1;
                     }
                 }
@@ -89,10 +89,11 @@ public class ThreeSum {
 
         for (int i = 0; i < nums.length - 2; i++) {
             if (i == 0 || (i > 0 && nums[i] != nums[i - 1])) { // 跳过可能重复的答案
-
-                int l = i + 1, r = nums.length - 1, sum = 0 - nums[i];
+                int l = i + 1;
+                int r = nums.length - 1;
                 while (l < r) {
-                    if (nums[l] + nums[r] == sum) {
+                    int tmp = nums[l] + nums[r];
+                    if (tmp == -nums[i]) {
                         ls.add(Arrays.asList(nums[i], nums[l], nums[r]));
                         while (l < r && nums[l] == nums[l + 1]) {
                             l++;
@@ -102,7 +103,7 @@ public class ThreeSum {
                         }
                         l++;
                         r--;
-                    } else if (nums[l] + nums[r] < sum) {
+                    } else if (tmp < -nums[i]) {
                         while (l < r && nums[l] == nums[l + 1]) {
                             l++; // 跳过重复值
                         }
@@ -119,34 +120,44 @@ public class ThreeSum {
         return ls;
     }
 
-    public List<List<Integer>> ss(int[] nums) {
+    public static List<List<Integer>> myImpl(int[] nums) {
+        TreeSet<Integer> set = new TreeSet<>();
+        for (int num : nums) {
+            set.add(num);
+        }
+        if (nums == null || nums.length < 3) {
+            return null;
+        }
+        List<List<Integer>> result = new ArrayList<>();
         Arrays.sort(nums);
-        List<List<Integer>> rst = new LinkedList<>();
-        for (int i = nums.length - 1; i >= 2;) {
-            for (int j = 0, k = i - 1; j < k;) {
-                int tmp = nums[j] + nums[k];
-                if (tmp < -nums[i]) {
-                    j++;
-                } else if (tmp > -nums[i]) {
-                    k--;
+        // 去重 得需要额外空间
+        for (int i = 0; i < nums.length - 2; i++) {
+            // 数组有重复，需要判断跳过
+            if (i > 0 && nums[i] == nums[i - 1]) {
+                continue;
+            }
+            int l = i + 1;
+            int r = nums.length - 1;
+            while (l < r) {
+                while (l < r && nums[l] == nums[l + 1]) {
+                    l++;
+                }
+                while (l < r && nums[r] == nums[r - 1]) {
+                    r--;
+                }
+                int tmp = nums[l] + nums[r];
+                if (tmp == -nums[i]) {
+                    result.add(Arrays.asList(nums[i], nums[l], nums[r]));
+                    i++;
+                    r--;
+                    // l有重复
+                } else if (tmp >= -nums[i]) {
+                    r--;
                 } else {
-                    List<Integer> rstItem = new ArrayList<>();
-                    rstItem.add(nums[i]);
-                    rstItem.add(nums[j]);
-                    rstItem.add(nums[k]);
-                    rst.add(rstItem);
-                    do {
-                        j++;
-                    } while (j < k && nums[j] == nums[j - 1]);
-                    do {
-                        k--;
-                    } while (j < k && nums[k] == nums[k + 1]);
+                    l++;
                 }
             }
-            do {
-                i--;
-            } while (i >= 2 && nums[i] == nums[i + 1]);
         }
-        return rst;
+        return result;
     }
 }

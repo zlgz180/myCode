@@ -248,22 +248,6 @@ public class HeightChecker {
         return res;
     }
 
-    public static int coinChange(int[] coins, int amount) {
-        if (coins.length == 0 || amount == 0) {
-            return 0;
-        }
-        int res=Integer.MAX_VALUE
-        for (int coin : coins) {
-            if (amount > coin) {
-                //不够扣的，换一个
-                continue;
-            }
-            int tmp = coinChange(coins, amount - coin);
-
-        }
-        return 0;
-    }
-
     public static void main(String[] args) {
         int[] heights = { 1, 1, 4, 2, 1, 3 };
         // heightChecker(heights);
