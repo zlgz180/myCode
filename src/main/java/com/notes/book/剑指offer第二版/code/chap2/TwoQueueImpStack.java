@@ -1,4 +1,4 @@
-package com.notes.book.剑指offer第二版.code;
+package com.notes.book.剑指offer第二版.code.chap2;
 
 import java.util.LinkedList;
 import java.util.Queue;

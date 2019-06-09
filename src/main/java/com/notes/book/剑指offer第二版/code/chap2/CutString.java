@@ -1,4 +1,4 @@
-package com.notes.book.剑指offer第二版.code;
+package com.notes.book.剑指offer第二版.code.chap2;
 
 /**
  * 给你一根长度为n的绳子，把绳子剪成m段（m、n都是整数且m > 1, n > 1）,m段绳子的长度依然是整数，求m段绳子的长度乘积最大为多少？

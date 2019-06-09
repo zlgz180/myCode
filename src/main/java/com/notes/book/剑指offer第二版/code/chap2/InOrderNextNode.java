@@ -1,4 +1,4 @@
-package com.notes.book.剑指offer第二版.code;
+package com.notes.book.剑指offer第二版.code.chap2;
 
 /**
  * 给定一个二叉树和其中的一个结点，请找出中序遍历顺序的下一个结点并且返回。
