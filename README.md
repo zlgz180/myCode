@@ -1,8 +1,9 @@
 # myCode
+```java
 目录
 code
-    algorithm
-    design
+    algorithm（算法）
+    design（设计模式）
     jdk
     jvm
     nio
@@ -21,7 +22,6 @@ notes
         软实力体系.xmind
     面试
         Spring实例化对象
-        优知学院-最全架构师面试130题.pdf
         大数据面试题
         查漏补缺.txt
         算法题
@@ -31,3 +31,4 @@ notes
         面试题总结.xmind
         项目总结.xmind
 
+```
