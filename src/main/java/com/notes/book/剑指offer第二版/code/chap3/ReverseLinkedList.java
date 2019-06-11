@@ -63,7 +63,9 @@ public class ReverseLinkedList {
      * 递归，不太推荐。虽然很巧妙
      */
     public ListNode reverseListRecur(ListNode head) {
-        if (head == null || head.next == null) return head;
+        if (head == null || head.next == null) {
+            return head;
+        }
 
         ListNode revHead = reverseListRecur(head.next);
         ListNode nextNode = head.next;

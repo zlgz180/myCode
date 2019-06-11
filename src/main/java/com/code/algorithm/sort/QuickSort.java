@@ -39,7 +39,6 @@ public class QuickSort {
 
     private static int partition(int[] arr, int start, int end) {
         // 取第一个位置的元素作为基准元素
-        int key = arr[start];
         int left = start;
         int right = end;
         // 坑的位置，初始等于pivot的位置
@@ -48,7 +47,7 @@ public class QuickSort {
         while (right >= left) {
             // right指针从右向左进行比较
             while (right >= left) {
-                if (arr[right] < key) {
+                if (arr[right] < arr[start]) {
                     arr[left] = arr[right];
                     index = right;
                     left++;
@@ -58,7 +57,7 @@ public class QuickSort {
             }
             // left指针从左向右进行比较
             while (right >= left) {
-                if (arr[left] > key) {
+                if (arr[left] > arr[start]) {
                     arr[right] = arr[left];
                     index = left;
                     right--;
@@ -67,7 +66,7 @@ public class QuickSort {
                 left++;
             }
         }
-        arr[index] = key;
+        arr[index] = arr[start];
         return index;
     }
 }

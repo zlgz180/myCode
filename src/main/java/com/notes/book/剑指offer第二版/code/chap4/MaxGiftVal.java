@@ -9,22 +9,25 @@ public class MaxGiftVal {
      * 方法一：递归，两个方向的深度优先搜索，用一个对象数组保存最大值（只需一个长度）
      */
     public int getMax(int[] gifts, int rows, int cols) {
-        if (gifts == null || gifts.length == 0)
+        if (gifts == null || gifts.length == 0) {
             return 0;
+        }
         int[] max = { 0 };
         select(gifts, 0, 0, rows, cols, 0, max);
         return max[0];
     }
 
     private void select(int[] gifts, int row, int col, int rows, int cols, int val, int[] max) {
-        if (row >= rows || col >= cols)
+        if (row >= rows || col >= cols) {
             return;
+        }
         // 一维数组表示，对应着二维数组中的array[row][col]
         val += gifts[row * cols + col];
         // 到达右下角，和max比较
         if (row == rows - 1 && col == cols - 1) {
-            if (val > max[0])
+            if (val > max[0]) {
                 max[0] = val;
+            }
         }
         select(gifts, row + 1, col, rows, cols, val, max);
         select(gifts, row, col + 1, rows, cols, val, max);
@@ -39,17 +42,20 @@ public class MaxGiftVal {
      */
 
     public int getMaxVal(int[] gifts, int rows, int cols) {
-        if (gifts == null || gifts.length == 0)
+        if (gifts == null || gifts.length == 0) {
             return 0;
+        }
         int[][] maxVal = new int[rows][cols];
         for (int row = 0; row < rows; row++) {
             for (int col = 0; col < cols; col++) {
                 int left = 0;
                 int up = 0;
-                if (row > 0)
+                if (row > 0) {
                     up = maxVal[row - 1][col];
-                if (col > 0)
+                }
+                if (col > 0) {
                     left = maxVal[row][col - 1];
+                }
                 maxVal[row][col] = Math.max(up, left) + gifts[row * cols + col];
             }
         }
@@ -58,17 +64,20 @@ public class MaxGiftVal {
 
     // 上面动态方法的优化，将二位数阿奴换成一维数组
     public int betterGetMaxVal(int[] gifts, int rows, int cols) {
-        if (gifts == null || gifts.length == 0)
+        if (gifts == null || gifts.length == 0) {
             return 0;
+        }
         int[] maxVal = new int[cols];
         for (int row = 0; row < rows; row++) {
             for (int col = 0; col < cols; col++) {
                 int left = 0;
                 int up = 0;
-                if (row > 0)
+                if (row > 0) {
                     up = maxVal[col];
-                if (col > 0)
+                }
+                if (col > 0) {
                     left = maxVal[col - 1];
+                }
                 maxVal[col] = Math.max(up, left) + gifts[row * cols + col];
             }
         }

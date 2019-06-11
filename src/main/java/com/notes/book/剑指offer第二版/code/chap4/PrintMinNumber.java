@@ -11,8 +11,9 @@ import java.util.List;
  */
 public class PrintMinNumber {
     public String printMinNumber(int[] numbers) {
-        if (numbers == null || numbers.length == 0)
+        if (numbers == null || numbers.length == 0) {
             return "";
+        }
 
         List<Integer> list = new ArrayList<>();
         for (int a : numbers) {

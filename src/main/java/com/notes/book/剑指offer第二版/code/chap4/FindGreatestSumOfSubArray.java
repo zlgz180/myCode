@@ -12,8 +12,9 @@ public class FindGreatestSumOfSubArray {
     }
 
     public int findGreatestSumOfSubArray(int[] array) {
-        if (array == null || array.length == 0)
+        if (array == null || array.length == 0) {
             return 0;
+        }
 
         int maxSum = array[0];
         int curSum = array[0];
@@ -40,8 +41,9 @@ public class FindGreatestSumOfSubArray {
      * @return
      */
     public int FindGreatestSumOfSubArray2(int[] array) {
-        if (array == null || array.length == 0)
+        if (array == null || array.length == 0) {
             return 0;
+        }
 
         int maxSum = array[0];
         int curSum = array[0];

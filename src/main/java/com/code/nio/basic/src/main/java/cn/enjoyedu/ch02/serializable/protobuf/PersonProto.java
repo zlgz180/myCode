@@ -77,7 +77,7 @@ public final class PersonProto {
             return defaultInstance;
         }
 
-        public Person getDefaultInstanceForType() {
+        @Override public Person getDefaultInstanceForType() {
             return defaultInstance;
         }
 
@@ -142,13 +142,13 @@ public final class PersonProto {
             return PersonProto.internal_static_netty_Person_descriptor;
         }
 
-        protected FieldAccessorTable internalGetFieldAccessorTable() {
+        @Override protected FieldAccessorTable internalGetFieldAccessorTable() {
             return PersonProto.internal_static_netty_Person_fieldAccessorTable.ensureFieldAccessorsInitialized(
                     Person.class, Builder.class);
         }
 
         public static com.google.protobuf.Parser<Person> PARSER = new com.google.protobuf.AbstractParser<Person>() {
-            public Person parsePartialFrom(com.google.protobuf.CodedInputStream input,
+            @Override public Person parsePartialFrom(com.google.protobuf.CodedInputStream input,
                     com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                     throws com.google.protobuf.InvalidProtocolBufferException {
                 return new Person(input, extensionRegistry);
@@ -268,7 +268,7 @@ public final class PersonProto {
 
         private byte memoizedIsInitialized = -1;
 
-        public final boolean isInitialized() {
+        @Override public final boolean isInitialized() {
             byte isInitialized = memoizedIsInitialized;
             if (isInitialized == 1) {
                 return true;
@@ -289,7 +289,7 @@ public final class PersonProto {
             return true;
         }
 
-        public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        @Override public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             getSerializedSize();
             if (((bitField0_ & 0x00000001) == 0x00000001)) {
                 output.writeInt32(1, id_);
@@ -305,7 +305,7 @@ public final class PersonProto {
 
         private int memoizedSerializedSize = -1;
 
-        public int getSerializedSize() {
+        @Override public int getSerializedSize() {
             int size = memoizedSerializedSize;
             if (size != -1) {
                 return size;
@@ -384,7 +384,7 @@ public final class PersonProto {
             return Builder.create();
         }
 
-        public Builder newBuilderForType() {
+        @Override public Builder newBuilderForType() {
             return newBuilder();
         }
 
@@ -392,7 +392,7 @@ public final class PersonProto {
             return newBuilder().mergeFrom(prototype);
         }
 
-        public Builder toBuilder() {
+        @Override public Builder toBuilder() {
             return newBuilder(this);
         }
 
@@ -412,7 +412,7 @@ public final class PersonProto {
                 return PersonProto.internal_static_netty_Person_descriptor;
             }
 
-            protected FieldAccessorTable internalGetFieldAccessorTable() {
+            @Override protected FieldAccessorTable internalGetFieldAccessorTable() {
                 return PersonProto.internal_static_netty_Person_fieldAccessorTable.ensureFieldAccessorsInitialized(
                         Person.class, Builder.class);
             }
@@ -436,7 +436,7 @@ public final class PersonProto {
                 return new Builder();
             }
 
-            public Builder clear() {
+            @Override public Builder clear() {
                 super.clear();
                 id_ = 0;
                 bitField0_ = (bitField0_ & ~0x00000001);
@@ -447,19 +447,19 @@ public final class PersonProto {
                 return this;
             }
 
-            public Builder clone() {
+            @Override public Builder clone() {
                 return create().mergeFrom(buildPartial());
             }
 
-            public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            @Override public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
                 return PersonProto.internal_static_netty_Person_descriptor;
             }
 
-            public Person getDefaultInstanceForType() {
+            @Override public Person getDefaultInstanceForType() {
                 return Person.getDefaultInstance();
             }
 
-            public Person build() {
+            @Override public Person build() {
                 Person result = buildPartial();
                 if (!result.isInitialized()) {
                     throw newUninitializedMessageException(result);
@@ -467,7 +467,7 @@ public final class PersonProto {
                 return result;
             }
 
-            public Person buildPartial() {
+            @Override public Person buildPartial() {
                 Person result = new Person(this);
                 int from_bitField0_ = bitField0_;
                 int to_bitField0_ = 0;
@@ -488,7 +488,7 @@ public final class PersonProto {
                 return result;
             }
 
-            public Builder mergeFrom(com.google.protobuf.Message other) {
+            @Override public Builder mergeFrom(com.google.protobuf.Message other) {
                 if (other instanceof Person) {
                     return mergeFrom((Person) other);
                 } else {
@@ -518,7 +518,7 @@ public final class PersonProto {
                 return this;
             }
 
-            public final boolean isInitialized() {
+            @Override public final boolean isInitialized() {
                 if (!hasId()) {
 
                     return false;
@@ -530,7 +530,7 @@ public final class PersonProto {
                 return true;
             }
 
-            public Builder mergeFrom(com.google.protobuf.CodedInputStream input,
+            @Override public Builder mergeFrom(com.google.protobuf.CodedInputStream input,
                     com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
                 Person parsedMessage = null;
                 try {
@@ -760,7 +760,7 @@ public final class PersonProto {
                 + "\002(\005\022\014\n\004name\030\002 \002(\t\022\r\n\005email\030\003 \001(\tB:\n+cn.e"
                 + "njoyedu.ch02.serializable.protobuf.demoB" + "\013PersonProto" };
         com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner = new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-            public com.google.protobuf.ExtensionRegistry assignDescriptors(
+            @Override public com.google.protobuf.ExtensionRegistry assignDescriptors(
                     com.google.protobuf.Descriptors.FileDescriptor root) {
                 descriptor = root;
                 return null;

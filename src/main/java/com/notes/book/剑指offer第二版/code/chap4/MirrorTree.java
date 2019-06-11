@@ -63,10 +63,12 @@ public class MirrorTree {
                 node.left = node.right;
                 node.right = temp;
             }
-            if (node.left != null)
+            if (node.left != null) {
                 queue.offer(node.left);
-            if (node.right != null)
+            }
+            if (node.right != null) {
                 queue.offer(node.right);
+            }
         }
     }
 

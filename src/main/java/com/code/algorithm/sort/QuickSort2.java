@@ -31,7 +31,7 @@ public class QuickSort2 {
     private static int partition(int[] arr, int left, int right) {
         // 设定基准值
         int pivot = left;
-        int index = pivot + 1;
+        int index = left + 1;
         for (int i = index; i <= right; i++) {
             if (arr[i] < arr[pivot]) {
                 swap(arr, i, index);

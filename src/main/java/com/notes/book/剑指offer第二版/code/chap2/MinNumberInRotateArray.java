@@ -8,8 +8,7 @@ public class MinNumberInRotateArray {
     /**
      * 二分查找法
      * 
-     * @param array
-     *            旋转数组
+     * @param array 旋转数组
      * @return 旋转数组的最小值
      */
     public static int minNumberInRotateArray(int[] array) {
@@ -34,8 +33,27 @@ public class MinNumberInRotateArray {
         return array[low];
     }
 
+    public static int minNumber(int[] nums) {
+        int l = 0;
+        int h = nums.length - 1;
+        while (l < h) {
+            int mid = l + ((h - l) >> 1);
+            if (nums[mid] > nums[h]) {
+
+            }
+            if (nums[mid] < nums[h]) {
+
+            }
+            if (nums[mid] == nums[h]) {
+
+            }
+        }
+        return nums[l];
+    }
+
     public static void main(String[] args) {
-        int[] nums = {  4, 5, 1, 2,3 };
+        int[] nums = { 4, 5, 1, 2, 3 };
         System.out.println(minNumberInRotateArray(nums));
+        System.out.println(minNumber(nums));
     }
 }

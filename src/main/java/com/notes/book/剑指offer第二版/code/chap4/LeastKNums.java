@@ -13,8 +13,9 @@ public class LeastKNums {
      */
     public ArrayList<Integer> GetLeastNumbers_Solution(int[] input, int k) {
         ArrayList<Integer> list = new ArrayList<>();
-        if (input == null || input.length == 0 || k > input.length || k <= 0)
+        if (input == null || input.length == 0 || k > input.length || k <= 0) {
             return list;
+        }
         select(input, k - 1);
         for (int i = 0; i < k; i++) {
             list.add(input[i]);
@@ -31,12 +32,13 @@ public class LeastKNums {
         // high==low时只有一个元素，不切分
         while (high > low) {
             int j = partition(array, low, high);
-            if (j == k)
+            if (j == k) {
                 return array[k];
-            else if (j > k)
+            } else if (j > k) {
                 high = j - 1;
-            else if (j < k)
+            } else if (j < k) {
                 low = j + 1;
+            }
         }
 
         return array[k];
@@ -50,14 +52,19 @@ public class LeastKNums {
         int j = high + 1;
         int v = array[low];
         while (true) {
-            while (array[++i] < v)
-                if (i == high)
+            while (array[++i] < v) {
+                if (i == high) {
                     break;
-            while (array[--j] > v)
-                if (j == low)
+                }
+            }
+            while (array[--j] > v) {
+                if (j == low) {
                     break;
-            if (i >= j)
+                }
+            }
+            if (i >= j) {
                 break;
+            }
             swap(array, i, j);
         }
         swap(array, low, j);
@@ -75,8 +82,9 @@ public class LeastKNums {
      */
     public ArrayList<Integer> leastK(int[] input, int k) {
         ArrayList<Integer> list = new ArrayList<>();
-        if (input == null || input.length == 0 || k > input.length || k == 0)
+        if (input == null || input.length == 0 || k > input.length || k == 0) {
             return list;
+        }
 
         int N = input.length;
         // 堆的构造
@@ -98,10 +106,12 @@ public class LeastKNums {
         while (2 * k <= N) {
             int j = 2 * k;
             // 左右子结点中选择小的
-            if (j < N && greater(arr, j, j + 1))
+            if (j < N && greater(arr, j, j + 1)) {
                 j++;
-            if (!greater(arr, k, j))
+            }
+            if (!greater(arr, k, j)) {
                 break;
+            }
             swapForHeap(arr, k, j);
             k = j;
         }

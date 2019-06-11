@@ -45,6 +45,18 @@ public class hasCycle {
         return false;
     }
 
+    public ListNode reverse(ListNode head) {
+        ListNode pre = null;
+        ListNode cur = head;
+        while (cur != null) {
+            ListNode next = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = next;
+        }
+        return pre;
+    }
+
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         ListNode aCur = headA;
         ListNode bCur = headB;
