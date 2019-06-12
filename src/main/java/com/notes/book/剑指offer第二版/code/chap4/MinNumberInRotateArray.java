@@ -1,4 +1,4 @@
-package com.notes.book.剑指offer第二版.code.chap2;
+package com.notes.book.剑指offer第二版.code.chap4;
 
 /**
  * 把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。 输入一个非递减排序的数组的一个旋转，输出旋转数组的最小元素。
@@ -33,19 +33,28 @@ public class MinNumberInRotateArray {
         return array[low];
     }
 
+    /**
+     * 跟左边比，逻辑说不通，只能跟右边比
+     * 
+     * @param nums
+     * @return
+     */
     public static int minNumber(int[] nums) {
         int l = 0;
         int h = nums.length - 1;
         while (l < h) {
             int mid = l + ((h - l) >> 1);
+            // 在右边
             if (nums[mid] > nums[h]) {
-
+                l = mid + 1;
             }
+            // 已经在右边了，但是不知道是哪个做还是右
             if (nums[mid] < nums[h]) {
-
+                h = mid;
             }
+            // 暂时放弃二分查找
             if (nums[mid] == nums[h]) {
-
+                h--;
             }
         }
         return nums[l];

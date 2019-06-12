@@ -41,26 +41,10 @@ public class P218_GreatestSumOfSubarrays {
     }
 
     public static void main(String[] args) {
-        int[] data = { 2, 3, -6, 4, 6, 2, -2, 5, -9 };
+        // int[] data = { 2, 3, -6, 4, 6, 2, -2, 5, -9 };
         // int[] data = { -1, -2, -3, -4, -5, -6, -7 };
         // int[] data = { 3, -2, 6, 9, -5 };
+        int[] data = { 1, 2, 3, 4, 5 };
         System.out.println(findGreatestSumOfSumArrays3(data));
     }
-
-    public static int findGreatestSumOfSumArrays2(int[] data) {
-        // 给定一个足够小的最大值
-        int SUM = -100000;
-        for (int i = 0; i < data.length; i++) {
-            int subOfArr = 0; // 临时最大值
-            for (int j = i; j < data.length; j++) {
-                System.out.println(data[j]);
-                subOfArr += data[j];
-                if (subOfArr > SUM) {
-                    SUM = subOfArr;
-                }
-            }
-        }
-        return SUM;
-    }
-
 }
