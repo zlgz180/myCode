@@ -1,6 +1,9 @@
 package com.notes.book.剑指offer第二版;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Stack;
 
 /**
  * 二叉树的遍历：
@@ -80,8 +83,8 @@ public class TreeOrder {
         TreeNode<Integer> cur = node;
         while (cur != null || !stack.isEmpty()) {
             if (cur != null) {
-                list.add(cur.val);
                 stack.add(cur);
+                list.add(cur.val);
                 cur = cur.left;
             } else {
                 cur = stack.pop().right;
@@ -158,22 +161,17 @@ public class TreeOrder {
      * @return
      */
     public static List<Integer> levelorder(TreeNode<Integer> node) {
-        Queue<TreeNode<Integer>> queue = new LinkedList<>();
-        List<Integer> list = new LinkedList<>();
-        TreeNode<Integer> temp = null;
-        if (node == null) {
-            return list;
-        }
+        List<Integer> list = new ArrayList<>();
+        LinkedList<TreeNode<Integer>> queue = new LinkedList<>();
         queue.add(node);
         while (!queue.isEmpty()) {
-            temp = queue.poll();
-            list.add(temp.val);
-            if (temp.left != null) {
-                queue.offer(temp.left);
+            TreeNode<Integer> tmp = queue.poll();
+            System.out.println(tmp.val);
+            list.add(tmp.val);
+            if (tmp.left != null) {
+                queue.add(tmp.left);
             }
-            if (temp.right != null) {
-                queue.offer(temp.right);
-            }
+            if (tmp.right != null);
         }
         return list;
     }
