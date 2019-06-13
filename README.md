@@ -20,15 +20,4 @@ notes（书籍/笔记）
         技术知识体系.xmind
         算法.xmind
         软实力体系.xmind
-    面试
-        Spring实例化对象
-        大数据面试题
-        查漏补缺.txt
-        算法题
-        面试
-        面试查漏补缺.txt
-        面试题
-        面试题总结.xmind
-        项目总结.xmind
-
 ```
