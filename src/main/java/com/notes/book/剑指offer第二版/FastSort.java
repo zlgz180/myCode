@@ -10,7 +10,7 @@ import java.util.Arrays;
  * @author tianwei
  * @since 2019-06-10 12:47
  */
-public class FastSort {
+public class  FastSort {
     public static void main(String[] args) {
         int[] nums = { 3, 6, 1, 8, 5, 9, 5, 1 };
         fastSort(nums, 0, nums.length - 1);
