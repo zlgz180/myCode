@@ -3,9 +3,8 @@ package com.code.design.enjoy.create.singleton;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class SessionCount {
+    private static volatile SessionCount instance;// 懒汉式
     private AtomicInteger count = new AtomicInteger(0);
-
-    private static SessionCount instance;// 懒汉式
 
     private SessionCount() {
     }
