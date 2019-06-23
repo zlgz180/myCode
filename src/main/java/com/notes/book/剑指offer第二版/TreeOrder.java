@@ -45,9 +45,9 @@ public class TreeOrder {
         if (node == null) {
             return result;
         }
-        result.addAll(preOrder(node.left));
+        result.addAll(inorderRecursively(node.left));
         result.add(node.val);
-        result.addAll(preOrder(node.right));
+        result.addAll(inorderRecursively(node.right));
         return result;
     }
 
@@ -62,8 +62,8 @@ public class TreeOrder {
         if (node == null) {
             return result;
         }
-        result.addAll(preOrder(node.left));
-        result.addAll(preOrder(node.right));
+        result.addAll(postorderRecursively(node.left));
+        result.addAll(postorderRecursively(node.right));
         result.add(node.val);
         return result;
     }
@@ -100,11 +100,10 @@ public class TreeOrder {
      * @return
      */
     public static List<Integer> inorderIteratively(TreeNode<Integer> node) {
-        List<Integer> list = new LinkedList<>();
+        List<Integer> list = new ArrayList<>();
         if (node == null) {
             return list;
         }
-        // stack栈顶元素永远为cur的父节点
         Stack<TreeNode<Integer>> stack = new Stack<>();
         TreeNode<Integer> cur = node;
         while (cur != null || !stack.isEmpty()) {
@@ -156,22 +155,23 @@ public class TreeOrder {
 
     /**
      * 层序遍历
-     * 
+     *
      * @param node
      * @return
      */
     public static List<Integer> levelorder(TreeNode<Integer> node) {
         List<Integer> list = new ArrayList<>();
         LinkedList<TreeNode<Integer>> queue = new LinkedList<>();
-        queue.add(node);
+        queue.offer(node);
         while (!queue.isEmpty()) {
-            TreeNode<Integer> tmp = queue.poll();
-            System.out.println(tmp.val);
-            list.add(tmp.val);
-            if (tmp.left != null) {
-                queue.add(tmp.left);
+            TreeNode<Integer> cur = queue.poll();
+            list.add(cur.val);
+            if (cur.left != null) {
+                queue.offer(cur.left);
             }
-            if (tmp.right != null);
+            if (cur.right != null) {
+                queue.offer(cur.right);
+            }
         }
         return list;
     }
@@ -198,7 +198,6 @@ public class TreeOrder {
         System.out.print("postorderRecursively: " + '\t');
         System.out.println(list_postorderRecursively.toString());
         System.out.println();
-
 
         List<Integer> list_preorderIteratively = preorderIteratively(root);
         System.out.print("preorderIteratively: " + '\t');
