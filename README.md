@@ -15,6 +15,7 @@ notes（书籍/笔记）
         极客专栏-左耳听风
         程序员职业小白书 —— 如何规划和经营你的职业
     知识体系/学习笔记
+        DDD
         ES
         ElasticSearch.xmind
         HBase.xmind
