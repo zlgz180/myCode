@@ -11,7 +11,7 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class TwoThreadPrint {
     private final static ReentrantLock reentrantLock = new ReentrantLock();
-    private static volatile AtomicInteger sum = new AtomicInteger(1);
+    private static volatile AtomicInteger sum = new AtomicInteger(0);
 
     public static void main(String[] args) {
 
@@ -19,11 +19,10 @@ public class TwoThreadPrint {
             @Override
             public void run() {
                 while (sum.get() <= 100) {
+                    reentrantLock.lock();
                     try {
-                        reentrantLock.lock();
                         if (sum.get() % 3 == 0) {
-                            System.out.println(Thread.currentThread().getName() + "--" + sum);
-                            sum.incrementAndGet();
+                            System.out.println(Thread.currentThread().getName() + "--" + sum.incrementAndGet());
                         }
                     } finally {
                         reentrantLock.unlock();
@@ -35,11 +34,10 @@ public class TwoThreadPrint {
             @Override
             public void run() {
                 while (sum.get() <= 100) {
+                    reentrantLock.lock();
                     try {
-                        reentrantLock.lock();
                         if (sum.get() % 3 == 1) {
-                            System.out.println(Thread.currentThread().getName() + "--" + sum);
-                            sum.incrementAndGet();
+                            System.out.println(Thread.currentThread().getName() + "--" + sum.incrementAndGet());
                         }
                     } finally {
                         reentrantLock.unlock();
@@ -51,11 +49,10 @@ public class TwoThreadPrint {
             @Override
             public void run() {
                 while (sum.get() <= 100) {
+                    reentrantLock.lock();
                     try {
-                        reentrantLock.lock();
                         if (sum.get() % 3 == 2) {
-                            System.out.println(Thread.currentThread().getName() + "--" + sum);
-                            sum.incrementAndGet();
+                            System.out.println(Thread.currentThread().getName() + "--" + sum.incrementAndGet());
                         }
                     } finally {
                         reentrantLock.unlock();
