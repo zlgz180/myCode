@@ -1,4 +1,9 @@
 # 技术知识体系
+
+
+![预览](https://raw.githubusercontent.com/zlgz180/myCode/master/src/main/java/com/notes/%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB/%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB.png)
+
+
 ```java
 目录
 code（代码）
@@ -39,3 +44,7 @@ notes（书籍/笔记）
         软实力体系.xmind
         集合.xmind
 ```
+
+
+
+
