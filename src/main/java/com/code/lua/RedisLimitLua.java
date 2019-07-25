@@ -7,7 +7,7 @@ import java.util.List;
  * @author tianwei
  * @since 2019-07-25 12:37
  */
-public class RedisLua {
+public class RedisLimitLua {
     /**
      * 固定时间窗口<br/>
      * key: key <br/>
@@ -81,5 +81,43 @@ public class RedisLua {
      */
     public void tokenBucket() {
 
+    }
+
+    /**
+     * 扣减库存
+     * 
+     * @throws InterruptedException
+     */
+    public void incrbyStock() throws InterruptedException {
+        StringBuilder script = new StringBuilder();
+        script.append("if (redis.call('exists', KEYS[1]) == 1) then");
+        script.append("    local stock = tonumber(redis.call('get', KEYS[1]));");
+        script.append("    local num = tonumber(ARGV[1]);");
+        script.append("    if (stock == -1) then");
+        script.append("        return -1;");
+        script.append("    end;");
+        script.append("    if (stock >= num) then");
+        script.append("        return redis.call('incrby', KEYS[1], 0 - num);");
+        script.append("    end;");
+        script.append("    return -2;");
+        script.append("end;");
+        script.append("return -3;");
+        // String scriptLoad = jimClient.scriptLoad(script.toString());
+        // System.out.println(scriptLoad);
+
+        // 初始化库存
+        // jimClient.incrBy("tianwei_store", 10);
+        // System.out.println("当前库存" + jimClient.get("tianwei_store"));
+        // 扣库存
+        List<String> keys = new ArrayList<>();
+        keys.add("tianwei_store");// key名称
+        List<String> args = new ArrayList<>();
+        args.add("2");// 不超过1
+        // args.add("10");// 100秒
+        for (int i = 0; i < 100; i++) {
+            Thread.sleep(1000);
+            // Object evalsha = jimClient.evalsha(scriptLoad, keys, args, false);
+            // System.out.println(evalsha);
+        }
     }
 }
