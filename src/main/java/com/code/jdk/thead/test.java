@@ -6,7 +6,7 @@ import java.util.concurrent.*;
 import com.alibaba.fastjson.JSON;
 
 public class test {
-    public static void main(String[] args) {
+    public static void main4(String[] args) {
         Thread.dumpStack();
         Map<Thread, StackTraceElement[]> allStackTraces = Thread.getAllStackTraces();
         System.out.println(JSON.toJSONString(allStackTraces));
@@ -52,7 +52,7 @@ public class test {
         Thread.sleep(5000L);
         for (int i = 0; i < 30; i++) {
             Thread.sleep(1000L);
-            exec.execute(new MyThread());
+            exec.execute(new MyThread("自定义线程" + i));
         }
         // exec.shutdown();
     }
@@ -89,18 +89,38 @@ public class test {
         t1.start();
         t2.start();
     }
+
+    public static void main(String[] args) throws InterruptedException {
+        ExecutorService exec = new ThreadPoolExecutor(10, 20, 30L, TimeUnit.SECONDS, new ArrayBlockingQueue<>(1000),
+                new ThreadPoolExecutor.CallerRunsPolicy());
+        Thread.sleep(5000L);
+        for (int i = 0; i < 30; i++) {
+            Thread.sleep(1000L);
+            MyThread myThread = new MyThread("自定义线程" + i);
+            exec.execute(myThread);
+        }
+    }
 }
 
-class MyThread implements Runnable {
+class MyThread extends Thread {
+    private int[] ints = null;
+    private String name;
+
+    public MyThread(String name) {
+        this.name = name;
+    }
+
     @Override
     public void run() {
-        int[] ints = new int[1024 * 1024 * 10];
-        ints[0] = 1;
+        ints = new int[1024 * 1024 * 10];
+        for (int i = 0; i < ints.length; i++) {
+            ints[i] = i;
+        }
         try {
-            Thread.sleep(10000L);
+            Thread.sleep(20000L);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println(ints.length);
+        System.out.println(name + "----" + ints[ints.length - 1]);
     }
 }
