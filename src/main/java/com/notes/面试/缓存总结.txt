@@ -13,7 +13,7 @@ b.先删缓存，更新数据库，如果出现并发读导致缓存不一致(�
 c.读写jvm队列异步处理，读hold,写串行，请求流量hash均匀分布到jvm
 	
 
-matadata(元数据)实时性要求低，可以考虑多级缓存
+metadata(元数据)实时性要求低，可以考虑多级缓存
 nginx 本地缓存+ redis集群缓存 + Tomcat jvm缓存
 
 	
@@ -30,3 +30,5 @@ hash分片(双层proyx，nginx流量分发)
 
 缓存预热
 rpc，启动初始化
+
+graua
