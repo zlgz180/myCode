@@ -15,7 +15,7 @@
     <url>http://maven.apache.org</url>
     <properties>
         <slf4j.version>1.7.25</slf4j.version>
-        <log4j.version>2.8.2</log4j.version>
+        <log4j.version>2.15.0</log4j.version>
     </properties>
     <dependencies>
         <dependency>
